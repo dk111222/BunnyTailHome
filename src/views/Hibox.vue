@@ -50,6 +50,37 @@
             <!-- game-and-token -->
             <div class="game-and-token">
                 <div class="lefe-top-ellipse"></div>
+                <!-- intro game -->
+                <div class="game-intro">
+                    <div class="game-intro-title">
+                        <span class="game-title">Game.</span>
+                        <span class="game-title-lr">How it works.</span>
+                    </div>
+                    <div class="game-intro-content">
+                        Hibox allows players to experience a strategic vioce battle game using wisdom and tricks.
+                        Players will meet more sidekicks using voice social networking with the help of hibox. We aim to
+                        help metaverse build a glorious future.
+                    </div>
+                    <div class="game-intro-more">
+                        <div class="how-box">
+                            <span class="blue-circle"></span>
+                            <span class="how-box-w">HOW TO PLAY?</span>
+                        </div>
+                        <div class="how-box">
+                            <span class="blue-circle"></span>
+                            <span class="how-box-w">WHAT CAN I GET?</span>
+                        </div>
+                        <div class="how-box">
+                            <span class="blue-circle"></span>
+                            <span class="how-box-w">ABOUT SOCIAL</span>
+                        </div>
+                        <div class="how-box">
+                            <span class="blue-circle"></span>
+                            <span class="how-box-w">MUCH MORE...</span>
+                        </div>
+                    </div>
+                    <div class="game-intro-read-more">READ MORE</div>
+                </div>
                 <div class="cassette-pictrue">
                     <img class="cassette-img" src="../assets/img/cassette.png" alt="cassette">
                 </div>
@@ -57,7 +88,26 @@
                 <div class="center-ellipse">
 
                 </div>
-                <div class="bottom-ellipse"></div>
+                <div class="token-content">
+                    <div class="hibox-token-title">Token.</div>
+                    <div class="hibox-token-types">There will be two types of token in HiBox:</div>
+                    <div class="hibox-token-game">-$HAPPY(Game Token)</div>
+                    <div class="hibox-token-governance">-$HIBOX(Governance Token)</div>
+                    <div class="hibox-token-paper">You can check more info from our white paper.</div>
+                    <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
+                        actively participating in community events and in-game testing.</div>
+                    <div class="hibox-token-white-paper">white paper</div>
+                </div>
+                <div class="bottom-ellipse">
+                    <div class="market-place">MARKETPLACE</div>
+                    <div class="market-nft">Each of our Nft has a unique image.</div>
+                    <div class="market-platform">It can be traded publicly on our
+                        in-game platform.</div>
+                </div>
+                <div class="comming-soon-market">
+                    <span class="comming-left-blue"></span>
+                    <span class="comming">COMMING SOON</span>
+                </div>
                 <!-- round-point -->
                 <div class="round-point-top-left round-blue"></div>
                 <div class="round-point-top-right round-blue"></div>
@@ -94,6 +144,133 @@
                         <span class="comming">COMMING SOON</span>
                     </div>
                     <div class="google-play-link"></div>
+                </div>
+            </div>
+            <!-- Roadmap -->
+            <div class="roadmap">
+                <div class="roadmap-title">
+                    <div class="roadmap-tl">Roadmap.</div>
+                    <div class="roadmap-tr">
+                        <div class="left-p"></div>
+                        <div class="right-edition">
+                            <div class="edition-s">EDITION</div>
+                            <div class="edition-time">2022</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="roadmap-list">
+                    <div class="list-box">
+                        <div class="left-top-num">.01</div>
+                        <div class="content">
+                            <div class="title">Q1 2022</div>
+                            <div class="title-bottom-line"></div>
+                            <div class="text">
+                                <div class="text-row">1.Born of Concept Framework</div>
+                                <div class="text-row">2.Team Building</div>
+                                <div class="text-row">3.Gameplay and Model design</div>
+                                <div class="text-row">4.Project Start</div>
+                            </div>
+                        </div>
+                        <div class="read-more">READ MORE</div>
+                    </div>
+                    <div class="list-box">
+                        <div class="left-top-num">.02</div>
+                        <div class="content">
+                            <div class="title">Q2 2022</div>
+                            <div class="title-bottom-line"></div>
+                            <div class="text">
+                                <div class="text-row">1.Official Website Design</div>
+                                <div class="text-row">2.Voice & Wallet System</div>
+                                <div class="text-row">Development</div>
+                                <div class="text-row">3.Game Demo Prototype Testing</div>
+                            </div>
+                        </div>
+                        <div class="read-more">READ MORE</div>
+                    </div>
+                    <div class="list-box">
+                        <div class="left-top-num">.03</div>
+                        <div class="content">
+                            <div class="title">Q3 2022</div>
+                            <div class="title-bottom-line"></div>
+                            <div class="text">
+                                <div class="text-row">1. Whitepaper and Official Website</div>
+                                <div class="text-row">Release</div>
+                                <div class="text-row">2. Online Communities Established</div>
+                                <div class="text-row">3. NFT Public Sale</div>
+                                <div class="text-row">4. HiBox Beta Version Release</div>
+                                <div class="text-row">5.IDO & Pancakeswap</div>
+                                <div class="text-row">6.Mint System Development</div>
+                            </div>
+                        </div>
+                        <div class="read-more">READ MORE</div>
+                    </div>
+                    <div class="list-box">
+                        <div class="left-top-num">.04</div>
+                        <div class="content">
+                            <div class="title">Q4 2022</div>
+                            <div class="title-bottom-line"></div>
+                            <div class="text">
+                                <div class="text-row">1.League Competition System</div>
+                                <div class="text-row">2.Daily Task System Development</div>
+                                <div class="text-row">3.Achievement System</div>
+                                <div class="text-row">Development</div>
+                                <div class="text-row">4.Staking Mining System</div>
+                                <div class="text-row">Development</div>
+                            </div>
+                        </div>
+                        <div class="read-more">READ MORE</div>
+                    </div>
+                </div>
+            </div>
+            <!-- join us -->
+            <div class="join-us">
+                <img class="join-us-img" src="../assets/img/join-us.png" alt="join us">
+            </div>
+            <!-- here we are members -->
+            <div class="members">
+                <div class="titles">
+                    <div class="title-up">NOW.</div>
+                    <div class="title-dn">Here We Are</div>
+                </div>
+                <div class="members-list">
+                    <div class="content content-ceo">
+                        <div class="head-sculpture">
+                            <div class="member-sculpture">
+                                <img class="member-sculpture-img" src="../assets/img/ceo.png" alt="CEO">
+                            </div>
+                            <div class="post">CO-FOUNDER & CEO</div>
+                        </div>
+                        <div class="members-intro">
+                            <div class="main-work">Agent Code: Professor</div>
+                            <div class="agent-code">•Background as a software engineer</div>
+                            <div class="work-experience">•8+ years of investment experience</div>
+                        </div>
+                    </div>
+                    <div class="content content-product-director">
+                        <div class="head-sculpture">
+                            <div class="member-sculpture">
+                                <img class="member-sculpture-img" src="../assets/img/product-director.png" alt="product-director">
+                            </div>
+                            <div class="post">CO-FOUNDER & PRODUCT DIRECTOR</div>
+                        </div>
+                        <div class="product-director-intro">
+                            <div class="main-work">Agent Code: Charmer</div>
+                            <div class="agent-code">•Vast Experience in working with multiple teams</div>
+                        </div>
+                    </div>
+                    <div class="content content-head-of-design">
+                        <div class="head-sculpture">
+                            <div class="member-sculpture">
+                                <img class="member-sculpture-img" src="../assets/img/head-of-design.png" alt="head-of-design">
+                            </div>
+                            <div class="post">Head of Design</div>
+                        </div>
+                        <div class="product-director-intro">
+                            <div class="main-work">Agent Code: Whisper</div>
+                            <div class="agent-code">•Background as a program designer</div>
+                            <div class="work-experience">•5+ years EXP on mobile games</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -133,8 +310,8 @@
             // 移除监听器
             // window.removeEventListener('scroll', this.scrollMove)
         },
-        methods : {
-            
+        methods: {
+
         }
     };
 </script>
@@ -460,6 +637,103 @@
                 background-size: 100% 100%;
             }
 
+            .game-intro {
+                position: absolute;
+                width: 466px;
+                height: 473px;
+                left: 184px;
+                top: 131px;
+                color: #FFFFFF;
+
+                .game-intro-title {
+                    .game-title {
+                        font-weight: 700;
+                        font-size: 60px;
+                        font-family: 'Krub';
+                        font-style: normal;
+                    }
+
+                    .game-title-lr {
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 28.7735px;
+                        letter-spacing: 2px;
+                        vertical-align: text-top;
+                        margin-left: 20px;
+                        font-family: 'Product Sans';
+                    }
+                }
+
+                .game-intro-content {
+                    margin-top: 15px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 27px;
+                }
+
+                .game-intro-more {
+                    margin-top: 34px;
+                    overflow: auto;
+
+                    .how-box {
+                        float: left;
+                        // font-family: 'Product Sans';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 13px;
+
+                        // margin-right: 154px;
+                        &:nth-child(1) {
+                            margin-right: 154px;
+                            margin-bottom: 43px;
+                        }
+
+                        &:nth-child(2) {
+                            margin-bottom: 43px;
+                        }
+
+                        &:nth-child(3) {
+                            margin-right: 154px;
+                        }
+
+                        .blue-circle {
+                            display: inline-block;
+                            width: 9px;
+                            height: 9px;
+                            border-radius: 100%;
+                            background-color: #4FBDFE;
+                            margin-right: 9px;
+                            vertical-align: middle;
+                        }
+
+                        .how-box-w {
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+                    }
+
+                }
+
+                .game-intro-read-more {
+                    margin-top: 74px;
+                    width: 141px;
+                    height: 53px;
+                    text-align: center;
+                    line-height: 53px;
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    border-radius: 6px;
+                    // font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #000000;
+                    letter-spacing: 1.3px;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                }
+            }
+
             .cassette-pictrue {
                 position: absolute;
                 width: 601px;
@@ -493,6 +767,84 @@
                 background-size: 100% 100%;
             }
 
+            .token-content {
+                position: absolute;
+                width: 392px;
+                height: 395px;
+                left: 942px;
+                top: 850px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 15.7px;
+                letter-spacing: 0.91px;
+
+                color: #BEBEBE;
+
+                .hibox-token-title {
+                    color: #FFFFFF;
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 63px;
+                }
+
+                .hibox-token-types {
+                    margin-bottom: 19px;
+                }
+
+                .hibox-token-game {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 19px;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 29px;
+                        height: 29px;
+                        margin-right: 10px;
+                        background: url('../assets/img/token-game.png') no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+
+                .hibox-token-governance {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 19px;
+
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 29px;
+                        height: 29px;
+                        margin-right: 10px;
+                        background: url('../assets/img/token-gov.png') no-repeat;
+                        background-size: 100% 100%;
+                    }
+                }
+
+                .hibox-token-paper {
+                    margin-bottom: 20px;
+                }
+
+                .hibox-token-white-paper {
+                    width: 140px;
+                    height: 50px;
+                    line-height: 50px;
+                    margin-top: 35px;
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    border-radius: 6px;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 15.2788px;
+                    text-transform: uppercase;
+                    color: #000000;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+
             .bottom-ellipse {
                 position: absolute;
                 width: 831px;
@@ -501,6 +853,70 @@
                 top: 1382px;
                 background: url('../assets/img/bottom-ellipse.png') no-repeat;
                 background-size: 100% 100%;
+
+                .market-place {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 83.3333px;
+                    // line-height: 100px;
+                    letter-spacing: 1.6389px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #F2F2F2;
+                    padding: 58px 0 55px 57px;
+                }
+
+                .market-nft {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 29px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+
+                .market-platform {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 29px;
+                    text-align: center;
+                    color: #FFFFFF;
+                }
+            }
+
+            .comming-soon-market {
+                position: absolute;
+                height: 20px;
+                left: 67px;
+                top: 1614px;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                white-space: nowrap;
+                color: #FFFFFF;
+                transform: rotate(90deg);
+
+                .comming-left-blue {
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    background: #4FBDFE;
+                    margin-right: 26px;
+                }
+
+                .comming {
+                    display: inline-block;
+                    // font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16.2489px;
+                    color: #FFFFFF;
+                }
             }
 
             .round-blue {
@@ -594,50 +1010,298 @@
                     height: 662px;
                 }
             }
+
+            .down-app {
+                position: absolute;
+                left: 50%;
+                top: 877px;
+                transform: translate(-50%, 0);
+                height: 70px;
+                width: 1015px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .apple-store-link {
+                    width: 210px;
+                    height: 70px;
+                    background: url('../assets/img/apple-store.png') no-repeat;
+                    background-size: 100% 100%;
+                }
+
+                .comming-soon {
+                    .comming-left-blue {
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        background: #4FBDFE;
+                        margin-right: 28px;
+                    }
+
+                    .comming {
+                        display: inline-block;
+                        // font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16.2489px;
+                        color: #FFFFFF;
+                    }
+                }
+
+                .google-play-link {
+                    width: 210px;
+                    height: 70px;
+                    background: url('../assets/img/google-play-store.png') no-repeat;
+                    background-size: 100% 100%;
+                }
+            }
         }
 
-        .down-app {
-            position: absolute;
-            left: 50%;
-            top: 877px;
-            transform: translate(-50%, 0);
-            height: 70px;
-            width: 1015px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .roadmap {
+            position: relative;
+            height: 760px;
 
-            .apple-store-link {
-                width: 210px;
-                height: 70px;
-                background: url('../assets/img/apple-store.png') no-repeat;
-                background-size: 100% 100%;
-            }
+            .roadmap-title {
+                width: 1369px;
+                height: 98px;
+                margin: 32px auto 109px auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
 
-            .comming-soon {
-                .comming-left-blue {
-                    display: inline-block;
-                    width: 12px;
-                    height: 12px;
-                    background: #4FBDFE;
-                    margin-right: 28px;
-                }
-
-                .comming {
-                    display: inline-block;
-                    // font-family: 'Krub';
+                .roadmap-tl {
+                    height: 98px;
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 16.2489px;
-                    color: #FFFFFF;
+                    font-size: 75.0509px;
+                    line-height: 98px;
+                    color: #F2F2F2;
+                }
+
+                .roadmap-tr {
+                    width: 123px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .left-p {
+                        width: 13px;
+                        height: 13px;
+                        background-color: #F1F1F1;
+                        margin-top: 10px;
+                    }
+
+                    .right-edition {
+                        color: #FFFFFF;
+                        font-style: normal;
+
+                        .edition-s {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 17.0459px;
+                            letter-spacing: 3.7776px;
+                        }
+
+                        .edition-time {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 28.8811px;
+                            letter-spacing: 4.19733px;
+                        }
+                    }
                 }
             }
 
-            .google-play-link {
-                width: 210px;
-                height: 70px;
-                background: url('../assets/img/google-play-store.png') no-repeat;
-                background-size: 100% 100%;
+            .roadmap-list {
+                width: 1369px;
+                height: 470px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+
+                .list-box {
+                    position: relative;
+                    width: 290px;
+                    height: 470px;
+                    background: rgba(0, 0, 0, 0.0001);
+                    border: 3px solid #FFFFFF;
+                    border-radius: 6px;
+
+                    .left-top-num {
+                        position: absolute;
+                        width: 45px;
+                        height: 45px;
+                        left: -1px;
+                        top: -1px;
+                        padding: 15px 0 0 7px;
+                        background: #F1F1F1;
+                        border-radius: 0px 0px 6px 0;
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 20.8357px;
+                    }
+
+                    .content {
+                        width: 218px;
+                        height: 360px;
+                        margin: 75px auto 0 auto;
+
+                        .title {
+                            font-family: 'Product Sans';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 33.3371px;
+                            height: 50px;
+                            line-height: 50px;
+                            letter-spacing: 0.720724px;
+                            color: #F2F2F2;
+                            text-align: center;
+                        }
+
+                        .title-bottom-line {
+                            width: 76px;
+                            height: 2px;
+                            background-color: #77C8FF;
+                            margin: 10px auto;
+                        }
+
+                        .text {
+                            margin-top: 20px;
+
+                            .text-row {
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 12.5014px;
+                                color: #FFFFFF;
+                                margin-bottom: 8px;
+                                text-indent: 8px;
+                            }
+                        }
+                    }
+
+                    .read-more {
+                        position: absolute;
+                        width: 127px;
+                        height: 47px;
+                        top: 386px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        line-height: 47px;
+                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        border-radius: 6px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 17px;
+                        letter-spacing: 0.438446px;
+                        color: #000000;
+                        text-align: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+
+        .join-us {
+            height: 985px;
+
+            .join-us-img {
+                display: block;
+                margin: 75px auto 0 auto;
+            }
+        }
+
+        .members {
+            position: relative;
+            height: 764px;
+
+            .titles {
+                width: 288px;
+                margin: 89px auto 74px auto;
+
+                .title-up {
+                    font-family: 'Product Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 93.3108px;
+                    color: #FFFFFF;
+                }
+
+                .title-dn {
+                    font-family: 'Product Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 42.0573px;
+                    letter-spacing: 2.70713px;
+                    color: #7BCFF1;
+                }
+            }
+
+            .members-list {
+                width: 1093px;
+                height: 362px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+
+                .content {
+                    .head-sculpture {
+                        margin-bottom: 48px;
+
+                        .member-sculpture {
+                            width: 179px;
+                            height: 179px;
+                            border-radius: 100%;
+                            border: 4px solid #36F0FF;
+                            margin: 0 auto;
+
+                            .member-sculpture-img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 100%;
+                            }
+                        }
+
+                        .post {
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 17px;
+                            color: #FFFFFF;
+                            margin-top: 32px;
+                            text-align: center;
+                            text-transform: uppercase;
+                            
+                        }
+                    }
+
+                    .members-intro {
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 24px;
+                        letter-spacing: 0.5px;
+                        color: #AEAEAE;
+                    }
+                    .product-director-intro {
+                        width: 247px;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 12px;
+                        line-height: 24px;
+                        letter-spacing: 0.5px;
+                        color: #AEAEAE;
+                        margin: 0 auto;
+                    }
+                }
+
+                .content-ceo {
+                    width: 216px;
+                }
+                .content-product-director {
+                    width: 321px;
+                }
+                .content-head-of-design {
+                    width: 214px;
+                }
             }
         }
     }
