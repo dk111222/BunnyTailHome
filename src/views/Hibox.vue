@@ -8,12 +8,14 @@
             </div>
             <!-- right-nav -->
             <div class="navbar">
-                <div class="navbar-item active">Intro</div>
-                <div class="navbar-item special-margin">Game</div>
-                <div class="navbar-item">Token</div>
-                <div class="navbar-item">Marketplace</div>
-                <div class="navbar-item">Roadmap</div>
-                <div class="navbar-item paper">Paper</div>
+                <div @click="activeHandle(0)" :class="['navbar-item', {'active': activeIndex==0}]">Intro</div>
+                <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game
+                </div>
+                <div @click="activeHandle(2)" :class="['navbar-item', {'active': activeIndex==2}]">Token</div>
+                <div @click="activeHandle(3)" :class="['navbar-item', {'active': activeIndex==3}]">Marketplace</div>
+                <div @click="activeHandle(4)" :class="['navbar-item', {'active': activeIndex==4}]">Roadmap</div>
+                <a :class="['navbar-item','paper']" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction"
+                    target="_blank">Paper</a>
             </div>
         </div>
         <div class="section">
@@ -29,26 +31,27 @@
                         <div>2022</div>
                     </div>
                     <div class="links">
-                        <div class="twitter-icon incon-links-sm"><img class="twitter-size"
-                                src="../assets/img/twitter-link.png" alt="twitter icon"></div>
-                        <div class="discord-icon incon-links-sm"><img class="discord-size"
-                                src="../assets/img/discord-link.png"></div>
-                        <div class="telegram-icon incon-links-sm"><img class="telegram-size"
-                                src="../assets/img/telegram-link.png" alt="telegram icon"></div>
+                        <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
+                            target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
+                                alt="twitter"></a>
+                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
+                                class="discord-size" src="../assets/img/discord-link.png"></a>
+                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
+                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
                     </div>
                     <div class="read-more">
-                        <div class="title">you are quite special</div>
+                        <div class="title">you are quite uncommon</div>
                         <div class="article">Use your unique voice to earn one more chance , and create more
                             possibilities</div>
                         <div class="start-box">
-                            <div class="start-btn">let´s start</div>
+                            <a class="start-btn" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">let´s start</a>
                             <div class="read-more-tip">read more</div>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- game-and-token -->
-            <div class="game-and-token">
+            <div class="game-and-token" ref="tokens">
                 <div class="lefe-top-ellipse"></div>
                 <!-- intro game -->
                 <div class="game-intro">
@@ -58,7 +61,7 @@
                     </div>
                     <div class="game-intro-content">
                         Hibox allows players to experience a strategic vioce battle game using wisdom and tricks.
-                        Players will meet more sidekicks using voice social networking with the help of hibox. We aim to
+                        Players will meet more sidekicks using voice social networking with the help of Hibox. We aim to
                         help metaverse build a glorious future.
                     </div>
                     <div class="game-intro-more">
@@ -72,14 +75,14 @@
                         </div>
                         <div class="how-box">
                             <span class="blue-circle"></span>
-                            <span class="how-box-w">ABOUT SOCIAL</span>
+                            <span class="how-box-w">ABOUT SOCIAL?</span>
                         </div>
                         <div class="how-box">
                             <span class="blue-circle"></span>
                             <span class="how-box-w">MUCH MORE...</span>
                         </div>
                     </div>
-                    <div class="game-intro-read-more">READ MORE</div>
+                    <a class="game-intro-read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
                 </div>
                 <div class="cassette-pictrue">
                     <img class="cassette-img" src="../assets/img/cassette.png" alt="cassette">
@@ -96,7 +99,7 @@
                     <div class="hibox-token-paper">You can check more info from our white paper.</div>
                     <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
                         actively participating in community events and in-game testing.</div>
-                    <div class="hibox-token-white-paper">white paper</div>
+                    <a class="hibox-token-white-paper" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">white paper</a>
                 </div>
                 <div class="bottom-ellipse">
                     <div class="market-place">MARKETPLACE</div>
@@ -161,7 +164,7 @@
                 <div class="roadmap-list">
                     <div class="list-box">
                         <div class="left-top-num">.01</div>
-                        <div class="content">
+                        <div class="content q1-content">
                             <div class="title">Q1 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
@@ -171,30 +174,30 @@
                                 <div class="text-row">4.Project Start</div>
                             </div>
                         </div>
-                        <div class="read-more">READ MORE</div>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.02</div>
-                        <div class="content">
+                        <div class="content q2-content">
                             <div class="title">Q2 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
                                 <div class="text-row">1.Official Website Design</div>
-                                <div class="text-row">2.Voice & Wallet System</div>
-                                <div class="text-row">Development</div>
+                                <div class="text-row">2.Voice & Wallet System Development</div>
+                                <!-- <div class="text-row">Development</div> -->
                                 <div class="text-row">3.Game Demo Prototype Testing</div>
                             </div>
                         </div>
-                        <div class="read-more">READ MORE</div>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.03</div>
-                        <div class="content">
+                        <div class="content q3-content">
                             <div class="title">Q3 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
-                                <div class="text-row">1. Whitepaper and Official Website</div>
-                                <div class="text-row">Release</div>
+                                <div class="text-row">1. Whitepaper and Official Website Release</div>
+                                <!-- <div class="text-row">Release</div> -->
                                 <div class="text-row">2. Online Communities Established</div>
                                 <div class="text-row">3. NFT Public Sale</div>
                                 <div class="text-row">4. HiBox Beta Version Release</div>
@@ -202,23 +205,23 @@
                                 <div class="text-row">6.Mint System Development</div>
                             </div>
                         </div>
-                        <div class="read-more">READ MORE</div>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.04</div>
-                        <div class="content">
+                        <div class="content q4-content">
                             <div class="title">Q4 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
                                 <div class="text-row">1.League Competition System</div>
                                 <div class="text-row">2.Daily Task System Development</div>
-                                <div class="text-row">3.Achievement System</div>
-                                <div class="text-row">Development</div>
+                                <div class="text-row">3.Achievement System Development</div>
+                                <!-- <div class="text-row">Development</div> -->
                                 <div class="text-row">4.Staking Mining System</div>
                                 <div class="text-row">Development</div>
                             </div>
                         </div>
-                        <div class="read-more">READ MORE</div>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +252,8 @@
                     <div class="content content-product-director">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
-                                <img class="member-sculpture-img" src="../assets/img/product-director.png" alt="product-director">
+                                <img class="member-sculpture-img" src="../assets/img/product-director.png"
+                                    alt="product-director">
                             </div>
                             <div class="post">CO-FOUNDER & PRODUCT DIRECTOR</div>
                         </div>
@@ -261,7 +265,8 @@
                     <div class="content content-head-of-design">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
-                                <img class="member-sculpture-img" src="../assets/img/head-of-design.png" alt="head-of-design">
+                                <img class="member-sculpture-img" src="../assets/img/head-of-design.png"
+                                    alt="head-of-design">
                             </div>
                             <div class="post">Head of Design</div>
                         </div>
@@ -272,6 +277,55 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- feedback -->
+            <div class="feedback">
+                <div class="feedback-message">
+                    <div class="feedback-big-title">FEEDBACK.</div>
+                    <div class="feedback-really">We look forward to your constructive suggestions and feedback really
+                    </div>
+                    <div class="contact-email">CONTACT US : hello@HiBox.com</div>
+                    <div class="feedback-name">
+                        <input type="text" placeholder="NAME">
+                    </div>
+                    <div class="feedback-name feedback-mail">
+                        <input type="text" placeholder="MAIL">
+                    </div>
+                    <div class="feedback-more-message">
+                        <!-- <input type="textarea" placeholder="MESSAGE"> -->
+                        <textarea name="MESSAGE" id="" cols="5" rows="5" maxlength="115"
+                            placeholder="MESSAGE"></textarea>
+                    </div>
+                    <div class="seed-message-btn">send message</div>
+                </div>
+                <div class="feedback-img">
+                    <img class="feedback-bg" src="../assets/img/feedback-img.png" alt="feedback">
+                </div>
+            </div>
+            <!-- start -hibox -->
+            <div class="start-hibox">
+                <div class="hibox-nav-bt">
+                    <img src="../assets/img/group-hibox-b-nav.png" alt="start hibox">
+                </div>
+                <div class="follow-us-content">
+                    <div class="download">
+                        <div class="app-store-down"></div>
+                        <div class="google-play-down"></div>
+                    </div>
+                    <div class="follow-us-link">
+                        <div class="tip">Follow us:</div>
+                        <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
+                            target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
+                                alt="twitter"></a>
+                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
+                                class="discord-size" src="../assets/img/discord-link.png"></a>
+                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
+                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
+
+                    </div>
+                </div>
+                <div class="bottom-title">Let's start a new journey with HiBox</div>
+                <div class="copyright">Copyright © 2022 • HiBox.Tel All rights reserved</div>
             </div>
         </div>
     </div>
@@ -299,19 +353,79 @@
                         el: '.swiper-pagination',
                         clickable: true
                     }
-                }
+                },
+                activeIndex: 0,
+                setScrollTop: 0,
+                stopscroll: 0,
+                timer: null,
             }
         },
         mounted() {
             // 监听滚动事件
-            // window.addEventListener('scroll', this.scrollMove)
+            window.addEventListener('scroll', this.scrollMove)
         },
         destroyed() {
             // 移除监听器
-            // window.removeEventListener('scroll', this.scrollMove)
+            window.removeEventListener('scroll', this.scrollMove)
         },
         methods: {
-
+            activeHandle(index) {
+                switch (index) {
+                    case 0:
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth"
+                        })
+                        break;
+                    case 1:
+                        window.scrollTo({
+                            top: 1040,
+                            behavior: "smooth"
+                        })
+                        break;
+                    case 2:
+                        window.scrollTo({
+                            top: 1760,
+                            behavior: "smooth"
+                        })
+                        break;
+                    case 3:
+                        window.scrollTo({
+                            top: 2400,
+                            behavior: "smooth"
+                        })
+                        break;
+                    case 4:
+                        window.scrollTo({
+                            top: 3840,
+                            behavior: "smooth"
+                        })
+                        break;
+                }
+                this.activeIndex = index
+            },
+            scrollMove() {
+                clearTimeout(this.timer);
+                this.timer = setTimeout(this.scrollEnd, 100);
+                // 2.获取当前页面的卷曲高度
+                this.setScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            },
+            scrollEnd() {
+                this.stopscroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if (this.stopscroll == this.setScrollTop) {
+                    if (this.setScrollTop >= 0 && this.setScrollTop < 1040) {
+                        this.activeIndex = 0
+                    } else if (this.setScrollTop >= 1040 && this.setScrollTop < 1760) {
+                        this.activeIndex = 1
+                    } else if (this.setScrollTop >= 1760 && this.setScrollTop < 2400) {
+                        this.activeIndex = 2
+                    } else if (this.setScrollTop >= 2400 && this.setScrollTop < 3840) {
+                        this.activeIndex = 3
+                    } else {
+                        this.activeIndex = 4
+                    }
+                }
+            }
         }
     };
 </script>
@@ -334,10 +448,10 @@
             .hibox-icon {
                 float: left;
                 cursor: pointer;
-                width: 167px;
-                height: 39px;
-                margin-top: 28px;
-                margin-left: 76px;
+                width: 208px;
+                height: 61px;
+                margin-top: 16px;
+                margin-left: 56px;
 
                 img {
                     width: 100%;
@@ -520,6 +634,7 @@
                 justify-content: space-between;
 
                 .incon-links-sm {
+                    display: block;
                     width: 60px;
                     height: 60px;
                     background-color: #FFFFFF;
@@ -549,9 +664,10 @@
 
             .read-more {
                 position: absolute;
-                width: 321px;
+                // width: 321px;
+                width: 338px;
                 height: 256px;
-                left: 1032px;
+                left: 1020px;
                 top: 320px;
                 // background: pink;
 
@@ -586,6 +702,7 @@
                     height: 47px;
 
                     .start-btn {
+                        display: block;
                         float: left;
                         width: 125px;
                         height: 47px;
@@ -641,7 +758,8 @@
                 position: absolute;
                 width: 466px;
                 height: 473px;
-                left: 184px;
+                // left: 184px;
+                left: 10.8%;
                 top: 131px;
                 color: #FFFFFF;
 
@@ -716,6 +834,7 @@
                 }
 
                 .game-intro-read-more {
+                    display: block;
                     margin-top: 74px;
                     width: 141px;
                     height: 53px;
@@ -738,7 +857,8 @@
                 position: absolute;
                 width: 601px;
                 height: 392px;
-                left: 720px;
+                // left: 720px;
+                left: 50%;
                 top: 204px;
 
                 .cassette-img {
@@ -771,7 +891,8 @@
                 position: absolute;
                 width: 392px;
                 height: 395px;
-                left: 942px;
+                // left: 942px;
+                left: 55%;
                 top: 850px;
                 font-style: normal;
                 font-weight: 700;
@@ -829,6 +950,7 @@
                 }
 
                 .hibox-token-white-paper {
+                    display: block;
                     width: 140px;
                     height: 50px;
                     line-height: 50px;
@@ -849,7 +971,8 @@
                 position: absolute;
                 width: 831px;
                 height: 382px;
-                left: 308px;
+                // left: 308px;
+                left: 18.3%;
                 top: 1382px;
                 background: url('../assets/img/bottom-ellipse.png') no-repeat;
                 background-size: 100% 100%;
@@ -1142,7 +1265,7 @@
                     }
 
                     .content {
-                        width: 218px;
+                        width: 233px;
                         height: 360px;
                         margin: 75px auto 0 auto;
 
@@ -1171,7 +1294,7 @@
                             .text-row {
                                 font-style: normal;
                                 font-weight: 700;
-                                font-size: 12.5014px;
+                                font-size: 12px;
                                 color: #FFFFFF;
                                 margin-bottom: 8px;
                                 text-indent: 8px;
@@ -1179,7 +1302,24 @@
                         }
                     }
 
+                    .q1-content {
+                        width: 185px;
+                    }
+
+                    .q2-content {
+                        width: 225px;
+                    }
+
+                    .q3-content {
+                        width: 255px;
+                    }
+
+                    .q4-content {
+                        width: 220px;
+                    }
+
                     .read-more {
+                        display: block;
                         position: absolute;
                         width: 127px;
                         height: 47px;
@@ -1269,7 +1409,7 @@
                             margin-top: 32px;
                             text-align: center;
                             text-transform: uppercase;
-                            
+
                         }
                     }
 
@@ -1281,6 +1421,7 @@
                         letter-spacing: 0.5px;
                         color: #AEAEAE;
                     }
+
                     .product-director-intro {
                         width: 247px;
                         font-style: normal;
@@ -1296,13 +1437,309 @@
                 .content-ceo {
                     width: 216px;
                 }
+
                 .content-product-director {
                     width: 321px;
                 }
+
                 .content-head-of-design {
                     width: 214px;
                 }
             }
+        }
+
+        .feedback {
+            position: relative;
+            height: 860px;
+
+            .feedback-message {
+                position: absolute;
+                width: 392px;
+                left: 143px;
+                top: 165px;
+
+                .feedback-big-title {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 53.1281px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    text-align: center;
+                }
+
+                .feedback-really {
+                    width: 252px;
+                    height: 50px;
+                    // padding-left: 20px;
+                    font-family: 'Product Sans';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 16px;
+                    letter-spacing: 3px;
+                    text-align: center;
+                    color: #FFFFFF;
+                    margin: 0 auto;
+                }
+
+                .contact-email {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16.6667px;
+                    letter-spacing: 1.66667px;
+                    color: #FFFFFF;
+                    margin-top: 44px;
+                    text-align: center;
+                }
+
+                .feedback-name {
+                    margin-top: 20px;
+
+                    input {
+                        width: 100%;
+                        height: 56px;
+                        border: 4px solid #FFFFFF;
+                        border-radius: 6px;
+                        background-color: #111111;
+                        color: #FFFFFF;
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12.7106px;
+                        letter-spacing: 1.4px;
+                        text-indent: 28px;
+                    }
+                }
+
+                .feedback-mail {
+                    margin: 42px 0 34px 0;
+                }
+
+                .feedback-more-message {
+                    textarea {
+                        width: 100%;
+                        height: 139px;
+                        border: 4px solid #FFFFFF;
+                        border-radius: 6px;
+                        background-color: #111111;
+                        color: #FFFFFF;
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12.7106px;
+                        letter-spacing: 1.4px;
+                        // text-indent: 28px;
+                        outline: none;
+                        padding: 18px 18px 18px 28px;
+                        resize: none;
+                    }
+                }
+
+                .seed-message-btn {
+                    width: 151px;
+                    height: 48px;
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    border-radius: 6px;
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 13.8046px;
+                    line-height: 48px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #000000;
+                    margin: 63px auto 0 auto;
+                    cursor: pointer;
+                }
+            }
+
+            .feedback-img {
+                position: absolute;
+                width: 776px;
+                height: 734px;
+                right: 0px;
+                bottom: 0px;
+
+                .feedback-bg {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .start-hibox {
+            height: 740px;
+            background-color: #000000;
+
+            .hibox-nav-bt {
+                width: 600px;
+                margin: 0 auto;
+
+                img {
+                    width: 100%;
+                    height: 172px;
+                    margin-top: 105px;
+                }
+            }
+
+            .follow-us-content {
+                width: 1147px;
+                height: 49px;
+                // margin: 153px 0 auto auto;
+                margin: 153px auto 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .download {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 416px;
+
+                    .app-store-down {
+                        width: 141px;
+                        height: 47px;
+                        background: url('../assets/img/apple-store-b.png') no-repeat;
+                        background-size: 100% 100%;
+                        // cursor: pointer;
+                    }
+
+                    .google-play-down {
+                        width: 141px;
+                        height: 47px;
+                        background: url('../assets/img/google-play-b.png') no-repeat;
+                        background-size: 100% 100%;
+                        // cursor: pointer;
+                    }
+                }
+
+                .follow-us-link {
+                    display: flex;
+                    // justify-content: space-between;
+                    width: 510px;
+                    height: 48px;
+
+                    .tip {
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 25px;
+                        height: 48px;
+                        line-height: 48px;
+                        color: #FFFFFF;
+                        margin-right: 45px;
+                    }
+
+                    .incon-links-sm {
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        background-color: #FFFFFF;
+                        border-radius: 8px;
+                        text-align: center;
+                        cursor: pointer;
+
+                        .twitter-size {
+                            width: 36px;
+                            height: 30px;
+                            margin-top: 9px;
+                        }
+
+                        .discord-size {
+                            width: 36px;
+                            height: 27px;
+                            margin-top: 10px;
+                        }
+
+                        .telegram-size {
+                            width: 32px;
+                            height: 26px;
+                            margin-top: 12px;
+                        }
+                    }
+
+                    .discord-icon {
+                        margin: 0 88px;
+                    }
+                }
+            }
+
+            .bottom-title {
+                width: 1202px;
+                height: 49px;
+                // font-family: 'Product Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                line-height: 49px;
+                text-align: center;
+                letter-spacing: 6px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                margin: 160px auto 26px auto;
+            }
+
+            .copyright {
+                // font-family: 'Product Sans';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 12px;
+                text-align: center;
+                letter-spacing: 2.5px;
+                text-transform: uppercase;
+                color: #FFFFFF;
+            }
+        }
+
+        input::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #FFFFFF;
+        }
+
+        input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #FFFFFF;
+        }
+
+        input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #FFFFFF;
+        }
+
+        input:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFFFFF;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        textarea::-webkit-input-placeholder {
+            /* WebKit, Blink, Edge */
+            color: #FFFFFF;
+        }
+
+        textarea:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color: #FFFFFF;
+        }
+
+        textarea::-moz-placeholder {
+            /* Mozilla Firefox 19+ */
+            color: #FFFFFF;
+        }
+
+        textarea:-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: #FFFFFF;
+        }
+
+        textarea:focus {
+            outline: none;
         }
     }
 </style>
