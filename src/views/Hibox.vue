@@ -2,6 +2,7 @@
     <div class="content">
         <!-- header fixed -->
         <div class="header">
+            <div class="header-auto">
             <!-- left-icon -->
             <div class="hibox-icon">
                 <img src="../assets/img/nav-title-hibox.png" alt="hibox">
@@ -17,41 +18,51 @@
                 <a :class="['navbar-item','paper']" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction"
                     target="_blank">Paper</a>
             </div>
+            </div>
         </div>
         <div class="section">
             <!-- intro -->
             <div class="intro-content">
+                <div class="intro-content-auto">
                 <div class="intro-bg-img">
                     <img class="intro-large" src="../assets/img/intro-hibox-bg.png" alt="HI,hibox">
                     <div class="hi-wd"><span>hi</span><span class="krub">.</span></div>
                     <div class="beginner-wd">BEGINNER'S</div>
-                    <div class="join-community-wd"><span>Join the community</span><span class="square"></span></div>
+                    <div class="join-community-wd"><span>Join the <span class="community-bold">community</span></span><span class="square"></span></div>
                     <div class="edition-wd">
                         <div class="editions">EDITION</div>
                         <div>2022</div>
                     </div>
                     <div class="links">
+                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
+                            class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
+                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
+                            class="discord-size" src="../assets/img/discord-link.png"></a>
                         <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
                             target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
                                 alt="twitter"></a>
-                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
-                                class="discord-size" src="../assets/img/discord-link.png"></a>
-                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
-                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
                     </div>
                     <div class="read-more">
-                        <div class="title">you are quite uncommon</div>
-                        <div class="article">Use your unique voice to earn one more chance , and create more
-                            possibilities</div>
+                        <div class="title">you are quite</div>
+                        <div class="title" style="color: #50BDFF;">special</div>
+                        <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div>
                         <div class="start-box">
                             <a class="start-btn" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">let´s start</a>
-                            <div class="read-more-tip">read more</div>
+                             <a class="read-more-tip" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                                <span>read more</span>
+                                <span class="read-more-tip-ic"></span>
+                             </a>
+                            <!-- <div class="read-more-tip">
+                                
+                            </div> -->
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
             <!-- game-and-token -->
             <div class="game-and-token" ref="tokens">
+                <div class="game-and-auto">
                 <div class="lefe-top-ellipse"></div>
                 <!-- intro game -->
                 <div class="game-intro">
@@ -67,22 +78,25 @@
                     <div class="game-intro-more">
                         <div class="how-box">
                             <span class="blue-circle"></span>
-                            <span class="how-box-w">HOW TO PLAY?</span>
+                            <span class="how-box-w">How to Play？</span>
                         </div>
                         <div class="how-box">
                             <span class="blue-circle"></span>
-                            <span class="how-box-w">WHAT CAN I GET?</span>
+                            <span class="how-box-w">What can I get？</span>
                         </div>
                         <div class="how-box">
                             <span class="blue-circle"></span>
-                            <span class="how-box-w">ABOUT SOCIAL?</span>
+                            <span class="how-box-w">About social？</span>
                         </div>
                         <div class="how-box">
                             <span class="blue-circle"></span>
-                            <span class="how-box-w">MUCH MORE...</span>
+                            <span class="how-box-w">Much more...</span>
                         </div>
                     </div>
-                    <a class="game-intro-read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
+                    <a class="game-intro-read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                        <span>READ MORE</span>
+                        <span class="read-more-tip-ic"></span>
+                    </a>
                 </div>
                 <div class="cassette-pictrue">
                     <img class="cassette-img" src="../assets/img/cassette.png" alt="cassette">
@@ -104,8 +118,7 @@
                 <div class="bottom-ellipse">
                     <div class="market-place">MARKETPLACE</div>
                     <div class="market-nft">Each of our Nft has a unique image.</div>
-                    <div class="market-platform">It can be traded publicly on our
-                        in-game platform.</div>
+                    <div class="market-platform">It can be traded publicly on our in-game platform.</div>
                 </div>
                 <div class="comming-soon-market">
                     <span class="comming-left-blue"></span>
@@ -122,6 +135,7 @@
                 <!-- cube -->
                 <div class="cube-left-large"></div>
                 <div class="cube-right-large"></div>
+                </div>
             </div>
 
             <!-- phone -->
@@ -131,21 +145,20 @@
                             src="../assets/img/iPhone 13-market-imgc.png" alt="marketApp"></swiper-slide>
                     <swiper-slide class="slide"><img class="complete-silde"
                             src="../assets/img/iPhone 13-market-imgr.png" alt="marketApp"></swiper-slide>
-                    <swiper-slide class="slide"><img class="incomplete-silde"
-                            src="../assets/img/iPhone 13-market-imgfl.png" alt="marketApp"><img class="incomplete-silde"
-                            src="../assets/img/iPhone 13-market-imgfr.png" style="margin-left:-1px" alt="marketApp">
+                    <swiper-slide class="slide"><img class="complete-silde"
+                            src="../assets/img/iPhone 13-market-imgfl.png" alt="marketApp">
                     </swiper-slide>
                     <swiper-slide class="slide"><img class="complete-silde"
                             src="../assets/img/iPhone 13-market-imgl.png" alt="marketApp"></swiper-slide>
                     <!-- <swiper-slide class="slide"></swiper-slide> -->
                 </swiper>
                 <!-- down app comming soon -->
+                <div class="comming-soon">
+                    <span class="comming-left-blue"></span>
+                    <span class="comming">COMMING SOON</span>
+                </div>
                 <div class="down-app">
                     <div class="apple-store-link"></div>
-                    <div class="comming-soon">
-                        <span class="comming-left-blue"></span>
-                        <span class="comming">COMMING SOON</span>
-                    </div>
                     <div class="google-play-link"></div>
                 </div>
             </div>
@@ -174,7 +187,10 @@
                                 <div class="text-row">4.Project Start</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <div class="span">READ MORE</div>
+                            <span class="read-more-tip-ic"></span>
+                        </a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.02</div>
@@ -188,7 +204,10 @@
                                 <div class="text-row">3.Game Demo Prototype Testing</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <div class="span">READ MORE</div>
+                            <span class="read-more-tip-ic"></span>
+                        </a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.03</div>
@@ -205,7 +224,10 @@
                                 <div class="text-row">6.Mint System Development</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <div class="span">READ MORE</div>
+                            <span class="read-more-tip-ic"></span>
+                        </a>
                     </div>
                     <div class="list-box">
                         <div class="left-top-num">.04</div>
@@ -221,7 +243,10 @@
                                 <div class="text-row">Development</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">READ MORE</a>
+                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <div class="span">READ MORE</div>
+                            <span class="read-more-tip-ic"></span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -233,10 +258,10 @@
             <div class="members">
                 <div class="titles">
                     <div class="title-up">NOW.</div>
-                    <div class="title-dn">Here We Are</div>
+                    <div class="title-dn">Here We Are.</div>
                 </div>
                 <div class="members-list">
-                    <div class="content content-ceo">
+                    <div class="content-mem content-ceo">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/ceo.png" alt="CEO">
@@ -249,7 +274,7 @@
                             <div class="work-experience">•8+ years of investment experience</div>
                         </div>
                     </div>
-                    <div class="content content-product-director">
+                    <div class="content-mem content-product-director">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/product-director.png"
@@ -257,12 +282,12 @@
                             </div>
                             <div class="post">CO-FOUNDER & PRODUCT DIRECTOR</div>
                         </div>
-                        <div class="product-director-intro">
+                        <div class="product-director-intro product-director-intro-charmer">
                             <div class="main-work">Agent Code: Charmer</div>
                             <div class="agent-code">•Vast Experience in working with multiple teams</div>
                         </div>
                     </div>
-                    <div class="content content-head-of-design">
+                    <div class="content-mem content-head-of-design">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/head-of-design.png"
@@ -304,28 +329,29 @@
             </div>
             <!-- start -hibox -->
             <div class="start-hibox">
+                <div class="start-hibox-auto">
                 <div class="hibox-nav-bt">
                     <img src="../assets/img/group-hibox-b-nav.png" alt="start hibox">
                 </div>
+                <div class="download">
+                    <div class="app-store-down"></div>
+                    <div class="google-play-down"></div>
+                </div>
                 <div class="follow-us-content">
-                    <div class="download">
-                        <div class="app-store-down"></div>
-                        <div class="google-play-down"></div>
-                    </div>
                     <div class="follow-us-link">
                         <div class="tip">Follow us:</div>
+                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
+                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
+                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
+                                class="discord-size" src="../assets/img/discord-link.png"></a>
                         <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
                             target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
                                 alt="twitter"></a>
-                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
-                                class="discord-size" src="../assets/img/discord-link.png"></a>
-                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
-                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
-
                     </div>
                 </div>
                 <div class="bottom-title">Let's start a new journey with HiBox</div>
                 <div class="copyright">Copyright © 2022 • HiBox.Tel All rights reserved</div>
+                </div>
             </div>
         </div>
     </div>
@@ -397,7 +423,7 @@
                         break;
                     case 4:
                         window.scrollTo({
-                            top: 3840,
+                            top: 3880,
                             behavior: "smooth"
                         })
                         break;
@@ -419,7 +445,7 @@
                         this.activeIndex = 1
                     } else if (this.setScrollTop >= 1760 && this.setScrollTop < 2400) {
                         this.activeIndex = 2
-                    } else if (this.setScrollTop >= 2400 && this.setScrollTop < 3840) {
+                    } else if (this.setScrollTop >= 2400 && this.setScrollTop < 3880) {
                         this.activeIndex = 3
                     } else {
                         this.activeIndex = 4
@@ -433,9 +459,10 @@
 <style lang="scss" scoped>
     .content {
         width: 100%;
+        overflow-x: hidden;
 
         .header {
-            min-width: 1440px;
+            // min-width: 1440px;
             position: fixed;
             width: 100% !important;
             height: 96px;
@@ -443,8 +470,11 @@
             top: 0px;
             border-bottom: 1px solid #656565;
             background-color: #0D0D0D;
-            z-index: 1000;
-
+            z-index: 100;
+            .header-auto {
+                width: 1440px;
+                height: 96px;
+                margin: 0 auto;
             .hibox-icon {
                 float: left;
                 cursor: pointer;
@@ -463,12 +493,12 @@
                 float: right;
                 // width: 714px;
                 height: 52px;
-                margin-right: 66px;
+                margin-right: 38px;
                 margin-top: 22px;
 
                 .navbar-item {
                     float: left;
-                    font-family: 'Oswald';
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 16.6677px;
@@ -502,6 +532,7 @@
                 }
             }
         }
+        }
 
         .section {
             padding-top: 96px;
@@ -514,7 +545,9 @@
             height: 1035px;
             background-color: #0D0D0D;
             overflow: hidden;
-
+            .intro-content-auto {
+                width: 1440px;
+                margin: 0 auto;
             .intro-bg-img {
                 position: relative;
                 top: 66px;
@@ -552,7 +585,7 @@
                 height: 42px;
                 left: -122px;
                 top: 450px;
-                font-family: 'Krub';
+                // font-family: 'Krub';
                 font-style: normal;
                 font-weight: 400;
                 font-size: 32px;
@@ -569,17 +602,20 @@
                 position: absolute;
                 width: 417px;
                 height: 36px;
-                left: -40px;
-                top: 876px;
-                font-family: 'Krub';
+                left: 700px;
+                top: 902px;
+                font-family: 'Krub-Regular';
                 font-style: normal;
-                font-weight: 700;
+                font-weight: 400;
                 font-size: 28px;
                 line-height: 36px;
                 display: flex;
                 align-items: flex-end;
                 letter-spacing: 2px;
                 color: #FFFFFF;
+                .community-bold {
+                    font-family: 'Krub';
+                }
 
                 .square {
                     position: relative;
@@ -594,7 +630,7 @@
                         position: absolute;
                         width: 12px;
                         height: 12px;
-                        top: 58%;
+                        top: 49%;
                         background-color: #FFFFFF;
                     }
                 }
@@ -604,13 +640,13 @@
                 position: absolute;
                 width: 207px;
                 height: 105px;
-                left: 1136px;
-                top: 843px;
+                left: 1137px;
+                top: 0;
                 border: 1px solid #F1F1F1;
-                // font-family: 'Product Sans';
+                font-family: 'MyriadPro-Bold';
                 font-style: normal;
                 font-weight: 700;
-                font-size: 17px;
+                font-size: 24px;
                 // display: flex;
                 // align-items: center;
                 text-align: center;
@@ -621,43 +657,45 @@
 
                 .editions {
                     margin-top: 24px;
+                    font-size: 20px;
                 }
             }
 
             .links {
                 position: absolute;
-                width: 332px;
-                height: 60px;
-                left: 473px;
-                top: 863px;
+                width: 174px;
+                height: 44px;
+                right: 9px;
+                top: 902px;
                 display: flex;
                 justify-content: space-between;
 
                 .incon-links-sm {
                     display: block;
-                    width: 60px;
-                    height: 60px;
+                    width: 44px;
+                    height: 44px;
                     background-color: #FFFFFF;
                     border-radius: 8px;
                     text-align: center;
                     cursor: pointer;
 
                     .twitter-size {
-                        width: 45px;
-                        height: 38px;
-                        margin-top: 12px;
+                        width: 33px;
+                        height: 28px;
+                        margin-top: 8px;
                     }
 
                     .discord-size {
-                        width: 45px;
-                        height: 34px;
-                        margin-top: 12px;
+                        width: 32px;
+                        height: 25px;
+                        margin-top: 9px;
                     }
 
                     .telegram-size {
-                        width: 40px;
-                        height: 33px;
-                        margin-top: 15px;
+                        width: 29px;
+                        height: 24px;
+                        margin-top: 11px;
+                        margin-right: 4px;
                     }
                 }
             }
@@ -665,58 +703,52 @@
             .read-more {
                 position: absolute;
                 // width: 321px;
-                width: 338px;
+                width: 438px;
                 height: 256px;
-                left: 1020px;
-                top: 320px;
-                // background: pink;
+                left: 42px;
+                top: 578px;
 
                 .title {
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 19.7031px;
+                    // font-size: 19.7031px;
+                    font-size: 48px;
                     display: flex;
                     align-items: center;
                     letter-spacing: 2px;
                     text-transform: uppercase;
                     color: #FFFFFF;
-                    margin-bottom: 12px;
-                    text-indent: 12px;
                 }
 
                 .article {
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 16.6067px;
-                    display: flex;
-                    align-items: center;
-                    text-align: center;
-                    letter-spacing: 0.583393px;
+                    font-size: 17px;
                     color: #FFFFFF;
                     line-height: 27px;
-                    padding-right: 23px;
                 }
 
                 .start-box {
-                    margin: 49px 0 0 22px;
+                    margin-top: 28px;
                     height: 47px;
-
                     .start-btn {
                         display: block;
                         float: left;
                         width: 125px;
                         height: 47px;
-                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        background-color: #50BDFF;
                         border-radius: 6px;
                         font-family: 'Krub';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 14px;
                         line-height: 47px;
-                        letter-spacing: 1.08016px;
                         text-transform: uppercase;
                         text-align: center;
-                        color: #000000;
+                        color: #FFFFFF;
                         cursor: pointer;
                     }
 
@@ -725,25 +757,37 @@
                         height: 47px;
                         line-height: 47px;
                         margin-left: 27px;
+                        font-family: 'Krub';
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 14.3552px;
+                        font-size: 14px;
                         display: flex;
-                        align-items: flex-end;
-                        letter-spacing: 1.08016px;
+                        align-items: center;
                         text-transform: uppercase;
-                        color: #FFFFFF;
+                        color: #35F3BB;
+                        .read-more-tip-ic {
+                            width: 10px;
+                            height: 16px;
+                            background: url('../assets/img/vector-2x.png') no-repeat;
+                            background-size: 100% 100%;
+                            margin-left: 10px;
+                        }
                     }
                 }
 
 
             }
         }
+        }
 
         .game-and-token {
-            position: relative;
             height: 1764px;
-
+            background-color: #111111;
+            .game-and-auto {
+                position: relative;
+                width: 1440px;
+                height: 1764px;
+                margin: 0 auto;
             .lefe-top-ellipse {
                 position: absolute;
                 width: 186px;
@@ -758,61 +802,73 @@
                 position: absolute;
                 width: 466px;
                 height: 473px;
-                // left: 184px;
-                left: 10.8%;
-                top: 131px;
+                left: 89px;
+                top: 204px;
                 color: #FFFFFF;
 
                 .game-intro-title {
+                    display: flex;
+                    text-indent: 4px;
                     .game-title {
                         font-weight: 700;
-                        font-size: 60px;
+                        font-size: 63px;
                         font-family: 'Krub';
                         font-style: normal;
                     }
 
                     .game-title-lr {
+                        font-family: 'MyriadPro-Regular';
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 28.7735px;
-                        letter-spacing: 2px;
+                        font-size: 36px;
+                        letter-spacing: 2.7px;
                         vertical-align: text-top;
-                        margin-left: 20px;
-                        font-family: 'Product Sans';
+                        margin-left: 10px;
+                        padding-top: 56px;
                     }
                 }
 
                 .game-intro-content {
-                    margin-top: 15px;
+                    margin-top: 12px;
+                    font-family: 'MyriadPro-Bold';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 18px;
                     line-height: 27px;
+                    letter-spacing: 0.630837px;
                 }
 
                 .game-intro-more {
-                    margin-top: 34px;
+                    width: 500px;
+                    margin-top: 26px;
                     overflow: auto;
 
                     .how-box {
                         float: left;
-                        // font-family: 'Product Sans';
+                        font-family: 'MyriadPro-Bold';
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 13px;
+                        font-size: 20px;
+                        color: #4FBDFE;
 
                         // margin-right: 154px;
                         &:nth-child(1) {
-                            margin-right: 154px;
-                            margin-bottom: 43px;
+                            margin-right: 92px;
+                            margin-bottom: 15px;
                         }
 
                         &:nth-child(2) {
-                            margin-bottom: 43px;
+                            margin-bottom: 15px;
                         }
 
                         &:nth-child(3) {
-                            margin-right: 154px;
+                            margin-right: 83px;
+                        }
+
+                        &:nth-child(4) {
+                            .how-box-w {
+                                padding-top: 4px;
+                            }
                         }
 
                         .blue-circle {
@@ -828,28 +884,30 @@
                         .how-box-w {
                             display: inline-block;
                             vertical-align: middle;
+                            text-transform: uppercase;
                         }
                     }
 
                 }
 
                 .game-intro-read-more {
-                    display: block;
-                    margin-top: 74px;
-                    width: 141px;
-                    height: 53px;
-                    text-align: center;
-                    line-height: 53px;
-                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    border-radius: 6px;
-                    // font-family: 'Krub';
+                    display: flex;
+                    width: 97px;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 18px;
-                    color: #000000;
-                    letter-spacing: 1.3px;
+                    font-size: 14px;
                     text-transform: uppercase;
-                    cursor: pointer;
+                    color: #35F3BB;
+                    margin-top: 18px;
+                    .read-more-tip-ic {
+                        width: 10px;
+                        height: 15px;
+                        background: url('../assets/img/vector-2x.png') no-repeat;
+                        background-size: 100% 100%;
+                    }
                 }
             }
 
@@ -857,8 +915,8 @@
                 position: absolute;
                 width: 601px;
                 height: 392px;
-                // left: 720px;
-                left: 50%;
+                left: 720px;
+                // left: 50%;
                 top: 204px;
 
                 .cassette-img {
@@ -891,15 +949,14 @@
                 position: absolute;
                 width: 392px;
                 height: 395px;
-                // left: 942px;
-                left: 55%;
-                top: 850px;
+                left: 880px;
+                // left: 55%;
+                top: 810px;
                 font-style: normal;
                 font-weight: 700;
                 font-size: 15.7px;
-                letter-spacing: 0.91px;
-
-                color: #BEBEBE;
+                color: #FFFFFF;
+                font-family: 'MyriadPro-Bold';
 
                 .hibox-token-title {
                     color: #FFFFFF;
@@ -954,14 +1011,16 @@
                     width: 140px;
                     height: 50px;
                     line-height: 50px;
-                    margin-top: 35px;
-                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    margin-top: 40px;
+                    // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    background-color: #50BDFF;
                     border-radius: 6px;
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 15.2788px;
+                    font-size: 14px;
                     text-transform: uppercase;
-                    color: #000000;
+                    color: #FFFFFF;
                     text-align: center;
                     cursor: pointer;
                 }
@@ -971,8 +1030,8 @@
                 position: absolute;
                 width: 831px;
                 height: 382px;
-                // left: 308px;
-                left: 18.3%;
+                left: 308px;
+                // left: 18.3%;
                 top: 1382px;
                 background: url('../assets/img/bottom-ellipse.png') no-repeat;
                 background-size: 100% 100%;
@@ -987,23 +1046,23 @@
                     text-transform: uppercase;
                     text-align: center;
                     color: #F2F2F2;
-                    padding: 58px 0 55px 57px;
+                    padding: 58px 0 28px 57px;
                 }
 
                 .market-nft {
-                    font-family: 'Krub';
+                    font-family: 'MyriadPro-Bold';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 29px;
+                    font-size: 35px;
                     text-align: center;
                     color: #FFFFFF;
                 }
 
                 .market-platform {
-                    font-family: 'Krub';
+                    font-family: 'MyriadPro-Bold';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 29px;
+                    font-size: 35px;
                     text-align: center;
                     color: #FFFFFF;
                 }
@@ -1012,13 +1071,14 @@
             .comming-soon-market {
                 position: absolute;
                 height: 20px;
-                left: 67px;
+                left: 65px;
                 top: 1614px;
+                font-family: 'MyriadPro-Bold';
                 font-style: normal;
                 font-weight: 700;
-                font-size: 16px;
+                font-size: 18px;
                 display: flex;
-                align-items: center;
+                align-items: baseline;
                 text-transform: uppercase;
                 white-space: nowrap;
                 color: #FFFFFF;
@@ -1034,10 +1094,8 @@
 
                 .comming {
                     display: inline-block;
-                    // font-family: 'Krub';
-                    font-style: normal;
                     font-weight: 700;
-                    font-size: 16.2489px;
+                    font-size: 18px;
                     color: #FFFFFF;
                 }
             }
@@ -1105,11 +1163,13 @@
                 background-size: 100% 100%;
             }
         }
+        }
 
         .market {
             position: relative;
+            width: 1440px;
             height: 999px;
-
+            margin: 0 auto;
             .swiper {
 
                 // margin-top: 5px;
@@ -1127,20 +1187,37 @@
                     height: 662px;
                 }
 
-                .incomplete-silde {
-                    float: left;
-                    width: 163.5px;
-                    height: 662px;
-                }
             }
+                .comming-soon {
+                    position: absolute;
+                    left: 50%;
+                    top: 805px;
+                    transform: translate(-50%, 0);
+                    .comming-left-blue {
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        background: #4FBDFE;
+                        margin-right: 27px;
+                    }
+
+                    .comming {
+                        display: inline-block;
+                        font-family: 'MyriadPro-Bold';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 16.2489px;
+                        color: #FFFFFF;
+                    }
+                }
 
             .down-app {
                 position: absolute;
                 left: 50%;
-                top: 877px;
+                top: 857px;
                 transform: translate(-50%, 0);
                 height: 70px;
-                width: 1015px;
+                width: 436px;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -1152,24 +1229,6 @@
                     background-size: 100% 100%;
                 }
 
-                .comming-soon {
-                    .comming-left-blue {
-                        display: inline-block;
-                        width: 12px;
-                        height: 12px;
-                        background: #4FBDFE;
-                        margin-right: 28px;
-                    }
-
-                    .comming {
-                        display: inline-block;
-                        // font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 16.2489px;
-                        color: #FFFFFF;
-                    }
-                }
 
                 .google-play-link {
                     width: 210px;
@@ -1183,11 +1242,13 @@
         .roadmap {
             position: relative;
             height: 760px;
+            width: 1440px;
+            margin: 0 auto;
 
             .roadmap-title {
                 width: 1369px;
                 height: 98px;
-                margin: 32px auto 109px auto;
+                margin: 82px auto 60px auto;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -1219,6 +1280,7 @@
                         font-style: normal;
 
                         .edition-s {
+                            font-family: 'MyriadPro-Bold';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 17.0459px;
@@ -1226,9 +1288,10 @@
                         }
 
                         .edition-time {
+                            font-family: 'MyriadPro-Bold';
                             font-style: normal;
                             font-weight: 700;
-                            font-size: 28.8811px;
+                            font-size: 30px;
                             letter-spacing: 4.19733px;
                         }
                     }
@@ -1256,12 +1319,16 @@
                         height: 45px;
                         left: -1px;
                         top: -1px;
-                        padding: 15px 0 0 7px;
+                        // padding: 15px 0 0 7px;
+                        line-height: 45px;
+                        text-align: center;
                         background: #F1F1F1;
                         border-radius: 0px 0px 6px 0;
+                        font-family: 'MyriadPro-Bold';
                         font-style: normal;
                         font-weight: 600;
                         font-size: 20.8357px;
+                        color: #181818;
                     }
 
                     .content {
@@ -1270,7 +1337,7 @@
                         margin: 75px auto 0 auto;
 
                         .title {
-                            font-family: 'Product Sans';
+                            font-family: 'MyriadPro-Bold';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 33.3371px;
@@ -1292,9 +1359,10 @@
                             margin-top: 20px;
 
                             .text-row {
+                                font-family: 'MyriadPro-Bold';
                                 font-style: normal;
                                 font-weight: 700;
-                                font-size: 12px;
+                                font-size: 12.5px;
                                 color: #FFFFFF;
                                 margin-bottom: 8px;
                                 text-indent: 8px;
@@ -1319,47 +1387,57 @@
                     }
 
                     .read-more {
-                        display: block;
+                        display: flex;
+                        align-items: center;
                         position: absolute;
-                        width: 127px;
                         height: 47px;
                         top: 386px;
                         left: 50%;
                         transform: translate(-50%, 0);
                         line-height: 47px;
-                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                        border-radius: 6px;
+                        font-family: 'Krub';
                         font-style: normal;
                         font-weight: 700;
-                        font-size: 17px;
-                        letter-spacing: 0.438446px;
-                        color: #000000;
-                        text-align: center;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        color: #35F3BB;
                         cursor: pointer;
+                        .read-more-tip-ic {
+                            width: 10px;
+                            height: 15px;
+                            background: url('../assets/img/vector-2x.png') no-repeat;
+                            background-size: 100% 100%;
+                            margin-left: 10px;
+                        }
                     }
                 }
             }
         }
 
         .join-us {
+            width: 1440px;
             height: 985px;
+            margin: 0 auto;
 
             .join-us-img {
                 display: block;
-                margin: 75px auto 0 auto;
+                margin: 0 auto;
+                padding-top: 75px;
             }
         }
 
         .members {
             position: relative;
+            width: 1440px;
             height: 764px;
-
+            margin: 0 auto;
             .titles {
                 width: 288px;
-                margin: 89px auto 74px auto;
+                margin: 0 0 65px 608px;
+                padding-top: 106px;
 
                 .title-up {
-                    font-family: 'Product Sans';
+                    font-family: 'Krub';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 93.3108px;
@@ -1367,7 +1445,7 @@
                 }
 
                 .title-dn {
-                    font-family: 'Product Sans';
+                    font-family: 'Krub-Regular';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 42.0573px;
@@ -1383,7 +1461,7 @@
                 display: flex;
                 justify-content: space-between;
 
-                .content {
+                .content-mem {
                     .head-sculpture {
                         margin-bottom: 48px;
 
@@ -1402,6 +1480,7 @@
                         }
 
                         .post {
+                            font-family: 'Krub';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 17px;
@@ -1414,23 +1493,30 @@
                     }
 
                     .members-intro {
+                        font-family: 'MyriadPro-Regular';
                         font-style: normal;
                         font-weight: 400;
                         font-size: 12px;
                         line-height: 24px;
                         letter-spacing: 0.5px;
-                        color: #AEAEAE;
+                        color: #AAAAAA;
+                        text-align: center;
                     }
 
                     .product-director-intro {
-                        width: 247px;
+                        width: 214px;
+                        font-family: 'MyriadPro-Regular';
                         font-style: normal;
                         font-weight: 400;
                         font-size: 12px;
                         line-height: 24px;
                         letter-spacing: 0.5px;
-                        color: #AEAEAE;
+                        color: #AAAAAA;
                         margin: 0 auto;
+                        text-align: center;
+                    }
+                    .product-director-intro-charmer {
+                        width: 260px;
                     }
                 }
 
@@ -1450,13 +1536,14 @@
 
         .feedback {
             position: relative;
+            width: 1440px;
             height: 860px;
-
+            margin: 0 auto;
             .feedback-message {
                 position: absolute;
                 width: 392px;
                 left: 143px;
-                top: 165px;
+                top: 174px;
 
                 .feedback-big-title {
                     font-family: 'Krub';
@@ -1471,31 +1558,30 @@
                 .feedback-really {
                     width: 252px;
                     height: 50px;
-                    // padding-left: 20px;
-                    font-family: 'Product Sans';
+                    font-family: 'MyriadPro-Regular';
                     font-style: normal;
                     font-weight: 400;
-                    font-size: 13px;
-                    line-height: 16px;
+                    font-size: 16px;
+                    line-height: 19px;
                     letter-spacing: 3px;
                     text-align: center;
                     color: #FFFFFF;
-                    margin: 0 auto;
+                    margin: 10px auto 0 auto;
                 }
 
                 .contact-email {
-                    font-family: 'Krub';
+                    font-family: 'MyriadPro-Bold';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 16.6667px;
                     letter-spacing: 1.66667px;
                     color: #FFFFFF;
-                    margin-top: 44px;
+                    margin-top: 21px;
                     text-align: center;
                 }
 
                 .feedback-name {
-                    margin-top: 20px;
+                    margin-top: 16px;
 
                     input {
                         width: 100%;
@@ -1504,7 +1590,7 @@
                         border-radius: 6px;
                         background-color: #111111;
                         color: #FFFFFF;
-                        font-family: 'Krub';
+                        font-family: 'MyriadPro-Bold';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 12.7106px;
@@ -1540,18 +1626,17 @@
                 .seed-message-btn {
                     width: 151px;
                     height: 48px;
-                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    background-color: #50BDFF;
                     border-radius: 6px;
                     font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 13.8046px;
+                    font-size: 14px;
                     line-height: 48px;
-                    letter-spacing: 1px;
                     text-transform: uppercase;
                     text-align: center;
-                    color: #000000;
-                    margin: 63px auto 0 auto;
+                    color: #FFFFFF;
+                    margin: 45px auto 0 auto;
                     cursor: pointer;
                 }
             }
@@ -1570,10 +1655,13 @@
             }
         }
 
-        .start-hibox {
+        .start-hibox {            
             height: 740px;
             background-color: #000000;
-
+            .start-hibox-auto {
+                width: 1440px;
+                height: 740px;
+                margin: 0 auto;
             .hibox-nav-bt {
                 width: 600px;
                 margin: 0 auto;
@@ -1581,46 +1669,47 @@
                 img {
                     width: 100%;
                     height: 172px;
-                    margin-top: 105px;
+                    margin-top: 84px;
                 }
             }
 
-            .follow-us-content {
-                width: 1147px;
-                height: 49px;
-                // margin: 153px 0 auto auto;
-                margin: 153px auto 0 auto;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .download {
+            .download {
                     display: flex;
                     justify-content: space-between;
-                    width: 416px;
+                    width: 280px;
+                    margin: 158px 0 0 593px;
 
                     .app-store-down {
-                        width: 141px;
-                        height: 47px;
+                        width: 123px;
+                        height: 41px;
                         background: url('../assets/img/apple-store-b.png') no-repeat;
                         background-size: 100% 100%;
                         // cursor: pointer;
                     }
 
                     .google-play-down {
-                        width: 141px;
-                        height: 47px;
+                        width: 123px;
+                        height: 41px;
                         background: url('../assets/img/google-play-b.png') no-repeat;
                         background-size: 100% 100%;
                         // cursor: pointer;
                     }
                 }
 
+            .follow-us-content {
+                width: 337px;
+                height: 44px;
+                // margin: 153px 0 auto auto;
+                margin: 24px 0 0 578px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
                 .follow-us-link {
                     display: flex;
                     // justify-content: space-between;
-                    width: 510px;
-                    height: 48px;
+                    width: 337px;
+                    height: 44px;
 
                     .tip {
                         font-family: 'Krub';
@@ -1630,39 +1719,39 @@
                         height: 48px;
                         line-height: 48px;
                         color: #FFFFFF;
-                        margin-right: 45px;
+                        margin-right: 20px;
                     }
 
                     .incon-links-sm {
                         display: block;
-                        width: 48px;
-                        height: 48px;
+                        width: 44px;
+                        height: 44px;
                         background-color: #FFFFFF;
                         border-radius: 8px;
                         text-align: center;
                         cursor: pointer;
 
                         .twitter-size {
-                            width: 36px;
-                            height: 30px;
+                            width: 29px;
+                            height: 23px;
                             margin-top: 9px;
                         }
 
                         .discord-size {
-                            width: 36px;
-                            height: 27px;
+                            width: 31.5px;
+                            height: 25px;
                             margin-top: 10px;
                         }
 
                         .telegram-size {
-                            width: 32px;
-                            height: 26px;
+                            width: 33px;
+                            height: 27.5px;
                             margin-top: 12px;
                         }
                     }
 
                     .discord-icon {
-                        margin: 0 88px;
+                        margin: 0 21px;
                     }
                 }
             }
@@ -1670,20 +1759,20 @@
             .bottom-title {
                 width: 1202px;
                 height: 49px;
-                // font-family: 'Product Sans';
+                font-family: 'MyriadPro-Bold';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 40px;
-                line-height: 49px;
+                line-height: 48px;
                 text-align: center;
                 letter-spacing: 6px;
                 text-transform: uppercase;
                 color: #FFFFFF;
-                margin: 160px auto 26px auto;
+                margin: 73px auto 50px auto;
             }
 
             .copyright {
-                // font-family: 'Product Sans';
+                font-family: 'MyriadPro-Bold';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 12px;
@@ -1692,6 +1781,7 @@
                 text-transform: uppercase;
                 color: #FFFFFF;
             }
+        }
         }
 
         input::-webkit-input-placeholder {

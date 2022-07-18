@@ -5,7 +5,7 @@
   }
   html,
   body {
-    min-width: 1440px;
+    // min-width: 1440px;
     height: 100%;
   }
   
@@ -38,4 +38,21 @@
   }
   a {
     text-decoration: none;
+  }
+  /**font family**/ 
+  @font-face {
+    font-family: 'MyriadPro-Bold';
+    src: url('~@/styles/fonts/MyriadPro-Bold.otf');
+  }
+  @font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('~@/styles/fonts/MyriadPro-Regular.otf');
+  }
+  @font-face {
+    font-family: 'Krub';
+    src: url('~@/styles/fonts/Krub-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'Krub-Regular';
+    src: url('~@/styles/fonts/Krub-Regular.ttf');
   }
