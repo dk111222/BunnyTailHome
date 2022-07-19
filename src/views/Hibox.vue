@@ -45,13 +45,17 @@
                     <div class="read-more">
                         <div class="title">you are quite</div>
                         <div class="title" style="color: #50BDFF;">special</div>
-                        <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
                         <div class="start-box">
-                            <a class="start-btn" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">let´s start</a>
-                             <a class="read-more-tip" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <a class="start-btn" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">WHITE PAPER</a>
+                             <!-- <a class="read-more-tip" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
                                 <span>read more</span>
                                 <span class="read-more-tip-ic"></span>
-                             </a>
+                             </a> -->
                             <!-- <div class="read-more-tip">
                                 
                             </div> -->
@@ -71,9 +75,7 @@
                         <span class="game-title-lr">How it works.</span>
                     </div>
                     <div class="game-intro-content">
-                        Hibox allows players to experience a strategic vioce battle game using wisdom and tricks.
-                        Players will meet more sidekicks using voice social networking with the help of Hibox. We aim to
-                        help metaverse build a glorious future.
+                        Use your unique voice to earn one more chance, meet more sidekicks, create more possibilities while enjoying our game.
                     </div>
                     <div class="game-intro-more">
                         <div class="how-box">
@@ -111,8 +113,9 @@
                     <div class="hibox-token-game">-$HAPPY(Game Token)</div>
                     <div class="hibox-token-governance">-$HIBOX(Governance Token)</div>
                     <div class="hibox-token-paper">You can check more info from our white paper.</div>
-                    <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
-                        actively participating in community events and in-game testing.</div>
+                    <br />
+                    <!-- <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
+                        actively participating in community events and in-game testing.</div> -->
                     <a class="hibox-token-white-paper" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">white paper</a>
                 </div>
                 <div class="bottom-ellipse">
@@ -824,7 +827,7 @@
                         letter-spacing: 2.7px;
                         vertical-align: text-top;
                         margin-left: 10px;
-                        padding-top: 56px;
+                        padding-top: 32px;
                     }
                 }
 
@@ -1046,7 +1049,7 @@
                     text-transform: uppercase;
                     text-align: center;
                     color: #F2F2F2;
-                    padding: 58px 0 28px 57px;
+                    padding: 56px 0 28px 0px;
                 }
 
                 .market-nft {
