@@ -11,11 +11,11 @@ let hiboxrouter = new Router({
       name: 'Hibox',
       component: () => import('../views/Hibox.vue')
     },
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: () => import('../views/Home.vue')
-    // },
+    {
+      path: '/bbox',
+      name: 'BlindBox',
+      component: () => import('../views/BlindBox.vue')
+    },
   ]
 })
 

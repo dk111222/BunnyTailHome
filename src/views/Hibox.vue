@@ -1,5 +1,7 @@
 <template>
+
     <div class="content">
+
         <!-- header fixed -->
         <div class="header">
             <div class="header-auto">
@@ -9,9 +11,9 @@
             </div>
             <!-- right-nav -->
             <div class="navbar">
+
                 <div @click="activeHandle(0)" :class="['navbar-item', {'active': activeIndex==0}]">Intro</div>
-                <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game
-                </div>
+                <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game</div>
                 <div @click="activeHandle(2)" :class="['navbar-item', {'active': activeIndex==2}]">Token</div>
                 <div @click="activeHandle(3)" :class="['navbar-item', {'active': activeIndex==3}]">Marketplace</div>
                 <div @click="activeHandle(4)" :class="['navbar-item', {'active': activeIndex==4}]">Roadmap</div>
@@ -398,6 +400,15 @@
             window.removeEventListener('scroll', this.scrollMove)
         },
         methods: {
+            connectWallet() {
+                if (window.ethereum) {
+                    window.ethereum.enable().then((res) => {
+                    alert("当前钱包地址:" + res[0]);
+                    });
+                } else {
+                    alert("请安装MetaMask钱包");
+                }
+            },
             activeHandle(index) {
                 switch (index) {
                     case 0:
