@@ -18,9 +18,12 @@
 
         <div class="section">
             <!-- intro -->
-            <div class="nft-box-content">
-                <div class="nft-box-img">
-                    <img src="../assets/img/nft-box-coming.png" />
+            <div class="aridrop-content">
+                <div class="airdrop-content-auto">
+                    <div class="airdrop-left">
+                        <img class="img" src="../assets/img/nft-box-coming.png" />
+                         <div @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
+                    </div>
                 </div>
             </div>
             <!-- start -hibox -->
@@ -182,97 +185,119 @@
                 width: 1440px;
                 height: 96px;
                 margin: 0 auto;
-            .hibox-icon {
-                float: left;
-                cursor: pointer;
-                width: 208px;
-                height: 61px;
-                margin-top: 16px;
-                margin-left: 56px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            .navbar {
-                float: right;
-                // width: 714px;
-                height: 52px;
-                margin-right: 38px;
-                margin-top: 22px;
-
-                .navbar-item {
+                .hibox-icon {
                     float: left;
-                    font-family: 'Krub';
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 16.6677px;
-                    line-height: 25px;
-                    /* identical to box height */
-                    display: flex;
-                    align-items: flex-end;
-                    letter-spacing: 0.407283px;
-                    // text-transform: uppercase;
-                    color: #FFFFFF;
-                    margin-left: 70px;
                     cursor: pointer;
+                    width: 208px;
+                    height: 61px;
+                    margin-top: 16px;
+                    margin-left: 56px;
 
-                    &:last-child {
-                        color: #000000;
-                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                        border-radius: 6px;
-                        font-size: 16.4957px;
-                        line-height: 24px;
-                        padding: 2px 12px;
+                    img {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
 
-                .special-margin {
-                    margin-left: 80px;
-                }
+                .navbar {
+                    float: right;
+                    // width: 714px;
+                    height: 52px;
+                    margin-right: 38px;
+                    margin-top: 22px;
 
-                .active {
-                    padding-bottom: 20px;
-                    border-bottom: 2px solid #FFFFFF;
+                    .navbar-item {
+                        float: left;
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 600;
+                        font-size: 16.6677px;
+                        line-height: 25px;
+                        /* identical to box height */
+                        display: flex;
+                        align-items: flex-end;
+                        letter-spacing: 0.407283px;
+                        // text-transform: uppercase;
+                        color: #FFFFFF;
+                        margin-left: 70px;
+                        cursor: pointer;
+
+                        &:last-child {
+                            color: #000000;
+                            background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                            border-radius: 6px;
+                            font-size: 16.4957px;
+                            line-height: 24px;
+                            padding: 2px 12px;
+                        }
+                    }
+
+                    .special-margin {
+                        margin-left: 80px;
+                    }
+
+                    .active {
+                        padding-bottom: 20px;
+                        border-bottom: 2px solid #FFFFFF;
+                    }
                 }
             }
-        }
         }
         .section {
             padding-top: 96px;
             background-color: #111111;
         }
 
-        .nft-box-content {
+        .aridrop-content {
             position: relative;
             width: 100%;
-            height: 960px;
+            height: 738px;
             background-color: #0D0D0D;
             overflow: hidden;
 
-            .intro-content-auto {
+            .airdrop-content-auto {
                 width: 1440px;
                 margin: 0 auto;
-            .nft-box-img {
+            .airdrop-left {
                 position: relative;
                 top: 66px;
                 left: 0;
                 right: 0;
-                width: 1251px;
-                height: 896px;
-                margin: 0 auto;
+                width: 384px;
+                height: 600px;
+                margin-left: 100px;
+                margin-top: 20px;
 
-                .intro-large {
-                    width: 40%;
-                    height: 60%;
+                .img {
+                    width: 100%;
+                    height: 459px;
+                }
+
+
+                .connect-wallet-wd {
+                    position: absolute;
+                    left: 30px;
+                    top: 185px;
+                    // font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 30px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    margin-top: 340px;
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    padding: 2px 22px;
+                     border-radius: 16px;
+
+                    .krub {
+                        font-family: 'Krub';
+                    }
                 }
             }
 
             .connect-wallet-wd {
                 position: absolute;
-                left: -33px;
+                left: 0px;
                 top: 185px;
                 // font-family: 'Krub';
                 font-style: normal;
