@@ -24,6 +24,49 @@
                         <img class="img" src="../assets/img/nft-box-coming.png" />
                          <div @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
                     </div>
+
+                    <div class="airdrop-right">
+                        <div class="title">HiBox Airdrop is COMING!!</div>
+                        <div class="summary">Please ...... TODO  FIXME</div>
+                        <div class="summary">Please ...... TODO  FIXME</div>
+                        <div class="summary">Please ...... TODO  FIXME</div>
+                        <div class="summary">Please ...... TODO  FIXME</div>
+                        <div class="summary">Please ...... TODO  FIXME</div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <div class="coin-info-content">
+                            <div class="coin-name">BNB</div>
+                            <div class="coin-value">0</div>
+                        </div>
+                        <div class="coin-info-content ">
+                            <div class="coin-name">HPY</div>
+                            <div class="coin-value">0</div>
+                        </div>
+
+
+                        <div class="hpy-address-info">
+                            <div class="hpy-indicator">
+                                <img src="../assets/img/airdrop-hpy-indicator.png" />
+                            </div>
+
+                            <div class="hpy-item-info">
+                                <div class="item-title">Power By</div>
+                                <div class="item-value">Binace Smart Coin</div>
+                            </div>
+                            <div class="hpy-item-info">
+                                <div class="item-title">Period</div>
+                                <div class="item-value">2022/08/20 ~2022/10/20</div>
+                            </div>
+                            <div class="hpy-item-info">
+                                <div class="item-title">HPY Address</div>
+                                <div class="item-value">0x00dkfdkskfdsldflslfl</div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
             <!-- start -hibox -->
@@ -262,7 +305,6 @@
                 position: relative;
                 top: 66px;
                 left: 0;
-                right: 0;
                 width: 384px;
                 height: 600px;
                 margin-left: 100px;
@@ -276,18 +318,19 @@
 
                 .connect-wallet-wd {
                     position: absolute;
-                    left: 30px;
+                    left: 60px;
                     top: 185px;
                     // font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 30px;
-                    text-transform: uppercase;
+                    text-transform: none;
+                    // text-transform: uppercase;
                     color: #FFFFFF;
                     margin-top: 340px;
                     background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    padding: 2px 22px;
-                     border-radius: 16px;
+                    padding: 2px 32px;
+                    border-radius: 30px;
 
                     .krub {
                         font-family: 'Krub';
@@ -295,150 +338,12 @@
                 }
             }
 
-            .connect-wallet-wd {
+            .airdrop-right {
                 position: absolute;
-                left: 0px;
-                top: 185px;
-                // font-family: 'Krub';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 101.923px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-
-                .krub {
-                    font-family: 'Krub';
-                }
-            }
-
-            .beginner-wd {
-                position: absolute;
-                width: 213px;
-                height: 42px;
-                left: -122px;
-                top: 450px;
-                // font-family: 'Krub';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 32px;
-                line-height: 42px;
-                display: flex;
-                align-items: flex-end;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-                transform: rotate(-90deg);
-            }
-
-            .join-community-wd {
-                position: absolute;
-                width: 417px;
-                height: 36px;
-                left: 700px;
-                top: 902px;
-                font-family: 'Krub-Regular';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 28px;
-                line-height: 36px;
-                display: flex;
-                align-items: flex-end;
-                letter-spacing: 2px;
-                color: #FFFFFF;
-                .community-bold {
-                    font-family: 'Krub';
-                }
-
-                .square {
-                    position: relative;
-                    width: 12px;
-                    height: 36px;
-                    // background-color: #FFFFFF;
-                    margin-left: 24px;
-
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        top: 49%;
-                        background-color: #FFFFFF;
-                    }
-                }
-            }
-
-            .edition-wd {
-                position: absolute;
-                width: 207px;
-                height: 105px;
-                left: 1137px;
-                top: 0;
-                border: 1px solid #F1F1F1;
-                font-family: 'MyriadPro-Bold';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 24px;
-                // display: flex;
-                // align-items: center;
-                text-align: center;
-                // flex-wrap: wrap;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-
-                .editions {
-                    margin-top: 24px;
-                    font-size: 20px;
-                }
-            }
-
-            .links {
-                position: absolute;
-                width: 174px;
-                height: 44px;
-                right: 9px;
-                top: 902px;
-                display: flex;
-                justify-content: space-between;
-
-                .incon-links-sm {
-                    display: block;
-                    width: 44px;
-                    height: 44px;
-                    background-color: #FFFFFF;
-                    border-radius: 8px;
-                    text-align: center;
-                    cursor: pointer;
-
-                    .twitter-size {
-                        width: 33px;
-                        height: 28px;
-                        margin-top: 8px;
-                    }
-
-                    .discord-size {
-                        width: 32px;
-                        height: 25px;
-                        margin-top: 9px;
-                    }
-
-                    .telegram-size {
-                        width: 29px;
-                        height: 24px;
-                        margin-top: 11px;
-                        margin-right: 4px;
-                    }
-                }
-            }
-
-            .read-more {
-                position: absolute;
-                // width: 321px;
-                width: 438px;
-                height: 256px;
-                left: 42px;
-                top: 578px;
+                top: 156px;
+                right: 0;
+                width: 960px;
+                height: 100%;
 
                 .title {
                     font-family: 'Krub';
@@ -449,62 +354,66 @@
                     display: flex;
                     align-items: center;
                     letter-spacing: 2px;
-                    text-transform: uppercase;
+                    text-transform:none;
                     color: #FFFFFF;
                 }
 
-                .article {
+                .summary {
                     font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 17px;
                     color: #FFFFFF;
+                    text-transform:none;
                     line-height: 27px;
                 }
+                .coin-info-content {
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 17px;
+                    color: #FFFF00;
+                    line-height: 27px;
+                    margin-top: 12px;
 
-                .start-box {
+                     .coin-name {
+                        float: left;
+                        width: 100px;
+                        color: #44FFA5;
+                    }
+
+                    .coin-value {
+                        margin-left: 20px;
+                        color: #44FFA5;
+                    }
+                }
+
+                .hpy-address-info {
+                    float: left;
                     margin-top: 28px;
-                    height: 47px;
-                    .start-btn {
-                        display: block;
-                        float: left;
-                        width: 125px;
-                        height: 47px;
-                        // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                        background-color: #50BDFF;
-                        border-radius: 6px;
-                        font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 14px;
-                        line-height: 47px;
-                        text-transform: uppercase;
-                        text-align: center;
-                        color: #FFFFFF;
-                        cursor: pointer;
+                    height: 24px;
+
+                    .hpy-indicator {
+                        width: 24px;
+                        height: 24px;
                     }
 
-                    .read-more-tip {
-                        float: left;
-                        height: 47px;
-                        line-height: 47px;
-                        margin-left: 27px;
-                        font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 14px;
-                        display: flex;
-                        align-items: center;
-                        text-transform: uppercase;
-                        color: #35F3BB;
-                        .read-more-tip-ic {
-                            width: 10px;
-                            height: 16px;
-                            background: url('../assets/img/vector-2x.png') no-repeat;
-                            background-size: 100% 100%;
-                            margin-left: 10px;
+                    .hpy-item-info {
+                        width: 300px;
+                        font-size: 17px;
+                        
+                        .item-title {
+                            line-height: 24px;
+                            color: #656565;
                         }
+
+                        .item-value {
+                            line-height: 24px;
+                            color: #FFFFFF;
+                        }
+
                     }
+                
                 }
             }
             }
