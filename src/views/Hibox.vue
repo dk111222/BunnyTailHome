@@ -17,8 +17,9 @@
                 <div @click="activeHandle(2)" :class="['navbar-item', {'active': activeIndex==2}]">Token</div>
                 <div @click="activeHandle(3)" :class="['navbar-item', {'active': activeIndex==3}]">Marketplace</div>
                 <div @click="activeHandle(4)" :class="['navbar-item', {'active': activeIndex==4}]">Roadmap</div>
-                <a :class="['navbar-item','paper']" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction"
+                <a :class="['navbar-item','paper']" href="https://whitepaper.hibox.tel/"
                     target="_blank">Paper</a>
+
             </div>
             </div>
         </div>
@@ -47,14 +48,13 @@
                     <div class="read-more">
                         <div class="title">you are quite</div>
                         <div class="title" style="color: #50BDFF;">special</div>
-                        <br />
-                        <br />
-                        <br />
+                        <button @click="connectWallet" class="start-metamask" v-text="metaMaskAddress"></button>
                         <br />
                         <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
                         <div class="start-box">
-                            <a class="start-btn" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">WHITE PAPER</a>
-                             <!-- <a class="read-more-tip" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                            <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">WHITE PAPER</a>
+                            
+                             <!-- <a class="read-more-tip" href="https://whitepaper.hibox.tel/" target="_blank">
                                 <span>read more</span>
                                 <span class="read-more-tip-ic"></span>
                              </a> -->
@@ -62,6 +62,7 @@
                                 
                             </div> -->
                         </div>
+
                     </div>
                 </div>
                 </div>
@@ -97,7 +98,7 @@
                             <span class="how-box-w">Much more...</span>
                         </div>
                     </div>
-                    <a class="game-intro-read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                    <a class="game-intro-read-more" href="https://whitepaper.hibox.tel/" target="_blank">
                         <span>READ MORE</span>
                         <span class="read-more-tip-ic"></span>
                     </a>
@@ -118,7 +119,7 @@
                     <br />
                     <!-- <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
                         actively participating in community events and in-game testing.</div> -->
-                    <a class="hibox-token-white-paper" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">white paper</a>
+                    <a class="hibox-token-white-paper" href="https://whitepaper.hibox.tel/" target="_blank">white paper</a>
                 </div>
                 <div class="bottom-ellipse">
                     <div class="market-place">MARKETPLACE</div>
@@ -192,7 +193,7 @@
                                 <div class="text-row">4.Project Start</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                        <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
                             <div class="span">READ MORE</div>
                             <span class="read-more-tip-ic"></span>
                         </a>
@@ -209,7 +210,7 @@
                                 <div class="text-row">3.Game Demo Prototype Testing</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                        <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
                             <div class="span">READ MORE</div>
                             <span class="read-more-tip-ic"></span>
                         </a>
@@ -229,7 +230,7 @@
                                 <div class="text-row">6.Mint System Development</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                        <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
                             <div class="span">READ MORE</div>
                             <span class="read-more-tip-ic"></span>
                         </a>
@@ -248,7 +249,7 @@
                                 <div class="text-row">Development</div>
                             </div>
                         </div>
-                        <a class="read-more" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">
+                        <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
                             <div class="span">READ MORE</div>
                             <span class="read-more-tip-ic"></span>
                         </a>
@@ -389,6 +390,7 @@
                 setScrollTop: 0,
                 stopscroll: 0,
                 timer: null,
+                metaMaskAddress: "Connect metamask",
             }
         },
         mounted() {
@@ -400,13 +402,17 @@
             window.removeEventListener('scroll', this.scrollMove)
         },
         methods: {
+            walletConnected() {
+                return window.ethereum;
+            },
+
             connectWallet() {
                 if (window.ethereum) {
                     window.ethereum.enable().then((res) => {
-                    alert("当前钱包地址:" + res[0]);
+                        this.metaMaskAddress = "Addr:" +res[0];
                     });
                 } else {
-                    alert("请安装MetaMask钱包");
+                    alert("Please install metamask.");
                 }
             },
             activeHandle(index) {
@@ -744,8 +750,25 @@
                     line-height: 27px;
                 }
 
-                .start-box {
+
+                .start-metamask {
                     margin-top: 28px;
+                    height: 47px;
+                    background-color: #50BDFF;
+                    border-radius: 6px;
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    line-height: 47px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    color: #FFFFFF;
+                    padding: 0px 16px;
+                }
+
+                .start-box {
+                    margin-top: 36px;
                     height: 47px;
                     .start-btn {
                         display: block;

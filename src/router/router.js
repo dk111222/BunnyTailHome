@@ -13,7 +13,7 @@ let hiboxrouter = new Router({
     },
     {
       path: '/airdrop',
-      name: 'BlindBox',
+      name: 'AirDrip',
       component: () => import('../views/AirDrop.vue')
     },
   ]
