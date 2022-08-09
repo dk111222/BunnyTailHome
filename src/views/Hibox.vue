@@ -50,18 +50,11 @@
                         <div class="title" style="color: #50BDFF;">special</div>
                         <button @click="connectWallet" class="start-metamask" v-text="metaMaskAddress"></button>
                         <br />
+                        <button @click="toAirdrop" class="start-airdrop" >Airdrop</button>
                         <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
-                        <div class="start-box">
-                            <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">WHITE PAPER</a>
-                            
-                             <!-- <a class="read-more-tip" href="https://whitepaper.hibox.tel/" target="_blank">
-                                <span>read more</span>
-                                <span class="read-more-tip-ic"></span>
-                             </a> -->
-                            <!-- <div class="read-more-tip">
-                                
-                            </div> -->
-                        </div>
+                        <!-- <div class="start-box">
+                            <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">Airdrop</a>
+                        </div> -->
 
                     </div>
                 </div>
@@ -415,6 +408,9 @@
                     alert("Please install metamask.");
                 }
             },
+            toAirdrop() {
+                alert("Airdrop comming soom.");
+            },
             activeHandle(index) {
                 switch (index) {
                     case 0:
@@ -754,40 +750,39 @@
                 .start-metamask {
                     margin-top: 28px;
                     height: 47px;
-                    background-color: #50BDFF;
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                     border-radius: 6px;
                     font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 12px;
                     line-height: 47px;
-                    text-transform: uppercase;
+                    text-transform: none;
                     text-align: center;
                     color: #FFFFFF;
                     padding: 0px 16px;
                 }
 
-                .start-box {
+                .start-airdrop {
                     margin-top: 36px;
                     height: 47px;
-                    .start-btn {
-                        display: block;
-                        float: left;
-                        width: 125px;
-                        height: 47px;
-                        // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                        background-color: #50BDFF;
-                        border-radius: 6px;
-                        font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 14px;
-                        line-height: 47px;
-                        text-transform: uppercase;
-                        text-align: center;
-                        color: #FFFFFF;
-                        cursor: pointer;
-                    }
+
+                    display: block;
+                    float: left;
+                    width: 125px;
+                    height: 47px;
+                    // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                    border-radius: 6px;
+                    font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 47px;
+                    text-transform: none;
+                    text-align: center;
+                    color: #FFFFFF;
+                    cursor: pointer;
 
                     .read-more-tip {
                         float: left;

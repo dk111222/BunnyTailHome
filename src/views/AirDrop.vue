@@ -26,31 +26,26 @@
                     </div>
 
                     <div class="airdrop-right">
-                        <div class="title">HiBox Airdrop is COMING!!</div>
-                        <div class="summary">Please ...... TODO  FIXME</div>
-                        <div class="summary">Please ...... TODO  FIXME</div>
-                        <div class="summary">Please ...... TODO  FIXME</div>
-                        <div class="summary">Please ...... TODO  FIXME</div>
-                        <div class="summary">Please ...... TODO  FIXME</div>
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <br />
-                        <div class="coin-info-content">
-                            <div class="coin-name">BNB</div>
-                            <div class="coin-value">0</div>
+                        <div class="header-top">HiBox Airdrop is COMING!!</div>
+
+                        <div class="attr-header">Attribute points</div>
+
+                        <div class="attr-content">
+                            <div class="attr-title" style="color:coral">Charisma</div>
+                            <div class="attr-value" id="charisma">**.*</div>
                         </div>
-                        <div class="coin-info-content ">
-                            <div class="coin-name">HPY</div>
-                            <div class="coin-value">0</div>
+                        <div class="attr-content">
+                            <div class="attr-title" style="color:blanchedalmond">Luck</div>
+                            <div class="attr-value" id="luck">**.*</div>
+                        </div>
+                        <div class="attr-content">
+                            <div class="attr-title" style="color#0280EA">Endurance</div>
+                            <div class="attr-value" id="endurance">**.*</div>
                         </div>
 
 
                         <div class="hpy-address-info">
-                            <div class="hpy-indicator">
-                                <img src="../assets/img/airdrop-hpy-indicator.png" />
-                            </div>
+                            <img class="hpy-indicator-img" src="../assets/img/airdrop-hpy-indicator.png" />
 
                             <div class="hpy-item-info">
                                 <div class="item-title">Power By</div>
@@ -58,11 +53,14 @@
                             </div>
                             <div class="hpy-item-info">
                                 <div class="item-title">Period</div>
-                                <div class="item-value">2022/08/20 ~2022/10/20</div>
+                                <div class="item-value">2022/08/20 23:00 ~2022/10/20 23:00</div>
                             </div>
                             <div class="hpy-item-info">
-                                <div class="item-title">HPY Address</div>
-                                <div class="item-value">0x00dkfdkskfdsldflslfl</div>
+                                <div class="item-title">Contract Address</div>
+                                <div class="item-value-addr">
+                                    <div class="addr-value" id="addr">0x13dae0e8EE9aEF44A4Bd4dDB1D1D29fc72Ec28b6</div>
+                                    <button class="addr-copy" @click="copyAddr">copy</button>
+                                </div>
                             </div>
                         </div>
                         
@@ -146,6 +144,22 @@
                     });
                 } else {
                     alert("请安装MetaMask钱包");
+                }
+            },
+            copyAddr() {
+                const el = document.createElement('textarea');
+                el.value = "0x13dae0e8EE9aEF44A4Bd4dDB1D1D29fc72Ec28b6";
+                el.setAttribute('readonly', '');
+                el.style.position = 'absolute';
+                el.style.left = '-9999px';
+                document.body.appendChild(el);
+                const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                if (selected) {
+                    document.getSelection().removeAllRanges();
+                    document.getSelection().addRange(selected);
                 }
             },
             activeHandle(index) {
@@ -293,7 +307,8 @@
 
         .aridrop-content {
             position: relative;
-            width: 100%;
+            width: 1440px;
+            margin: 0 auto;
             height: 738px;
             background-color: #0D0D0D;
             overflow: hidden;
@@ -303,23 +318,21 @@
                 margin: 0 auto;
             .airdrop-left {
                 position: relative;
-                top: 66px;
+                top: 0;
                 left: 0;
-                width: 384px;
-                height: 600px;
-                margin-left: 100px;
-                margin-top: 20px;
+                width: 581px;
+                height: 738px;
 
                 .img {
-                    width: 100%;
-                    height: 459px;
+                    width: 384px;
+                    height: 460px;
+                    margin-left: 110px;
+                    margin-top: 51px;
                 }
 
 
                 .connect-wallet-wd {
                     position: absolute;
-                    left: 60px;
-                    top: 185px;
                     // font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
@@ -331,6 +344,9 @@
                     background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                     padding: 2px 32px;
                     border-radius: 30px;
+                    
+                    margin-left: 170px;
+                    margin-top: 60px;
 
                     .krub {
                         font-family: 'Krub';
@@ -340,17 +356,19 @@
 
             .airdrop-right {
                 position: absolute;
-                top: 156px;
-                right: 0;
-                width: 960px;
-                height: 100%;
+                top: 0;
+                right: 67px;
+                width: 792px;
+                height: 450px;
+                margin-left: 600px;
+                margin-top: 126px;
 
-                .title {
+                .header-top {
                     font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
                     // font-size: 19.7031px;
-                    font-size: 48px;
+                    font-size: 38px;
                     display: flex;
                     align-items: center;
                     letter-spacing: 2px;
@@ -358,58 +376,113 @@
                     color: #FFFFFF;
                 }
 
-                .summary {
-                    font-family: 'Krub';
+                .attr-header {
+                    font-family: 'PingFang SC';
                     font-style: normal;
                     font-weight: 700;
-                    font-size: 17px;
+                    // font-size: 19.7031px;
+                    font-size: 26px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: 2px;
+                    text-transform:none;
                     color: #FFFFFF;
+                    margin-top: 86px;
+                }
+
+                .attr-content {
+                    display: flex;
+                    justify-content: flex-start;
+                    font-family: 'PingFang SC';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
                     text-transform:none;
                     line-height: 27px;
-                }
-                .coin-info-content {
-                    font-family: 'Krub';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 17px;
-                    color: #FFFF00;
-                    line-height: 27px;
-                    margin-top: 12px;
+                    margin-top: 22px;
 
-                     .coin-name {
-                        float: left;
-                        width: 100px;
-                        color: #44FFA5;
+                    .attr-title {
+                        width: 194px;
+                        color: #0280EA;
                     }
 
-                    .coin-value {
+                    .attr-value{
                         margin-left: 20px;
-                        color: #44FFA5;
+                        color: #D6FAED;
                     }
                 }
+
+                // .coin-info-content {
+                //     font-family: 'Krub';
+                //     font-style: normal;
+                //     font-weight: 700;
+                //     font-size: 17px;
+                //     color: #FFFF00;
+                //     line-height: 27px;
+                //     margin-top: 12px;
+
+                //      .coin-name {
+                //         float: left;
+                //         width: 100px;
+                //         color: #44FFA5;
+                //     }
+
+                //     .coin-value {
+                //         margin-left: 20px;
+                //         color: #44FFA5;
+                //     }
+                // }
 
                 .hpy-address-info {
+                    display: flex;
+                    justify-content: flex-start;
                     float: left;
-                    margin-top: 28px;
                     height: 24px;
+                    margin-top: 112px;
 
-                    .hpy-indicator {
-                        width: 24px;
-                        height: 24px;
+                    .hpy-indicator-img {
+                        width: 48px;
+                        height: 48px;
+                        margin-right: 10px;
                     }
 
                     .hpy-item-info {
-                        width: 300px;
-                        font-size: 17px;
+                        font-size: 16px;
+                        margin-right: 18px;
                         
                         .item-title {
                             line-height: 24px;
-                            color: #656565;
+                            color: #888888;
                         }
 
                         .item-value {
                             line-height: 24px;
                             color: #FFFFFF;
+                        }
+
+                        .item-value-addr {
+                            display: flex;
+                            justify-content: flex-start;
+                            align-items: center;
+
+                            .addr-value {
+                                width: 120px;
+                                line-height: 24px;
+                                color: #3A63FB;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                            .addr-copy {
+                                margin-left: 8px;
+                                color: #FFFFFF;
+                                font-size: 8px;
+                                padding: 0px 4px;
+                                text-align: center;
+                                border: 0;
+
+                                background: #3A63FB;
+                                border-radius: 8px;
+                            }
                         }
 
                     }
