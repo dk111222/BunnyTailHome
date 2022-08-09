@@ -53,7 +53,7 @@
                             </div>
                             <div class="hpy-item-info">
                                 <div class="item-title">Period</div>
-                                <div class="item-value">2022/08/20 23:00 ~2022/10/20 23:00</div>
+                                <div class="item-value">2022/??/?? ??:?? ~2022/??/?? ??:??</div>
                             </div>
                             <div class="hpy-item-info">
                                 <div class="item-title">Contract Address</div>
