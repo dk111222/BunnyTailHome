@@ -302,7 +302,7 @@
         }
         .section {
             padding-top: 96px;
-            background-color: #111111;
+            background-color: #000000;
         }
 
         .aridrop-content {
@@ -310,7 +310,7 @@
             width: 1440px;
             margin: 0 auto;
             height: 738px;
-            background-color: #0D0D0D;
+            background-color: #000000;
             overflow: hidden;
 
             .airdrop-content-auto {
