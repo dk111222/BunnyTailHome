@@ -48,9 +48,7 @@
                     <div class="read-more">
                         <div class="title">you are quite</div>
                         <div class="title" style="color: #50BDFF;">special</div>
-                        <button @click="connectWallet" class="start-metamask" v-text="metaMaskAddress"></button>
-                        <br />
-                        <button @click="toAirdrop" class="start-airdrop" >Airdrop</button>
+                        <div class="start-airdrop" ><router-link to="airdrop">Airdrop</router-link></div>
                         <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
                         <!-- <div class="start-box">
                             <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">Airdrop</a>
@@ -764,7 +762,7 @@
                 }
 
                 .start-airdrop {
-                    margin-top: 36px;
+                    margin-top: 112px;
                     height: 47px;
 
                     display: block;

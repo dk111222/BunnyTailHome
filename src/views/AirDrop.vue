@@ -5,12 +5,12 @@
             <div class="header-auto">
                 <!-- left-icon -->
                 <div class="hibox-icon">
-                    <img src="../assets/img/nav-title-hibox.png" alt="hibox">
+                    <router-link to="/"><img src="../assets/img/nav-title-hibox.png" alt="hibox"></router-link>
                 </div>
                 <!-- right-nav -->
                 <div class="navbar">
-                    <div @click="activeHandle(0)" :class="['navbar-item', {'active': activeIndex==0}]">Market</div>
-                    <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game</div>
+                    <!-- <div @click="activeHandle(0)" :class="['navbar-item', {'active': activeIndex==0}]">Market</div>
+                    <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game</div> -->
                     <a :class="['navbar-item','paper']" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">Paper</a>
                 </div>
             </div>
