@@ -48,7 +48,7 @@
                     <div class="read-more">
                         <div class="title">you are quite</div>
                         <div class="title" style="color: #50BDFF;">special</div>
-                        <router-link to="airdrop"><div class="start-airdrop" >Airdrop</div></router-link>
+                        <router-link to="airdrop"><div class="start-airdrop" >Airdrop is comming</div></router-link>
                         <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
                         <!-- <div class="start-box">
                             <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">Airdrop</a>
@@ -767,7 +767,7 @@
 
                     display: block;
                     float: left;
-                    width: 125px;
+                    min-width: 125px;
                     height: 47px;
                     // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                     background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
@@ -781,7 +781,8 @@
                     text-align: center;
                     color: #FFFFFF;
                     cursor: pointer;
-
+                    padding: 0px 16px;
+                    
                     .read-more-tip {
                         float: left;
                         height: 47px;
