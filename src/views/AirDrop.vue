@@ -31,15 +31,15 @@
                         <div class="attr-header">Attribute points</div>
 
                         <div class="attr-content">
-                            <div class="attr-title" style="color:coral">Charisma</div>
+                            <div class="attr-title" style="color:#FF631C">Charisma</div>
                             <div class="attr-value" id="charisma">**.*</div>
                         </div>
                         <div class="attr-content">
-                            <div class="attr-title" style="color:blanchedalmond">Luck</div>
+                            <div class="attr-title" style="color:#5A5FFD">Luck</div>
                             <div class="attr-value" id="luck">**.*</div>
                         </div>
                         <div class="attr-content">
-                            <div class="attr-title" style="color#0280EA">Endurance</div>
+                            <div class="attr-title" style="color#17AAFE">Endurance</div>
                             <div class="attr-value" id="endurance">**.*</div>
                         </div>
 
