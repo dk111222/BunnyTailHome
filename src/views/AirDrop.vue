@@ -23,6 +23,7 @@
                     <div class="airdrop-left">
                         <img class="img" src="../assets/img/nft-box-coming.png" />
                          <div @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
+                         <div class="wallet-addr" >{{walletAddr}}</div>
                     </div>
 
                     <div class="airdrop-right">
@@ -126,6 +127,7 @@
                 setScrollTop: 0,
                 stopscroll: 0,
                 timer: null,
+                walletAddr: "",
             }
         },
         mounted() {
@@ -140,7 +142,7 @@
             connectWallet() {
                 if (window.ethereum) {
                     window.ethereum.enable().then((res) => {
-                    alert("当前钱包地址:" + res[0]);
+                        this.walletAddr = res[0];
                     });
                 } else {
                     alert("请安装MetaMask钱包");
@@ -347,6 +349,24 @@
                     
                     margin-left: 170px;
                     margin-top: 60px;
+
+                    .krub {
+                        font-family: 'Krub';
+                    }
+                }
+
+                .wallet-addr {
+                    position: absolute;
+                    // font-family: 'Krub';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    text-transform: none;
+                    // text-transform: uppercase;
+                    color: #FFFFFF;
+                    margin-top: 380px;
+                    margin-left: 120px;
+                    margin-top: 120px;
 
                     .krub {
                         font-family: 'Krub';
