@@ -66,12 +66,12 @@
                 <div class="game-intro">
                     <div class="game-intro-title">
                         <span class="game-title">Game.</span>
-                        <span class="game-title-lr">How it works.</span>
+                        <!-- <span class="game-title-lr">How it works.</span> -->
                     </div>
                     <div class="game-intro-content">
                         Use your unique voice to earn one more chance, meet more sidekicks, create more possibilities while enjoying our game.
                     </div>
-                    <div class="game-intro-more">
+                    <!-- <div class="game-intro-more">
                         <div class="how-box">
                             <span class="blue-circle"></span>
                             <span class="how-box-w">How to Play？</span>
@@ -88,10 +88,10 @@
                             <span class="blue-circle"></span>
                             <span class="how-box-w">Much more...</span>
                         </div>
-                    </div>
+                    </div> -->
                     <a class="game-intro-read-more" href="https://whitepaper.hibox.tel/" target="_blank">
-                        <span>READ MORE</span>
-                        <span class="read-more-tip-ic"></span>
+                        <span>READ MORE  ></span>
+                        <!-- <span class="read-more-tip-ic"></span> -->
                     </a>
                 </div>
                 <div class="cassette-pictrue">
@@ -104,8 +104,8 @@
                 <div class="token-content">
                     <div class="hibox-token-title">Token.</div>
                     <div class="hibox-token-types">There will be two types of token in HiBox:</div>
-                    <div class="hibox-token-game">-$HAPPY(Game Token)</div>
-                    <div class="hibox-token-governance">-$HIBOX(Governance Token)</div>
+                    <div class="hibox-token-game">-HAPPY(Game Token)</div>
+                    <div class="hibox-token-governance">-HIBOX(Governance Token)</div>
                     <div class="hibox-token-paper">You can check more info from our white paper.</div>
                     <br />
                     <!-- <div class="hibox-token-more-intro">The only way to get $HAPPY before DEX/CEX goes public is by
@@ -258,7 +258,7 @@
                     <div class="title-dn">Here We Are.</div>
                 </div>
                 <div class="members-list">
-                    <div class="content-mem content-ceo">
+                    <div class="content-mem content-member">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/member1.png" alt="CEO">
@@ -270,7 +270,7 @@
                             <div class="work-experience">• Passionate about the tech industry</div>
                         </div>
                     </div>
-                    <div class="content-mem content-ceo">
+                    <div class="content-mem content-member">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/member2.png" alt="CEO">
@@ -282,7 +282,7 @@
                             <div class="work-experience">• 8+ years of investment experience</div>
                         </div>
                     </div>
-                    <div class="content-mem content-product-director">
+                    <div class="content-mem content-member">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/member3.png"
@@ -294,7 +294,7 @@
                             <div class="agent-code">• Years of user growth experience</div>
                         </div>
                     </div>
-                    <div class="content-mem content-head-of-design">
+                    <div class="content-mem content-member">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
                                 <img class="member-sculpture-img" src="../assets/img/member4.png"
@@ -565,7 +565,7 @@
         .intro-content {
             position: relative;
             width: 100%;
-            height: 1131px;
+            height: 1031px;
             background-color: #0D0D0D;
             overflow: hidden;
             .intro-content-auto {
@@ -821,29 +821,27 @@
                             }
                         }
                     }
-
-
                 }
             }
         }
 
         .game-and-token {
-            height: 1764px;
+            height: 1768px;
             background-color: #111111;
             .game-and-auto {
                 position: relative;
                 width: 1440px;
                 height: 1764px;
                 margin: 0 auto;
-            .lefe-top-ellipse {
-                position: absolute;
-                width: 186px;
-                height: 370px;
-                left: 0;
-                top: 31px;
-                background: url('../assets/img/Ellipse2x.png') no-repeat;
-                background-size: 100% 100%;
-            }
+                .lefe-top-ellipse {
+                    position: absolute;
+                    width: 186px;
+                    height: 370px;
+                    left: 0;
+                    // top: 31px;
+                    background: url('../assets/img/Ellipse2x.png') no-repeat;
+                    background-size: 100% 100%;
+                }
 
             .game-intro {
                 position: absolute;
@@ -876,13 +874,24 @@
                 }
 
                 .game-intro-content {
-                    margin-top: 12px;
-                    font-family: 'MyriadPro-Bold';
+                    position: absolute;
+                    width: 466px;
+                    height: 80px;
+                    left: 0px;
+                    top: 120px;
+
+                    font-family: 'Product Sans';
                     font-style: normal;
-                    font-weight: 700;
-                    font-size: 18px;
+                    font-weight: 400;
+                    font-size: 17.9725px;
                     line-height: 27px;
+                    /* or 148% */
+
+                    display: flex;
+                    align-items: center;
                     letter-spacing: 0.630837px;
+
+                    color: #FFFFFF;
                 }
 
                 .game-intro-more {
@@ -938,17 +947,22 @@
                 }
 
                 .game-intro-read-more {
-                    display: flex;
-                    width: 97px;
-                    align-items: center;
-                    justify-content: space-between;
+                    position: absolute;
+                    // width: 118px;
+                    // height: 18px;
+                    left: 0px;
+                    top: 346px;
+
                     font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 14px;
+                    line-height: 18px;
+                    display: flex;
+                    align-items: flex-end;
                     text-transform: uppercase;
+
                     color: #35F3BB;
-                    margin-top: 18px;
                     .read-more-tip-ic {
                         width: 10px;
                         height: 15px;
@@ -960,11 +974,10 @@
 
             .cassette-pictrue {
                 position: absolute;
-                width: 601px;
-                height: 392px;
-                left: 720px;
-                // left: 50%;
-                top: 204px;
+                width: 926px;
+                height: 604px;
+                left: 458px;
+                top: 58px;
 
                 .cassette-img {
                     width: 100%;
@@ -994,16 +1007,18 @@
 
             .token-content {
                 position: absolute;
-                width: 392px;
-                height: 395px;
+                width: 368px;
+                height: 380px;
                 left: 880px;
-                // left: 55%;
-                top: 810px;
+                top: 816px;
+                font-family: 'Product Sans';
                 font-style: normal;
-                font-weight: 700;
-                font-size: 15.7px;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 21px;
+                letter-spacing: 0.055em;
+
                 color: #FFFFFF;
-                font-family: 'MyriadPro-Bold';
 
                 .hibox-token-title {
                     color: #FFFFFF;
@@ -1014,19 +1029,19 @@
                 }
 
                 .hibox-token-types {
-                    margin-bottom: 19px;
+                    margin-top: 38px;
                 }
 
                 .hibox-token-game {
                     display: flex;
                     align-items: center;
-                    margin-bottom: 19px;
+                    margin-top: 21px;
 
                     &::before {
                         content: '';
                         display: block;
-                        width: 29px;
-                        height: 29px;
+                        width: 24px;
+                        height: 24px;
                         margin-right: 10px;
                         background: url('../assets/img/token-game.png') no-repeat;
                         background-size: 100% 100%;
@@ -1036,13 +1051,13 @@
                 .hibox-token-governance {
                     display: flex;
                     align-items: center;
-                    margin-bottom: 19px;
+                    margin-top: 21px;
 
                     &::before {
                         content: '';
                         display: block;
-                        width: 29px;
-                        height: 29px;
+                        width: 24px;
+                        height: 24px;
                         margin-right: 10px;
                         background: url('../assets/img/token-gov.png') no-repeat;
                         background-size: 100% 100%;
@@ -1050,7 +1065,7 @@
                 }
 
                 .hibox-token-paper {
-                    margin-bottom: 20px;
+                    margin-top: 20px;
                 }
 
                 .hibox-token-white-paper {
@@ -1476,35 +1491,63 @@
         .members {
             position: relative;
             width: 1440px;
-            height: 764px;
+            height: 724px;
             margin: 0 auto;
             .titles {
-                width: 288px;
-                margin: 0 0 65px 608px;
-                padding-top: 106px;
+                padding-top: 114px;
 
                 .title-up {
-                    font-family: 'Krub';
+                    position: absolute;
+                    height: 113px;
+                    left: 595px;
+
+                    font-family: 'Product Sans';
                     font-style: normal;
-                    font-weight: 400;
+                    font-weight: 700;
                     font-size: 93.3108px;
+                    line-height: 113px;
+                    display: flex;
+                    align-items: flex-end;
+                    text-transform: uppercase;
+
                     color: #FFFFFF;
                 }
 
                 .title-dn {
-                    font-family: 'Krub-Regular';
+                    position: absolute;
+                    height: 51px;
+                    left: 595px;
+                    top: 210px;
+
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 42.0573px;
+                    line-height: 51px;
+                    /* identical to box height */
+
+                    display: flex;
+                    align-items: flex-end;
                     letter-spacing: 2.70713px;
-                    color: #7BCFF1;
+
+                    color: #34DBFF;
                 }
             }
 
             .members-list {
+                /* Auto layout */
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 90px;
+
+                position: absolute;
                 width: 1168px;
                 height: 350px;
-                margin: 0 auto;
+                left: 136px;
+                top: 302px;
+                
                 display: flex;
                 justify-content: space-between;
 
@@ -1567,8 +1610,8 @@
                     }
                 }
 
-                .content-ceo {
-                    width: 216px;
+                .content-member {
+                    width: 228px;
                 }
 
                 .content-product-director {
@@ -1689,11 +1732,11 @@
             }
 
             .feedback-img {
-                position: absolute;
-                width: 776px;
-                height: 734px;
-                right: 0px;
-                bottom: 0px;
+            position: absolute;
+            width: 1123.21px;
+            height: 734px;
+            right: 0px;
+            top: 126px;
 
                 .feedback-bg {
                     width: 100%;
@@ -1709,126 +1752,126 @@
                 width: 1440px;
                 height: 740px;
                 margin: 0 auto;
-            .hibox-nav-bt {
-                width: 600px;
-                margin: 0 auto;
+                .hibox-nav-bt {
+                    width: 600px;
+                    margin: 0 auto;
 
-                img {
-                    width: 100%;
-                    height: 172px;
-                    margin-top: 84px;
-                }
-            }
-
-            .download {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 280px;
-                    margin: 158px 0 0 593px;
-
-                    .app-store-down {
-                        width: 123px;
-                        height: 41px;
-                        background: url('../assets/img/apple-store-b.png') no-repeat;
-                        background-size: 100% 100%;
-                        // cursor: pointer;
-                    }
-
-                    .google-play-down {
-                        width: 123px;
-                        height: 41px;
-                        background: url('../assets/img/google-play-b.png') no-repeat;
-                        background-size: 100% 100%;
-                        // cursor: pointer;
+                    img {
+                        width: 100%;
+                        height: 172px;
+                        margin-top: 84px;
                     }
                 }
 
-            .follow-us-content {
-                width: 337px;
-                height: 44px;
-                // margin: 153px 0 auto auto;
-                margin: 24px 0 0 578px;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                .download {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 280px;
+                        margin: 158px 0 0 593px;
 
-                .follow-us-link {
-                    display: flex;
-                    // justify-content: space-between;
+                        .app-store-down {
+                            width: 123px;
+                            height: 41px;
+                            background: url('../assets/img/apple-store-b.png') no-repeat;
+                            background-size: 100% 100%;
+                            // cursor: pointer;
+                        }
+
+                        .google-play-down {
+                            width: 123px;
+                            height: 41px;
+                            background: url('../assets/img/google-play-b.png') no-repeat;
+                            background-size: 100% 100%;
+                            // cursor: pointer;
+                        }
+                    }
+
+                .follow-us-content {
                     width: 337px;
                     height: 44px;
+                    // margin: 153px 0 auto auto;
+                    margin: 24px 0 0 578px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
 
-                    .tip {
-                        font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 25px;
-                        height: 48px;
-                        line-height: 48px;
-                        color: #FFFFFF;
-                        margin-right: 20px;
-                    }
-
-                    .incon-links-sm {
-                        display: block;
-                        width: 44px;
+                    .follow-us-link {
+                        display: flex;
+                        // justify-content: space-between;
+                        width: 337px;
                         height: 44px;
-                        background-color: #FFFFFF;
-                        border-radius: 8px;
-                        text-align: center;
-                        cursor: pointer;
 
-                        .twitter-size {
-                            width: 29px;
-                            height: 23px;
-                            margin-top: 9px;
+                        .tip {
+                            font-family: 'Krub';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 25px;
+                            height: 48px;
+                            line-height: 48px;
+                            color: #FFFFFF;
+                            margin-right: 20px;
                         }
 
-                        .discord-size {
-                            width: 31.5px;
-                            height: 25px;
-                            margin-top: 10px;
+                        .incon-links-sm {
+                            display: block;
+                            width: 44px;
+                            height: 44px;
+                            background-color: #FFFFFF;
+                            border-radius: 8px;
+                            text-align: center;
+                            cursor: pointer;
+
+                            .twitter-size {
+                                width: 29px;
+                                height: 23px;
+                                margin-top: 9px;
+                            }
+
+                            .discord-size {
+                                width: 31.5px;
+                                height: 25px;
+                                margin-top: 10px;
+                            }
+
+                            .telegram-size {
+                                width: 33px;
+                                height: 27.5px;
+                                margin-top: 12px;
+                            }
                         }
 
-                        .telegram-size {
-                            width: 33px;
-                            height: 27.5px;
-                            margin-top: 12px;
+                        .discord-icon {
+                            margin: 0 21px;
                         }
-                    }
-
-                    .discord-icon {
-                        margin: 0 21px;
                     }
                 }
-            }
 
-            .bottom-title {
-                width: 1202px;
-                height: 49px;
-                font-family: 'MyriadPro-Bold';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 40px;
-                line-height: 48px;
-                text-align: center;
-                letter-spacing: 6px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-                margin: 73px auto 50px auto;
-            }
+                .bottom-title {
+                    width: 1202px;
+                    height: 49px;
+                    font-family: 'MyriadPro-Bold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 40px;
+                    line-height: 48px;
+                    text-align: center;
+                    letter-spacing: 6px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                    margin: 73px auto 50px auto;
+                }
 
-            .copyright {
-                font-family: 'MyriadPro-Bold';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 12px;
-                text-align: center;
-                letter-spacing: 2.5px;
-                text-transform: uppercase;
-                color: #FFFFFF;
+                .copyright {
+                    font-family: 'MyriadPro-Bold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 12px;
+                    text-align: center;
+                    letter-spacing: 2.5px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
+                }
             }
-        }
         }
 
         input::-webkit-input-placeholder {
