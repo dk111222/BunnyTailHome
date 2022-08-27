@@ -27,35 +27,35 @@
             <!-- intro -->
             <div class="intro-content">
                 <div class="intro-content-auto">
-                <div class="intro-bg-img">
-                    <img class="intro-large" src="../assets/img/intro-hibox-bg.png" alt="HI,hibox">
-                    <div class="hi-wd"><span>hi</span><span class="krub">.</span></div>
-                    <div class="beginner-wd">BEGINNER'S</div>
-                    <div class="join-community-wd"><span>Join the <span class="community-bold">community</span></span><span class="square"></span></div>
-                    <div class="edition-wd">
-                        <div class="editions">EDITION</div>
-                        <div>2022</div>
-                    </div>
-                    <div class="links">
-                        <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
-                            class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
-                        <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
-                            class="discord-size" src="../assets/img/discord-link.png"></a>
-                        <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
-                            target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
-                                alt="twitter"></a>
-                    </div>
-                    <div class="read-more">
-                        <div class="title">you are quite</div>
-                        <div class="title" style="color: #50BDFF;">special</div>
-                        <router-link to="airdrop"><div class="start-airdrop" >Airdrop is comming</div></router-link>
-                        <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
-                        <!-- <div class="start-box">
-                            <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">Airdrop</a>
-                        </div> -->
+                    <div class="intro-bg-img">
+                        <img class="intro-large" src="../assets/img/intro-hibox-bg.png" alt="HI,hibox">
+                        <div class="hi-wd"><span>hi</span><span class="krub">.</span></div>
+                        <div class="beginner-wd">BEGINNER'S</div>
+                        <div class="join-community-wd"><span>Join the <span class="community-bold">community</span></span><span class="square"></span></div>
+                        <div class="edition-wd">
+                            <div class="editions">EDITION</div>
+                            <div>2022</div>
+                        </div>
+                        <div class="links">
+                            <a class="telegram-icon incon-links-sm" href="https://t.me/HiBoxOfficial" target="_blank"><img
+                                class="telegram-size" src="../assets/img/telegram-link.png" alt="telegram"></a>
+                            <a class="discord-icon incon-links-sm" href="https://discord.gg/sp9zXe497K" target="_blank"><img
+                                class="discord-size" src="../assets/img/discord-link.png"></a>
+                            <a class="twitter-icon incon-links-sm" href="https://twitter.com/HiBoxOfficial"
+                                target="_blank"><img class="twitter-size" src="../assets/img/twitter-link.png"
+                                    alt="twitter"></a>
+                        </div>
+                        <div class="read-more">
+                            <div class="title">you are quite</div>
+                            <div class="title" style="color: #50BDFF;">special</div>
+                            <router-link to="airdrop"><div class="start-airdrop" >Airdrop</div></router-link>
+                            <!-- <div class="article">Use your unique voice to<br> earn one more chance ,<br> and create more possibilities</div> -->
+                            <!-- <div class="start-box">
+                                <a class="start-btn" href="https://whitepaper.hibox.tel/" target="_blank">Airdrop</a>
+                            </div> -->
 
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             <!-- game-and-token -->
@@ -261,41 +261,50 @@
                     <div class="content-mem content-ceo">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
-                                <img class="member-sculpture-img" src="../assets/img/ceo.png" alt="CEO">
+                                <img class="member-sculpture-img" src="../assets/img/member1.png" alt="CEO">
                             </div>
-                            <div class="post">CO-FOUNDER & CEO</div>
+                            <div class="post">CO-FOUNDER</div>
                         </div>
                         <div class="members-intro">
-                            <div class="main-work">Agent Code: Professor</div>
-                            <div class="agent-code">•Background as a software engineer</div>
-                            <div class="work-experience">•8+ years of investment experience</div>
+                            <div class="agent-code">• 10+ years of software engineering experience</div>
+                            <div class="work-experience">• Passionate about the tech industry</div>
+                        </div>
+                    </div>
+                    <div class="content-mem content-ceo">
+                        <div class="head-sculpture">
+                            <div class="member-sculpture">
+                                <img class="member-sculpture-img" src="../assets/img/member2.png" alt="CEO">
+                            </div>
+                            <div class="post">CO-FOUNDER</div>
+                        </div>
+                        <div class="members-intro">
+                            <div class="agent-code">• Background as a software engineer</div>
+                            <div class="work-experience">• 8+ years of investment experience</div>
                         </div>
                     </div>
                     <div class="content-mem content-product-director">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
-                                <img class="member-sculpture-img" src="../assets/img/product-director.png"
+                                <img class="member-sculpture-img" src="../assets/img/member3.png"
                                     alt="product-director">
                             </div>
-                            <div class="post">CO-FOUNDER & PRODUCT DIRECTOR</div>
+                            <div class="post">COO</div>
                         </div>
                         <div class="product-director-intro product-director-intro-charmer">
-                            <div class="main-work">Agent Code: Charmer</div>
-                            <div class="agent-code">•Vast Experience in working with multiple teams</div>
+                            <div class="agent-code">• Years of user growth experience</div>
                         </div>
                     </div>
                     <div class="content-mem content-head-of-design">
                         <div class="head-sculpture">
                             <div class="member-sculpture">
-                                <img class="member-sculpture-img" src="../assets/img/head-of-design.png"
+                                <img class="member-sculpture-img" src="../assets/img/member4.png"
                                     alt="head-of-design">
                             </div>
                             <div class="post">Head of Design</div>
                         </div>
                         <div class="product-director-intro">
-                            <div class="main-work">Agent Code: Whisper</div>
-                            <div class="agent-code">•Background as a program designer</div>
-                            <div class="work-experience">•5+ years EXP on mobile games</div>
+                            <div class="agent-code">• Background as a program designer</div>
+                            <div class="work-experience">• 5+ years EXP on mobile games</div>
                         </div>
                     </div>
                 </div>
@@ -556,259 +565,266 @@
         .intro-content {
             position: relative;
             width: 100%;
-            height: 1035px;
+            height: 1131px;
             background-color: #0D0D0D;
             overflow: hidden;
             .intro-content-auto {
                 width: 1440px;
                 margin: 0 auto;
-            .intro-bg-img {
-                position: relative;
-                top: 66px;
-                left: 0;
-                right: 0;
-                width: 1251px;
-                height: 896px;
-                margin: 0 auto;
-
-                .intro-large {
-                    width: 100%;
-                    height: 100%;
-                }
-            }
-
-            .hi-wd {
-                position: absolute;
-                left: -33px;
-                top: 185px;
-                // font-family: 'Krub';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 101.923px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-
-                .krub {
-                    font-family: 'Krub';
-                }
-            }
-
-            .beginner-wd {
-                position: absolute;
-                width: 213px;
-                height: 42px;
-                left: -122px;
-                top: 450px;
-                // font-family: 'Krub';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 32px;
-                line-height: 42px;
-                display: flex;
-                align-items: flex-end;
-                letter-spacing: 3px;
-                text-transform: uppercase;
-                color: #FFFFFF;
-                transform: rotate(-90deg);
-            }
-
-            .join-community-wd {
-                position: absolute;
-                width: 417px;
-                height: 36px;
-                left: 700px;
-                top: 902px;
-                font-family: 'Krub-Regular';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 28px;
-                line-height: 36px;
-                display: flex;
-                align-items: flex-end;
-                letter-spacing: 2px;
-                color: #FFFFFF;
-                .community-bold {
-                    font-family: 'Krub';
-                }
-
-                .square {
+                .intro-bg-img {
                     position: relative;
-                    width: 12px;
-                    height: 36px;
-                    // background-color: #FFFFFF;
-                    margin-left: 24px;
+                    left: 0;
+                    right: 0;
+                    width: 1440px;
+                    height: 936px;
+                    margin: 0 auto;
 
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 12px;
-                        height: 12px;
-                        top: 49%;
-                        background-color: #FFFFFF;
+                    .intro-large {
+                        width: 100%;
+                        height: 100%;
                     }
                 }
-            }
 
-            .edition-wd {
-                position: absolute;
-                width: 207px;
-                height: 105px;
-                left: 1137px;
-                top: 0;
-                border: 1px solid #F1F1F1;
-                font-family: 'MyriadPro-Bold';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 24px;
-                // display: flex;
-                // align-items: center;
-                text-align: center;
-                // flex-wrap: wrap;
-                letter-spacing: 2px;
-                text-transform: uppercase;
-                color: #FFFFFF;
+                .hi-wd {
+                    position: absolute;
+                    left: 63px;
+                    top: 239px;
 
-                .editions {
-                    margin-top: 24px;
-                    font-size: 20px;
-                }
-            }
-
-            .links {
-                position: absolute;
-                width: 174px;
-                height: 44px;
-                right: 9px;
-                top: 902px;
-                display: flex;
-                justify-content: space-between;
-
-                .incon-links-sm {
-                    display: block;
-                    width: 44px;
-                    height: 44px;
-                    background-color: #FFFFFF;
-                    border-radius: 8px;
-                    text-align: center;
-                    cursor: pointer;
-
-                    .twitter-size {
-                        width: 33px;
-                        height: 28px;
-                        margin-top: 8px;
-                    }
-
-                    .discord-size {
-                        width: 32px;
-                        height: 25px;
-                        margin-top: 9px;
-                    }
-
-                    .telegram-size {
-                        width: 29px;
-                        height: 24px;
-                        margin-top: 11px;
-                        margin-right: 4px;
-                    }
-                }
-            }
-
-            .read-more {
-                position: absolute;
-                // width: 321px;
-                width: 438px;
-                height: 256px;
-                left: 42px;
-                top: 578px;
-
-                .title {
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
-                    // font-size: 19.7031px;
-                    font-size: 48px;
+                    font-size: 101.923px;
+                    line-height: 124px;
+                    /* identical to box height */
+
                     display: flex;
-                    align-items: center;
-                    letter-spacing: 2px;
+                    align-items: flex-end;
                     text-transform: uppercase;
+
                     color: #FFFFFF;
                 }
 
-                .article {
-                    font-family: 'Krub';
+                .beginner-wd {
+                    position: absolute;
+                    left: -13px;
+                    top: 480px;
+
+                    font-family: 'Product Sans';
                     font-style: normal;
-                    font-weight: 700;
-                    font-size: 17px;
+                    font-weight: 400;
+                    font-size: 24px;
+                    line-height: 39px;
+                    /* identical to box height */
+
+                    display: flex;
+                    align-items: flex-end;
+                    letter-spacing: 4px;
+                    text-transform: uppercase;
+
                     color: #FFFFFF;
-                    line-height: 27px;
+
+                    transform: rotate(-90deg);
                 }
 
+                .join-community-wd {
+                    position: absolute;
+                    width: 376px;
+                    height: 36px;
+                    left: 786px;
+                    top: 950px;
 
-                .start-metamask {
-                    margin-top: 28px;
-                    height: 47px;
-                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    border-radius: 6px;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
-                    font-weight: 700;
-                    font-size: 12px;
-                    line-height: 47px;
-                    text-transform: none;
-                    text-align: center;
-                    color: #FFFFFF;
-                    padding: 0px 16px;
-                }
+                    font-weight: 400;
+                    font-size: 30px;
+                    line-height: 36px;
+                    display: flex;
+                    align-items: flex-end;
+                    letter-spacing: 3px;
 
-                .start-airdrop {
-                    margin-top: 112px;
-                    height: 47px;
-
-                    display: block;
-                    float: left;
-                    min-width: 125px;
-                    height: 47px;
-                    // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    border-radius: 6px;
-                    font-family: 'Krub';
-                    font-style: normal;
-                    font-weight: 700;
-                    font-size: 14px;
-                    line-height: 47px;
-                    text-transform: none;
-                    text-align: center;
                     color: #FFFFFF;
-                    cursor: pointer;
-                    padding: 0px 16px;
-                    
-                    .read-more-tip {
-                        float: left;
-                        height: 47px;
-                        line-height: 47px;
-                        margin-left: 27px;
+                    .community-bold {
                         font-family: 'Krub';
-                        font-style: normal;
-                        font-weight: 700;
-                        font-size: 14px;
-                        display: flex;
-                        align-items: center;
-                        text-transform: uppercase;
-                        color: #35F3BB;
-                        .read-more-tip-ic {
-                            width: 10px;
-                            height: 16px;
-                            background: url('../assets/img/vector-2x.png') no-repeat;
-                            background-size: 100% 100%;
-                            margin-left: 10px;
+                    }
+
+                    .square {
+                        position: relative;
+                        width: 12px;
+                        height: 36px;
+                        // background-color: #FFFFFF;
+                        margin-left: 24px;
+
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            width: 12px;
+                            height: 12px;
+                            top: 49%;
+                            background-color: #FFFFFF;
                         }
                     }
                 }
 
+                .edition-wd {
+                    position: absolute;
+                    width: 207px;
+                    height: 105px;
+                    right: 0px;
+                    top: 40px;
+                    border: 1px solid #F1F1F1;
+                    font-family: 'MyriadPro-Bold';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 24px;
+                    // display: flex;
+                    // align-items: center;
+                    text-align: center;
+                    // flex-wrap: wrap;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    color: #FFFFFF;
 
+                    .editions {
+                        margin-top: 24px;
+                        font-size: 20px;
+                    }
+                }
+
+                .links {
+                    position: absolute;
+                    width: 174px;
+                    height: 44px;
+                    right: 82px;
+                    top: 950px;
+                    display: flex;
+                    justify-content: space-between;
+
+                    .incon-links-sm {
+                        display: block;
+                        width: 44px;
+                        height: 44px;
+                        background-color: #FFFFFF;
+                        border-radius: 8px;
+                        text-align: center;
+                        cursor: pointer;
+
+                        .twitter-size {
+                            width: 33px;
+                            height: 28px;
+                            margin-top: 8px;
+                        }
+
+                        .discord-size {
+                            width: 32px;
+                            height: 25px;
+                            margin-top: 9px;
+                        }
+
+                        .telegram-size {
+                            width: 29px;
+                            height: 24px;
+                            margin-top: 11px;
+                            margin-right: 4px;
+                        }
+                    }
+                }
+
+                .read-more {
+                    position: absolute;
+                    // width: 321px;
+                    width: 438px;
+                    height: 256px;
+                    left: 135px;
+                    top: 608px;
+
+                    .title {
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        // font-size: 19.7031px;
+                        font-size: 48px;
+                        display: flex;
+                        align-items: center;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        color: #FFFFFF;
+                    }
+
+                    .article {
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 17px;
+                        color: #FFFFFF;
+                        line-height: 27px;
+                    }
+
+
+                    .start-metamask {
+                        margin-top: 28px;
+                        height: 47px;
+                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        border-radius: 6px;
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 47px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: #FFFFFF;
+                        padding: 0px 16px;
+                    }
+
+                    .start-airdrop {
+                        margin-top: 112px;
+                        height: 47px;
+
+                        display: block;
+                        float: left;
+                        min-width: 125px;
+                        height: 47px;
+                        // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
+                        border-radius: 6px;
+                        font-family: 'Krub';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 22px;
+                        line-height: 47px;
+                        text-transform: uppercase;
+                        text-align: center;
+                        color: #FFFFFF;
+                        cursor: pointer;
+                        padding: 0px 8px;
+                        
+                        .read-more-tip {
+                            float: left;
+                            height: 47px;
+                            line-height: 47px;
+                            margin-left: 27px;
+                            font-family: 'Krub';
+                            font-style: normal;
+                            font-weight: 700;
+                            font-size: 14px;
+                            display: flex;
+                            align-items: center;
+                            text-transform: uppercase;
+                            color: #35F3BB;
+                            .read-more-tip-ic {
+                                width: 10px;
+                                height: 16px;
+                                background: url('../assets/img/vector-2x.png') no-repeat;
+                                background-size: 100% 100%;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+
+
+                }
             }
-        }
         }
 
         .game-and-token {
@@ -1486,15 +1502,15 @@
             }
 
             .members-list {
-                width: 1093px;
-                height: 362px;
+                width: 1168px;
+                height: 350px;
                 margin: 0 auto;
                 display: flex;
                 justify-content: space-between;
 
                 .content-mem {
                     .head-sculpture {
-                        margin-bottom: 48px;
+                        margin-bottom: 31px;
 
                         .member-sculpture {
                             width: 179px;
@@ -1531,7 +1547,7 @@
                         line-height: 24px;
                         letter-spacing: 0.5px;
                         color: #AAAAAA;
-                        text-align: center;
+                        // text-align: left;
                     }
 
                     .product-director-intro {
@@ -1544,7 +1560,7 @@
                         letter-spacing: 0.5px;
                         color: #AAAAAA;
                         margin: 0 auto;
-                        text-align: center;
+                        // text-align: center;
                     }
                     .product-director-intro-charmer {
                         width: 260px;
