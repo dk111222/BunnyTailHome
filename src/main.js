@@ -6,14 +6,13 @@ import axios from 'axios'
 //在main.js引入
 import Web3 from 'web3'
 Vue.prototype.Web3 = Web3
-if (window.ethereum) {
-  window.ethereum.enable().then((res) => {
-    alert("当前钱包地址:" + res[0]);
-  });
-} else {
-  alert("请安装MetaMask钱包");
-}
-
+// if (window.ethereum) {
+//   window.ethereum.enable().then((res) => {
+//     alert("当前钱包地址:" + res[0]);
+//   });
+// } else {
+//   alert("请安装MetaMask钱包");
+// }
 
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'

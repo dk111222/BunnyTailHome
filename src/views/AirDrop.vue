@@ -268,7 +268,7 @@
 
                     .navbar-item {
                         float: left;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 600;
                         font-size: 16.6677px;
@@ -352,7 +352,7 @@
                     margin-top: 60px;
 
                     .krub {
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                     }
                 }
 
@@ -370,7 +370,7 @@
                     margin-top: 120px;
 
                     .krub {
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                     }
                 }
             }
@@ -385,7 +385,7 @@
                 margin-top: 126px;
 
                 .header-top {
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     // font-size: 19.7031px;
@@ -398,7 +398,7 @@
                 }
 
                 .attr-header {
-                    font-family: 'PingFang SC';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     // font-size: 19.7031px;
@@ -414,7 +414,7 @@
                 .attr-content {
                     display: flex;
                     justify-content: flex-start;
-                    font-family: 'PingFang SC';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 14px;
@@ -570,7 +570,7 @@
                     height: 44px;
 
                     .tip {
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 25px;
@@ -617,7 +617,7 @@
             .bottom-title {
                 width: 1202px;
                 height: 49px;
-                font-family: 'MyriadPro-Bold';
+                font-family: 'Product Sans';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 40px;
@@ -630,7 +630,7 @@
             }
 
             .copyright {
-                font-family: 'MyriadPro-Bold';
+                font-family: 'Product Sans';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 12px;

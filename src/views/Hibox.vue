@@ -178,10 +178,10 @@
                             <div class="title">Q1 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
-                                <div class="text-row">1.Born of Concept Framework</div>
-                                <div class="text-row">2.Team Building</div>
-                                <div class="text-row">3.Gameplay and Model design</div>
-                                <div class="text-row">4.Project Start</div>
+                                <div class="text-row">1. Born of Concept Framework</div>
+                                <div class="text-row">2. Team Building</div>
+                                <div class="text-row">3. Gameplay and Model design</div>
+                                <div class="text-row">4. Project Start</div>
                             </div>
                         </div>
                         <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
@@ -195,10 +195,10 @@
                             <div class="title">Q2 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
-                                <div class="text-row">1.Official Website Design</div>
-                                <div class="text-row">2.Voice & Wallet System Development</div>
+                                <div class="text-row">1. Official Website Design</div>
+                                <div class="text-row">2. Voice & Wallet System Development</div>
                                 <!-- <div class="text-row">Development</div> -->
-                                <div class="text-row">3.Game Demo Prototype Testing</div>
+                                <div class="text-row">3. Game Demo Prototype Testing</div>
                             </div>
                         </div>
                         <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
@@ -217,8 +217,8 @@
                                 <div class="text-row">2. Online Communities Established</div>
                                 <div class="text-row">3. NFT Public Sale</div>
                                 <div class="text-row">4. HiBox Beta Version Release</div>
-                                <div class="text-row">5.IDO & Pancakeswap</div>
-                                <div class="text-row">6.Mint System Development</div>
+                                <div class="text-row">5. IDO & Pancakeswap</div>
+                                <div class="text-row">6. Mint System Development</div>
                             </div>
                         </div>
                         <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
@@ -232,12 +232,11 @@
                             <div class="title">Q4 2022</div>
                             <div class="title-bottom-line"></div>
                             <div class="text">
-                                <div class="text-row">1.League Competition System</div>
-                                <div class="text-row">2.Daily Task System Development</div>
-                                <div class="text-row">3.Achievement System Development</div>
+                                <div class="text-row">1. League Competition System</div>
+                                <div class="text-row">2. Daily Task System Development</div>
+                                <div class="text-row">3. Achievement System Development</div>
                                 <!-- <div class="text-row">Development</div> -->
-                                <div class="text-row">4.Staking Mining System</div>
-                                <div class="text-row">Development</div>
+                                <div class="text-row">4. Staking Mining System Development</div>
                             </div>
                         </div>
                         <a class="read-more" href="https://whitepaper.hibox.tel/" target="_blank">
@@ -278,8 +277,8 @@
                             <div class="post">CO-FOUNDER</div>
                         </div>
                         <div class="members-intro">
-                            <div class="agent-code">• Background as a software engineer</div>
-                            <div class="work-experience">• 8+ years of investment experience</div>
+                            <div class="agent-code">• 5+ years of blockchain development experience</div>
+                            <div class="work-experience">• 12+ years of game development experience</div>
                         </div>
                     </div>
                     <div class="content-mem content-member">
@@ -292,6 +291,8 @@
                         </div>
                         <div class="product-director-intro product-director-intro-charmer">
                             <div class="agent-code">• Years of user growth experience</div>
+                            <div class="agent-code">• Proficient in fission marketing</div>
+                            <div class="agent-code">• Market experience with large projects</div>
                         </div>
                     </div>
                     <div class="content-mem content-member">
@@ -303,8 +304,9 @@
                             <div class="post">Head of Design</div>
                         </div>
                         <div class="product-director-intro">
-                            <div class="agent-code">• Background as a program designer</div>
-                            <div class="work-experience">• 5+ years EXP on mobile games</div>
+                            <div class="agent-code">• 12+ years of design experience</div>
+                            <div class="work-experience">• Years of game design experience</div>
+                            <div class="work-experience">• 5+ years mobile project design experience</div>
                         </div>
                     </div>
                 </div>
@@ -521,7 +523,7 @@
 
                 .navbar-item {
                     float: left;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 600;
                     font-size: 16.6677px;
@@ -739,7 +741,7 @@
                     top: 608px;
 
                     .title {
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         // font-size: 19.7031px;
@@ -752,7 +754,7 @@
                     }
 
                     .article {
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 17px;
@@ -766,7 +768,7 @@
                         height: 47px;
                         background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                         border-radius: 6px;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 12px;
@@ -788,7 +790,7 @@
                         // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                         background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                         border-radius: 6px;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 22px;
@@ -804,7 +806,7 @@
                             height: 47px;
                             line-height: 47px;
                             margin-left: 27px;
-                            font-family: 'Krub';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 14px;
@@ -857,12 +859,12 @@
                     .game-title {
                         font-weight: 700;
                         font-size: 63px;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                     }
 
                     .game-title-lr {
-                        font-family: 'MyriadPro-Regular';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 36px;
@@ -953,7 +955,7 @@
                     left: 0px;
                     top: 346px;
 
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 14px;
@@ -1022,7 +1024,7 @@
 
                 .hibox-token-title {
                     color: #FFFFFF;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 63px;
@@ -1077,7 +1079,7 @@
                     // background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
                     background-color: #50BDFF;
                     border-radius: 6px;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 14px;
@@ -1112,7 +1114,7 @@
                 }
 
                 .market-nft {
-                    font-family: 'MyriadPro-Bold';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 35px;
@@ -1121,7 +1123,7 @@
                 }
 
                 .market-platform {
-                    font-family: 'MyriadPro-Bold';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 35px;
@@ -1135,7 +1137,7 @@
                 height: 20px;
                 left: 65px;
                 top: 1614px;
-                font-family: 'MyriadPro-Bold';
+                font-family: 'Product Sans';
                 font-style: normal;
                 font-weight: 700;
                 font-size: 18px;
@@ -1265,7 +1267,7 @@
 
                     .comming {
                         display: inline-block;
-                        font-family: 'MyriadPro-Bold';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 16.2489px;
@@ -1317,7 +1319,7 @@
 
                 .roadmap-tl {
                     height: 98px;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 75.0509px;
@@ -1342,7 +1344,7 @@
                         font-style: normal;
 
                         .edition-s {
-                            font-family: 'MyriadPro-Bold';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 17.0459px;
@@ -1350,7 +1352,7 @@
                         }
 
                         .edition-time {
-                            font-family: 'MyriadPro-Bold';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 30px;
@@ -1386,7 +1388,7 @@
                         text-align: center;
                         background: #F1F1F1;
                         border-radius: 0px 0px 6px 0;
-                        font-family: 'MyriadPro-Bold';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 600;
                         font-size: 20.8357px;
@@ -1399,7 +1401,7 @@
                         margin: 75px auto 0 auto;
 
                         .title {
-                            font-family: 'MyriadPro-Bold';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 33.3371px;
@@ -1421,7 +1423,7 @@
                             margin-top: 20px;
 
                             .text-row {
-                                font-family: 'MyriadPro-Bold';
+                                font-family: 'Product Sans';
                                 font-style: normal;
                                 font-weight: 700;
                                 font-size: 12.5px;
@@ -1457,7 +1459,7 @@
                         left: 50%;
                         transform: translate(-50%, 0);
                         line-height: 47px;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 14px;
@@ -1570,7 +1572,7 @@
                         }
 
                         .post {
-                            font-family: 'Krub';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 17px;
@@ -1583,7 +1585,7 @@
                     }
 
                     .members-intro {
-                        font-family: 'MyriadPro-Regular';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 400;
                         font-size: 12px;
@@ -1595,7 +1597,7 @@
 
                     .product-director-intro {
                         width: 214px;
-                        font-family: 'MyriadPro-Regular';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 400;
                         font-size: 12px;
@@ -1636,7 +1638,7 @@
                 top: 174px;
 
                 .feedback-big-title {
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 53.1281px;
@@ -1648,7 +1650,7 @@
                 .feedback-really {
                     width: 252px;
                     height: 50px;
-                    font-family: 'MyriadPro-Regular';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 16px;
@@ -1660,7 +1662,7 @@
                 }
 
                 .contact-email {
-                    font-family: 'MyriadPro-Bold';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 16.6667px;
@@ -1680,7 +1682,7 @@
                         border-radius: 6px;
                         background-color: #111111;
                         color: #FFFFFF;
-                        font-family: 'MyriadPro-Bold';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 12.7106px;
@@ -1701,7 +1703,7 @@
                         border-radius: 6px;
                         background-color: #111111;
                         color: #FFFFFF;
-                        font-family: 'Krub';
+                        font-family: 'Product Sans';
                         font-style: normal;
                         font-weight: 700;
                         font-size: 12.7106px;
@@ -1718,7 +1720,7 @@
                     height: 48px;
                     background-color: #50BDFF;
                     border-radius: 6px;
-                    font-family: 'Krub';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 14px;
@@ -1802,7 +1804,7 @@
                         height: 44px;
 
                         .tip {
-                            font-family: 'Krub';
+                            font-family: 'Product Sans';
                             font-style: normal;
                             font-weight: 700;
                             font-size: 25px;
@@ -1849,7 +1851,7 @@
                 .bottom-title {
                     width: 1202px;
                     height: 49px;
-                    font-family: 'MyriadPro-Bold';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 40px;
@@ -1862,7 +1864,7 @@
                 }
 
                 .copyright {
-                    font-family: 'MyriadPro-Bold';
+                    font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 700;
                     font-size: 12px;
