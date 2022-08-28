@@ -315,8 +315,7 @@
             <div class="feedback">
                 <div class="feedback-message">
                     <div class="feedback-big-title">FEEDBACK.</div>
-                    <div class="feedback-really">We look forward to your constructive suggestions and feedback really
-                    </div>
+                    <div class="feedback-really">We look forward to your constructive suggestions and feedback really</div>
                     <div class="contact-email">CONTACT US : hello@HiBox.com</div>
                     <div class="feedback-name">
                         <input type="text" placeholder="NAME">
@@ -1648,16 +1647,19 @@
                 }
 
                 .feedback-really {
-                    width: 252px;
-                    height: 50px;
+                    width: 286px;
+                    height: 59px;
                     font-family: 'Product Sans';
                     font-style: normal;
                     font-weight: 400;
                     font-size: 16px;
                     line-height: 19px;
                     letter-spacing: 3px;
+                    align-items: flex-end;
                     text-align: center;
-                    color: #FFFFFF;
+                    letter-spacing: 3px;
+                    text-align: center;
+                    color: #FCFCFC;
                     margin: 10px auto 0 auto;
                 }
 
