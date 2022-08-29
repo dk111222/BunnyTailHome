@@ -3,9 +3,9 @@ import App from './App.vue'
 import router from './router/router'
 import axios from 'axios'
 
-//在main.js引入
-import Web3 from 'web3'
-Vue.prototype.Web3 = Web3
+// //在main.js引入
+// import Web3 from 'web3'
+// Vue.prototype.Web3 = Web3
 // if (window.ethereum) {
 //   window.ethereum.enable().then((res) => {
 //     alert("当前钱包地址:" + res[0]);
