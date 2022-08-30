@@ -103,14 +103,14 @@
 <script>
     import 'swiper/dist/css/swiper.css'
     import {
-        swiper,
-        swiperSlide
+        // swiper,
+        // swiperSlide
     } from 'vue-awesome-swiper'
     
     export default {
         components: {
-            swiper,
-            swiperSlide
+            // swiper,
+            // swiperSlide
         },
         data() {
             return {

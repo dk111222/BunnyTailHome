@@ -12,17 +12,32 @@ Vue.prototype.Web3 = Web3
 //   alert("请安装MetaMask钱包");
 // }
 
+function web3Test() {
+  // https://cloud.tencent.com/developer/article/1152054?from=article.detail.1049813
+  //设置web3连接
+  var Web3 = require('web3');
+  //http://localhost:7545 为Ganache提供的节点链接
+  var web3 = new Web3(new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545'));
+  //读取合约
+  var fs = require('fs');
+  var contractCode = fs.readFileSync('Hello.sol').toString();
+  //编译合约代码
+  var solc = require('solc');
+  var compileCode = solc.compile(contractCode);
+  //获取合约abi和字节码
+  var abi = JSON.parse(compileCode.contracts[':Hello'].interface);
+  var byteCode = compileCode.contracts[':Hello'].bytecode;
+  //创建合约对象
+  var VotingContract = web3.eth.contract(abi);
+  //0xbf474d24ba8b19811db5deb51137ddccbe3ff288为合约部署地址
+  var contractInstance = VotingContract.at("0x7cC71dA09C61a2706cA378DFa63204612505c194");
 
-//  https://www.npmjs.com/package/web3-eth-contract
-// npm install web3-eth-contract
-const Web3EthContract = require('web3-eth-contract');
+  var result = contractInstance.say.call('Hello world');
+  console.log(result);
+}
 
-// Set provider for all later instances to use
-Web3EthContract.setProvider('ws://localhost:8546');
+function show() {
+  console.log("call method show")
+}
 
-const contract = new Web3EthContract(jsonInterface, address);
-// contract.methods.
-// contract.methods.somFunc().send({from: ....})
-// .on('receipt', function(){
-//     ...
-// });
+show()

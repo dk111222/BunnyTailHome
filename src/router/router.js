@@ -19,9 +19,9 @@ let hiboxrouter = new Router({
   ]
 })
 
-hiboxrouter.afterEach((to,from) => {
-  window.scrollTo(0,0);
-});
+// hiboxrouter.afterEach((to,from) => {
+//   window.scrollTo(0,0);
+// });
 
 // // 判断是否需要登录权限 以及是否登录
 // hiboxrouter.beforeEach((to, from, next) => {
