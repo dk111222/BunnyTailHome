@@ -13,7 +13,7 @@ Vue.prototype.Web3 = Web3
 // }
 
 
-//  https://www.npmjs.com/package/web3-eth-contract
+// https://cloud.tencent.com/developer/article/1653258?from=article.detail.1478131
 // npm install web3-eth-contract
 const Web3EthContract = require('web3-eth-contract');
 
