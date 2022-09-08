@@ -102,6 +102,8 @@
 
 <script>
     import 'swiper/dist/css/swiper.css'
+    import HiContract from '../HiAirdrop';
+
     import {
         swiper,
         swiperSlide
@@ -129,6 +131,22 @@
                 stopscroll: 0,
                 timer: null,
                 walletAddr: "",
+
+                hiboxContr: new HiContract()
+            }
+        },
+
+        computed: {
+            getAccountAddr: function() {
+                return this.hiboxContr.accountAddr
+            }
+        },
+        watch: {
+            getAccountAddr: {
+                handler: function() {
+                    walletAddr = this.hiboxContr.accountAddr;
+                    console.log("walletAddr  ", walletAddr)
+                },
             }
         },
         mounted() {
@@ -141,13 +159,14 @@
         },
         methods: {
             connectWallet() {
-                if (window.ethereum) {
-                    window.ethereum.enable().then((res) => {
-                        this.walletAddr = res[0];
-                    });
-                } else {
-                    alert("请安装MetaMask钱包");
-                }
+                this.hiboxContr.connectMetamask()
+                // if (window.ethereum) {
+                //     window.ethereum.enable().then((res) => {
+                //         this.walletAddr = res[0];
+                //     });
+                // } else {
+                //     alert("请安装MetaMask钱包");
+                // }
             },
             copyAddr() {
                 const el = document.createElement('textarea');
