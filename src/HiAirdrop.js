@@ -36,6 +36,7 @@ class HiContract {
         }
     }
 
+    // free mint
     requestAirdrop() {
         //引入包
         let Web3 = require('web3');
@@ -98,6 +99,7 @@ class HiContract {
         })
     }
 
+    // 获取账号NFT产品
     nftinfos() {
         //引入包
         let Web3 = require('web3');
@@ -141,12 +143,16 @@ class HiContract {
                     console.log("tokenOfOwnerByIndex ", err, res)
                     nftInfoContract.methods.tokenURI( res).call(function(err2, dataUrl) {
                         console.log("tokenURI ", dataUrl)
+                        // TODO 读取url中json，并展示
+                        fetch(dataUrl)
+                            .then((response) => response.json())
+                            .then((json) => console.log(json));
+
                     });
                 });
             }
         })
     }
-
 
     dump() {
         console.log("web3.version ", self.web3.version)
