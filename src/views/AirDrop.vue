@@ -9,8 +9,6 @@
                 </div>
                 <!-- right-nav -->
                 <div class="navbar">
-                    <!-- <div @click="activeHandle(0)" :class="['navbar-item', {'active': activeIndex==0}]">Market</div>
-                    <div @click="activeHandle(1)" :class="['navbar-item','special-margin',{'active': activeIndex==1}]">Game</div> -->
                     <a :class="['navbar-item','paper']" href="https://hhh-hashtager.gitbook.io/hibox/overview/introduction" target="_blank">Paper</a>
                 </div>
             </div>
@@ -21,9 +19,12 @@
             <div class="aridrop-content">
                 <div class="airdrop-content-auto">
                     <div class="airdrop-left">
-                        <img class="img" src="../assets/img/nft-box-coming.png" />
-                         <div @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
-                         <div class="wallet-addr" >{{walletAddr}}</div>
+                        <img v-if="airDropAuthorizedData.isConnectWalletOrAirdrop !== 2" class="img" src="../assets/img/nft-box-coming.png" />
+                        <img v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" class="ntf-img__success" src="../assets/img/nft-box-success.png" />
+                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 0" @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
+                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 1" @click="requestAirdrop" class="connect-wallet-wd" >Free mint</div>
+                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" @click="nftinfos" class="connect-wallet-wd" >Mint success</div>
+                        <!-- <div class="wallet-addr" >{{walletAddr}}</div> -->
                     </div>
 
                     <div class="airdrop-right">
@@ -101,38 +102,17 @@
 </template>
 
 <script>
-    import 'swiper/dist/css/swiper.css'
     import HiContract from '../HiAirdrop';
-
-    import {
-        swiper,
-        swiperSlide
-    } from 'vue-awesome-swiper'
     
     export default {
-        components: {
-            swiper,
-            swiperSlide
-        },
         data() {
             return {
-                swiperOption: {
-                    slidesPerView: 4,
-                    spaceBetween: 34,
-                    loop: true,
-                    centeredSlides: true,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    }
-                },
-                activeIndex: 0,
-                setScrollTop: 0,
-                stopscroll: 0,
-                timer: null,
                 walletAddr: "",
-
-                hiboxContr: new HiContract()
+                hiboxContr: new HiContract(),
+                airDropAuthorizedData : {
+                    isConnectWalletOrAirdrop : 0, // 0 初始状态, 1 连接MetaMask已成功, 2 Airdrop已成功
+                    isAirdrop : false,
+                }
             }
         },
 
@@ -144,22 +124,32 @@
         watch: {
             getAccountAddr: {
                 handler: function() {
-                    walletAddr = this.hiboxContr.accountAddr;
-                    console.log("walletAddr  ", walletAddr)
+                    let walletAddr = this.hiboxContr.accountAddr;
+                    console.log("walletAddr watch", walletAddr)
                 },
             }
         },
         mounted() {
             // 监听滚动事件
-            window.addEventListener('scroll', this.scrollMove)
+            console.log(this.hiboxContr, '----------------------mouted')
+            // this.$message('这是一条消息提示');
         },
         destroyed() {
             // 移除监听器
-            window.removeEventListener('scroll', this.scrollMove)
         },
         methods: {
+            // 连接MetaMask
             connectWallet() {
+                // console.log(this.hiboxContr);
                 this.hiboxContr.connectMetamask()
+                .then(res => {
+                    console.log(res)
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    console.log(this.hiboxContr, '是否赋值成功----')
+                })
+                .catch(() => {
+
+                })
                 // if (window.ethereum) {
                 //     window.ethereum.enable().then((res) => {
                 //         this.walletAddr = res[0];
@@ -167,6 +157,23 @@
                 // } else {
                 //     alert("请安装MetaMask钱包");
                 // }
+            },
+            // 获取Mint
+            requestAirdrop () {
+                // HiAirdrop文件实例化里面的对象方法
+                this.hiboxContr.requestAirdrop()
+                .then(res => {
+                    console.log(res)
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
+                })
+                .catch(err => {
+                    console.log(err)
+                })
+            },
+             // 获取账号NFT产品
+            nftinfos () {
+                // HiAirdrop文件实例化里面的对象方法
+                this.hiboxContr.nftinfos()
             },
             copyAddr() {
                 const el = document.createElement('textarea');
@@ -184,63 +191,6 @@
                     document.getSelection().addRange(selected);
                 }
             },
-            activeHandle(index) {
-                switch (index) {
-                    case 0:
-                        window.scrollTo({
-                            top: 0,
-                            behavior: "smooth"
-                        })
-                        break;
-                    case 1:
-                        window.scrollTo({
-                            top: 1040,
-                            behavior: "smooth"
-                        })
-                        break;
-                    case 2:
-                        window.scrollTo({
-                            top: 1760,
-                            behavior: "smooth"
-                        })
-                        break;
-                    case 3:
-                        window.scrollTo({
-                            top: 2400,
-                            behavior: "smooth"
-                        })
-                        break;
-                    case 4:
-                        window.scrollTo({
-                            top: 3880,
-                            behavior: "smooth"
-                        })
-                        break;
-                }
-                this.activeIndex = index
-            },
-            scrollMove() {
-                clearTimeout(this.timer);
-                this.timer = setTimeout(this.scrollEnd, 100);
-                // 2.获取当前页面的卷曲高度
-                this.setScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-            },
-            scrollEnd() {
-                this.stopscroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-                if (this.stopscroll == this.setScrollTop) {
-                    if (this.setScrollTop >= 0 && this.setScrollTop < 1040) {
-                        this.activeIndex = 0
-                    } else if (this.setScrollTop >= 1040 && this.setScrollTop < 1760) {
-                        this.activeIndex = 1
-                    } else if (this.setScrollTop >= 1760 && this.setScrollTop < 2400) {
-                        this.activeIndex = 2
-                    } else if (this.setScrollTop >= 2400 && this.setScrollTop < 3880) {
-                        this.activeIndex = 3
-                    } else {
-                        this.activeIndex = 4
-                    }
-                }
-            }
         }
     };
 </script>
@@ -352,9 +302,21 @@
                     margin-top: 51px;
                 }
 
+                .ntf-img__success {
+                    width: 398px;
+                    height: 402px;
+                    margin-left: 110px;
+                    // margin-top: 51px;
+                    margin-top: 109px;
+                }
+
 
                 .connect-wallet-wd {
                     position: absolute;
+                    width: 276px;
+                    height: 53px;
+                    text-align: center;
+                    line-height: 53px;
                     // font-family: 'Krub';
                     font-style: normal;
                     font-weight: 700;
@@ -364,11 +326,12 @@
                     color: #FFFFFF;
                     margin-top: 340px;
                     background: linear-gradient(94.81deg, #44FFA5 -3.57%, #04CEFF 51.02%, #0280EA 133.92%);
-                    padding: 2px 32px;
+                    // padding: 2px 32px;
                     border-radius: 30px;
                     
                     margin-left: 170px;
                     margin-top: 60px;
+                    cursor: pointer;
 
                     .krub {
                         font-family: 'Product Sans';

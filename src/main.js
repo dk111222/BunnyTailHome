@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router/router'
 import axios from 'axios'
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
 // //在main.js引入
 // import Web3 from 'web3'
 // Vue.prototype.Web3 = Web3
