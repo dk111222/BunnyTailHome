@@ -23,6 +23,7 @@ Vue.use(VueAwesomeSwiper);
 
 
 import VueLazyload from 'vue-lazyload'
+import HiContract from './HiAirdrop';
 Vue.use(VueLazyload, {
   //完全显示的时候加载
   preLoad: 1,
@@ -38,6 +39,8 @@ Vue.config.productionTip = false
 
 //设置超时时间
 axios.defaults.timeout = 5000
+
+var hiContract = new HiContract()
 //设置api地址
 //全局定义axios
 // axios.defaults.baseURL = 'http://shkjgw.shkjem.com/api/'

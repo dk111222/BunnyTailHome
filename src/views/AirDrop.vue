@@ -103,6 +103,7 @@
 
 <script>
     import HiContract from '../HiAirdrop';
+    import hiContract from '../main'
     
     export default {
         data() {
