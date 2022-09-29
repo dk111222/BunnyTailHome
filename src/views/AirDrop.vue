@@ -136,6 +136,8 @@
             if (window.ethereum) {
                 this.hiboxContr.doinit().then(res=>{
                     this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
+                    this.updateNftUi()
+                    // TODO update ui
                 }).catch(err =>{
                     this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
                 })
@@ -148,6 +150,11 @@
             // 移除监听器
         },
         methods: {
+
+            updateNftUi(data) {
+                console.log('updateNftUI ', data)
+            },
+
             // 连接MetaMask
             connectWallet() {
                 // console.log(this.hiboxContr);
