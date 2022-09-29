@@ -133,6 +133,15 @@
         mounted() {
             // 监听滚动事件
             console.log(this.hiboxContr, '----------------------mouted')
+            if (window.ethereum) {
+                this.hiboxContr.doinit().then(res=>{
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
+                }).catch(err =>{
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                })
+            } else {
+                this.airDropAuthorizedData.isConnectWalletOrAirdrop = 0 // 切换按钮
+            }
             // this.$message('这是一条消息提示');
         },
         destroyed() {
@@ -152,32 +161,25 @@
                     this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
                     alert(err)
                 })
-                // if (window.ethereum) {
-                //     window.ethereum.enable().then((res) => {
-                //         this.walletAddr = res[0];
-                //     });
-                // } else {
-                //     alert("请安装MetaMask钱包");
-                // }
             },
+
             // 获取Mint
             requestAirdrop () {
                 // HiAirdrop文件实例化里面的对象方法
-                this.hiboxContr.requestAirdrop()
-                .then(res => {
-                    console.log('final requestAirdrop then ' , res)
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
-                })
-                .catch(err => {
-                    console.log('final requestAirdrop err ', err)
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
-                })
+                console.log('requestAirdrop flag ' , this.hiboxContr.airdropRequestFlag)
+                if (this.hiboxContr.airdropRequestFlag < 1 ) {
+                    this.hiboxContr.requestAirdrop()
+                    .then(res => {
+                        console.log('final requestAirdrop then ' , res)
+                        this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
+                    })
+                    .catch(err => {
+                        console.log('final requestAirdrop err ', err)
+                        this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    })
+                }
             },
-            //  // 获取账号NFT产品
-            // nftinfos () {
-            //     // HiAirdrop文件实例化里面的对象方法
-            //     this.hiboxContr.nftinfos()
-            // },
+
             copyAddr() {
                 const el = document.createElement('textarea');
                 el.value = "0x13dae0e8EE9aEF44A4Bd4dDB1D1D29fc72Ec28b6";
