@@ -19,11 +19,11 @@
             <div class="aridrop-content">
                 <div class="airdrop-content-auto">
                     <div class="airdrop-left">
-                        <img v-if="airDropAuthorizedData.isConnectWalletOrAirdrop !== 2" class="img" src="../assets/img/nft-box-coming.png" />
-                        <img v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" class="ntf-img__success" src="../assets/img/nft-box-success.png" />
-                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 0" @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
-                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 1" @click="requestAirdrop" class="connect-wallet-wd" >Free mint</div>
-                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" class="connect-wallet-wd" >Mint success</div>
+                        <img v-if="airdropStatus !== 2" class="img" src="../assets/img/nft-box-coming.png" />
+                        <img v-if="airdropStatus === 2" class="ntf-img__success" src="../assets/img/nft-box-success.png" />
+                        <div v-if="airdropStatus === 0" @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
+                        <div v-if="airdropStatus === 1" @click="requestAirdrop" class="connect-wallet-wd" >Free mint</div>
+                        <div v-if="airdropStatus === 2" class="connect-wallet-wd" >Mint success</div>
                         <!-- <div class="wallet-addr" >{{walletAddr}}</div> -->
                     </div>
 
@@ -34,17 +34,16 @@
 
                         <div class="attr-content">
                             <div class="attr-title" style="color:#FF631C">Charisma</div>
-                            <div class="attr-value" id="charisma">**.*</div>
+                            <div class="attr-value" id="charisma">{{charisma}}</div>
                         </div>
                         <div class="attr-content">
                             <div class="attr-title" style="color:#5A5FFD">Luck</div>
-                            <div class="attr-value" id="luck">**.*</div>
+                            <div class="attr-value" id="luck" >{{luck}}</div>
                         </div>
                         <div class="attr-content">
                             <div class="attr-title" style="color#17AAFE">Endurance</div>
-                            <div class="attr-value" id="endurance">**.*</div>
+                            <div class="attr-value" id="endurance" >{{endurance}}</div>
                         </div>
-
 
                         <div class="hpy-address-info">
                             <img class="hpy-indicator-img" src="../assets/img/airdrop-hpy-indicator.png" />
@@ -110,10 +109,19 @@
             return {
                 walletAddr: "",
                 hiboxContr: new HiContract(),
-                airDropAuthorizedData : {
-                    isConnectWalletOrAirdrop : 0, // 0 初始状态, 1 连接MetaMask已成功, 2 Airdrop已成功
-                    isAirdrop : false,
-                }
+
+                airdropStatus : 0, // 0 初始状态, 1 连接MetaMask已成功, 2 Airdrop已成功
+
+                image: '',
+                title: '',
+                charisma: '**.*',
+                luck: '**.*',
+                endurance: '**.*',
+
+                // airDropAuthorizedData : {
+                //     isConnectWalletOrAirdrop : 0, 
+                //     isAirdrop : false,
+                // }
             }
         },
 
@@ -134,15 +142,23 @@
             // 监听滚动事件
             console.log(this.hiboxContr, '----------------------mouted')
             if (window.ethereum) {
-                this.hiboxContr.doinit().then(res=>{
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
-                    this.updateNftUi()
+                this.hiboxContr.doinit()
+                .then(dataUrl=>{
+
+                    this.hiboxContr.nftDetail(dataUrl)
+                    .then(data =>{
+                        this.airdropStatus = 2 // 切换按钮
+                        this.updateNftUi(data)
+                    }).catch((err)=>{
+                        console.log("fetch nft err： " + err)
+                        this.airdropStatus = 1 // 切换按钮
+                    })
                     // TODO update ui
                 }).catch(err =>{
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    this.airdropStatus = 1 // 切换按钮
                 })
             } else {
-                this.airDropAuthorizedData.isConnectWalletOrAirdrop = 0 // 切换按钮
+                this.airdropStatus = 0 // 切换按钮
             }
             // this.$message('这是一条消息提示');
         },
@@ -152,7 +168,29 @@
         methods: {
 
             updateNftUi(data) {
-                console.log('updateNftUI ', data)
+                this.image = data.image
+                this.charisma = data.attributes.charisma
+                this.luck = data.attributes.luck
+                this.endurance = data.attributes.endurance
+                // {
+                //     "name": "SPYICON  #40",
+                //     "description": "The Spy Icon",
+                //     "image": "https://www.hibox.tel/web3/imgs/687aa64ded3e7687002f01e023cd0bddeae10efb.png",
+                //     "dna": "687aa64ded3e7687002f01e023cd0bddeae10efb",
+                //     "edition": 40,
+                //     "date": 1660897419251,
+                //     "attributes": {
+                //         "backgroundColor": "719DCC",
+                //         "grade": 1,
+                //         "level": 0,
+                //         "mint": 0,
+                //         "charisma": 6.5,
+                //         "luck": 7.0,
+                //         "endurance": 8.3
+                //     },
+                //     "compiler": "HashLips Art Engine"
+                // }
+                console.log('updateNftUI ', data.attributes.charisma)
             },
 
             // 连接MetaMask
@@ -161,11 +199,11 @@
                 this.hiboxContr.connectMetamask()
                 .then(res => {
                     console.log(res)
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    this.airdropStatus = 1 // 切换按钮
                     console.log(this.hiboxContr, '是否赋值成功----')
                 }).catch((err) => {
                     // debug
-                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    this.airdropStatus = 1 // 切换按钮
                     alert(err)
                 })
             },
@@ -173,16 +211,22 @@
             // 获取Mint
             requestAirdrop () {
                 // HiAirdrop文件实例化里面的对象方法
-                console.log('requestAirdrop flag ' , this.hiboxContr.airdropRequestFlag)
                 if (this.hiboxContr.airdropRequestFlag < 1 ) {
                     this.hiboxContr.requestAirdrop()
-                    .then(res => {
-                        console.log('final requestAirdrop then ' , res)
-                        this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
+                    .then(dataUrl => {
+                        console.log('requestAirdrop dataUrl ' , dataUrl)
+                        this.hiboxContr.nftDetail(dataUrl)
+                        .then(data =>{
+                            this.airdropStatus = 2 // 切换按钮
+                            this.updateNftUi(data)
+                        }).catch((err)=>{
+                            console.log("fetch nft err： " + err)
+                            this.airdropStatus = 1 // 切换按钮
+                        })
                     })
                     .catch(err => {
-                        console.log('final requestAirdrop err ', err)
-                        this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                        console.log('requestAirdrop err ', err)
+                        this.airdropStatus = 1 // 切换按钮
                     })
                 }
             },

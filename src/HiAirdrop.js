@@ -47,11 +47,13 @@ class HiContract {
             return  this.nftData(accountAddr)
         }).catch(err => {
             console.log(err)
-        }).then (url => {
-            return this.nftDetail(url)
-        }).catch(err=> {
-            console.log(err)
         })
+        // .then (url => {
+        //     return this.nftDetail(url)
+        // }).catch(err=> {
+        //     console.log(err)
+        // })
+        // var p = this.nftDetail('https://www.hibox.tel/web3/data/1004.json')
         return p;
     }
 
@@ -151,28 +153,29 @@ class HiContract {
     requestAirdrop() {
         this.airdropRequestFlag = 1
 
-        var p = this.getMetaMaskAccount0()
-        .then(accountAddr => {
-            return this.getAvailableNum(this.accountAddr)
-        }).catch(err => {
-            console.log(err)
-        }).then (availableNum =>{
-            return  this.airdropSend(availableNum)
-        }).catch( (err) => {
-            console.log(err)
-        }).then( data =>{
-            return this.nftData(HiContract.accountAddr)
-        }).catch( (err) => {
-            console.log(err)
-        }).then (url => {
-            this.airdropRequestFlag = 0
-            return this.nftDetail(url)
-        }).catch(err=> {
-            this.airdropRequestFlag = 0
-            console.log(err)
-        })
+        // var p = this.getMetaMaskAccount0()
+        // .then(accountAddr => {
+        //     return this.getAvailableNum(this.accountAddr)
+        // }).catch(err => {
+        //     console.log(err)
+        // }).then (availableNum =>{
+        //     return  this.airdropSend(availableNum)
+        // }).catch( (err) => {
+        //     console.log(err)
+        // }).then( data =>{
+        //     return this.nftData(HiContract.accountAddr)
+        // }).catch( (err) => {
+        //     console.log(err)
+        // })
+        // .then (url => {
+        //     this.airdropRequestFlag = 0
+        //     return this.nftDetail(url)
+        // }).catch(err=> {
+        //     this.airdropRequestFlag = 0
+        //     console.log(err)
+        // })
         // debug UI
-        // var p = this.nftDetail('https://www.hibox.tel/web3/data/1004.json')
+        var p = this.nftDetail('https://www.hibox.tel/web3/data/1004.json')
 
         return p;
         // // 嵌套一层promise返回到AirDrop页面
@@ -266,21 +269,11 @@ class HiContract {
 
     // 读取url data , nginx 代理访问问题: https://www.yisu.com/zixun/581954.html
     nftDetail(url) {
-        var p = new Promise((resolve, reject) => {
-            console.log('nftDetail : ', url)
-            if (url == undefined) {
-                reject('get NFT info failed')
-            } else {
-                fetch(url)
+        return fetch(url)
                 .then((response) =>  {
-                    console.log(response)
-                    resolve(response)
-                }).catch((err)=>{
-                    reject(err)
+                    console.log("fetch nft ： " , response)
+                    return response.json()
                 })
-            }
-        })
-        return p
     }
 
     dump() {
