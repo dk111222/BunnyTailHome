@@ -27,6 +27,9 @@ class HiContract {
         self.walletMode = 'metamask'
 
         self.airdropAvailableNum = 0  // 可以获取的数量
+        self.nftUrl = null;
+
+        console.log("constructer web3 status ", window.ethereum)
     }
 
     /**----------------------------------------------   tip   --------------------------------------------------------------------
@@ -37,136 +40,240 @@ class HiContract {
     connectMetamask() {
         return new Promise((resolve, reject) => {
             if (typeof window.ethereum !== 'undefined') {
-                window.ethereum.enable()
-                .then((res) => {
-                    // if (window.ethereum.networkVersion !== "1") {
-                    //     // alert('当前网络不在以太坊')
-                    //     console.log('当前网络不在以太坊' , window.ethereum.networkVersion);
-                    //     this.$message('当前网络不在以太坊' , window.ethereum.networkVersion);
-                    // }
-                    HiContract.accountAddr = res[0];
+                // window.ethereum.enable() 过期方法
+                // https://eips.ethereum.org/EIPS/eip-1193#appendix-ii-examples
+                window.ethereum.request({ method: 'eth_accounts' })
+                .then((accounts) => {
+                    HiContract.accountAddr = accounts[0];
 
-                    let Web3 = require('web3');
-                    if (window.ethereum) {
-                        this.web3Provider = window.ethereum;
-                        console.log("web3Provider", window.ethereum)
-                        try {
-                            // 请求用户授权
-                            window.ethereum.enable();
-                        } catch (error) {
-                            // 用户不授权时
-                            alert("User denied account access")
-                            console.error("ethereum User denied account access")
-                        }
-                    } else if (window.web3) {   // 老版 MetaMask Legacy dapp browsers...
-                        console.log("currentProvider", window.web3.currentProvider)
-                        this.web3Provider = window.web3.currentProvider;
-                    } else {
-                        this.web3Provider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
-                    }
-                    // this.web3Provider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
+                    HiContract.web3Provider = window.ethereum;
+
                     HiContract.web3 = new Web3(this.web3Provider);//web3js就是你需要的web3实例
 
-                    console.log("new  web3 accountAddr = ", this, res)
+                    // console.log("web3 accountAddr = ", res)
                     resolve(true)
                 })
                 .catch((reason) => {
-                    console.log("login failed: ", reason)
-                    // 如果用户拒绝了登录请求
-                    // if (reason === "User rejected provider access") {
-                    //     alert('用户拒绝了登录请求')
-                    // } else {
-                    //     console.log("其他情况");
-                    // }
-                    reject(false)
-                    alert(reason)
+                    reject(reason.message)  // debug , should be false
                 })
             } else {
-                reject(false)
-                // alert("Please install metamask");
-                this.$message('Please install metamask');
-                // alert('Non-Ethereum browser detected. You should consider installing MetaMask.')
+                reject('Please install metamask')
             }
         })
+    }
+
+    getMetaMaskAccount0() {
+        var p = new Promise((resolve, reject) => {
+            HiContract.web3.eth.getAccounts(function (error, result) {
+                console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
+                if (error) {
+                    HiContract.accountAddr = null
+                    reject (error)
+                } else {
+                    HiContract.accountAddr = result[0]
+                    resolve (result[0])
+                }
+            })
+        })
+        return p
+    }
+
+    getAvailableNum(accountAddr) {
+        var p = new Promise((resolve, reject) => {
+            var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
+            console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
+
+            // 查询类，不修改合约使用call方法
+            hiboxContract.methods.getAirdropAvailableNum().call({from: accountAddr}, function(err, res){
+                console.log("hiboxContract - > getAirdropAvailableNum ", err, res)
+                if (err || res <= 0) {
+                    reject ('No available NFT')
+                } else {
+                    resolve(res)
+                }
+            })
+        })
+        return p
+    }
+
+    airdropSend(availableNum) {
+        var p = new Promise((resolve, reject) => {
+            if (availableNum >0) {
+                // var addr = HiContract.accountAddr
+                var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
+                hiboxContract.methods.getAirdrop().send({from: HiContract.accountAddr, gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
+                    if (err) {
+                        console.log("airdropSend err : ", err)
+                        reject (err)
+                    } else {
+                        console.log("airdropSend success ", res)
+                        resolve(res) // data
+                    }
+                })
+            } else {
+                reject('No more available NFT for the account.')
+            }
+        })
+        return p
     }
 
     // free mint
     requestAirdrop() {
-        // 嵌套一层promise返回到AirDrop页面
-        return new Promise((resolve, reject) => {
-            HiContract.web3.eth.getAccounts(function (error, result) {
-                console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
-                if (error) {
-                    self.accountAddr = null
-                    self.wei = 0
-                    self.bnb = 0
-                } else {
-                    this.accountAddr = result[0]
-                    console.log("accounts " , result[0])
-                    HiContract.web3.eth.getBalance(result[0]).then((result) =>{
-                        self.wei = result
-                        self.bnb = HiContract.web3.utils.fromWei(result,'ether')
-                        console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
-                    });
 
-                    var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
-                    console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
-    
-                    // 查询类，不修改合约使用call方法
-                    hiboxContract.methods.getAirdropAvailableNum().call({from: self.accountAddr}, function(err, res){
-                        console.log('getAirdropAvailableNum ', err, res);
-                        if (res >0) { // 剩余空投次数
-                            // 发起合约交易，使用send方法
-                            hiboxContract.methods.getAirdrop().send({from: result[0],gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
-                                if (err) {
-                                    console.log("getAirdrop err : ", err)
-                                } else {
-                                    console.log("getAirdrop success ", res)
-                                }
-                            })
-                           resolve(true) // data
-                        }
-                        
-                    }).then((result) => {
-                        console.log("then -> res " + res)
-                    })
-                }
-            })
+        var p = this.getMetaMaskAccount0()
+        .then(accountAddr => {
+            return this.getAvailableNum(this.accountAddr)
+        }).catch(err => {
+            console.log(err)
+        }).then (availableNum =>{
+            return  this.airdropSend(availableNum)
+        }).catch( (err) => {
+            console.log(err)
+        }).then( data =>{
+            return this.nftData(this.accountAddr)
+        }).catch( (err) => {
+            console.log(err)
+        }).then (url => {
+            return this.nftDetail(url)
+        }).catch(err=> {
+            console.log(err)
         })
+
+        return p;
+        // // 嵌套一层promise返回到AirDrop页面
+        // return new Promise((resolve, reject) => {
+        //     console.log("requestAirdrop web3 status ", window.ethereum)
+
+        //     HiContract.web3.eth.getAccounts(function (error, result) {
+        //         console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
+        //         if (error) {
+        //             HiContract.accountAddr = null
+        //         } else {
+        //             this.accountAddr = result[0]
+        //             console.log("accounts " , result[0])
+        //             HiContract.web3.eth.getBalance(result[0]).then((result) =>{
+        //                 self.wei = result
+        //                 self.bnb = HiContract.web3.utils.fromWei(result,'ether')
+        //                 console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
+        //             });
+
+        //             var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
+        //             console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
+    
+        //             // 查询类，不修改合约使用call方法
+        //             hiboxContract.methods.getAirdropAvailableNum().call({from: self.accountAddr}, function(err, res){
+        //                 console.log('getAirdropAvailableNum ', err, res);
+        //                 if (res >0) { // 剩余空投次数
+        //                     // 发起合约交易，使用send方法
+        //                     hiboxContract.methods.getAirdrop().send({from: result[0],gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
+        //                         if (err) {
+        //                             console.log("getAirdrop err : ", err)
+        //                         } else {
+        //                             console.log("getAirdrop success ", res)
+        //                         }
+        //                     })
+        //                     resolve(res) // data
+        //                 } else {
+        //                     reject(0)
+        //                 }
+                        
+        //             }).then((result) => {
+        //                 reject(-1)
+        //                 console.log("then -> res " + res)
+        //             })
+        //         }
+        //     })
+        // })
+    }
+
+    balanceOfAccount(accountAddr) {
+        var p = new Promise((resolve, reject) => {
+            HiContract.web3.eth.getBalance(accountAddr).then((result) =>{
+                HiContract.wei = result
+                HiContract.bnb = HiContract.web3.utils.fromWei(result,'ether')
+                console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
+
+                resolve(HiContract.web3.utils.fromWei(result, 'ether'))
+            });
+        })
+        return p
     }
 
     // 获取账号NFT产品
-    nftinfos() {
-        HiContract.web3.eth.getAccounts(function (error, result) {
-            console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
-            if (error) {
-                self.accountAddr = null
-                self.wei = 0
-                self.bnb = 0
+    nftData(accountAddr) {
+        var p = new Promise((resolve, reject) => {
+            var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+            console.log("nftInfoContract", nftInfoContract)
+            
+            nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, 1).call(function(err, res) {
+                console.log("tokenOfOwnerByIndex ", err, res)
+                nftInfoContract.methods.tokenURI(res).call(function(err2, dataUrl) {
+                    console.log("nftData ", err2, dataUrl)
+                    if (err2) {
+                        reject(err2)
+                    } else {
+                        resolve(dataUrl)
+                    }
+                    // // TODO 读取url中json，并展示
+                    // fetch(dataUrl)
+                    //     .then((response) => response.json())
+                    //     .then((json) => console.log(json));
+
+                });
+            });
+        })
+        return p
+    }
+
+    // 读取url data , nginx 代理访问问题: https://www.yisu.com/zixun/581954.html
+    nftDetail(url) {
+        var p = new Promise((resolve, reject) => {
+            console.log('nftDetail : ', url)
+            if (url == undefined) {
+                reject('get NFT info failed')
             } else {
-                self.accountAddr = result[0]
-
-                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
-                console.log("nftInfoContract", nftInfoContract)
-
-                nftInfoContract.methods.balanceOf(self.accountAddr).call(function(err, res) {
-                    console.log("balanceOf ", err, res)
-                });
-
-                nftInfoContract.methods.tokenOfOwnerByIndex(self.accountAddr, 2).call(function(err, res) {
-                    console.log("tokenOfOwnerByIndex ", err, res)
-                    nftInfoContract.methods.tokenURI( res).call(function(err2, dataUrl) {
-                        console.log("tokenURI ", dataUrl)
-                        // TODO 读取url中json，并展示
-                        fetch(dataUrl)
-                            .then((response) => response.json())
-                            .then((json) => console.log(json));
-
-                    });
-                });
+                fetch(url)
+                .then((response) =>  {
+                    console.log(response)
+                    resolve(response)
+                }).catch((err)=>{
+                    reject(err)
+                })
             }
         })
+        return p
     }
+
+    //     HiContract.web3.eth.getAccounts(function (error, result) {
+    //         console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
+    //         if (error) {
+    //             self.accountAddr = null
+    //             self.wei = 0
+    //             self.bnb = 0
+    //         } else {
+    //             self.accountAddr = result[0]
+
+    //             var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+    //             console.log("nftInfoContract", nftInfoContract)
+
+    //             nftInfoContract.methods.balanceOf(self.accountAddr).call(function(err, res) {
+    //                 console.log("balanceOf ", err, res)
+    //             });
+
+    //             nftInfoContract.methods.tokenOfOwnerByIndex(self.accountAddr, 2).call(function(err, res) {
+    //                 console.log("tokenOfOwnerByIndex ", err, res)
+    //                 nftInfoContract.methods.tokenURI( res).call(function(err2, dataUrl) {
+    //                     console.log("tokenURI ", dataUrl)
+    //                     // TODO 读取url中json，并展示
+    //                     fetch(dataUrl)
+    //                         .then((response) => response.json())
+    //                         .then((json) => console.log(json));
+
+    //                 });
+    //             });
+    //         }
+    //     })
+    // }
     // 监听ethereum.on
 
     dump() {

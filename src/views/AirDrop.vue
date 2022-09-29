@@ -23,7 +23,7 @@
                         <img v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" class="ntf-img__success" src="../assets/img/nft-box-success.png" />
                         <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 0" @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
                         <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 1" @click="requestAirdrop" class="connect-wallet-wd" >Free mint</div>
-                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" @click="nftinfos" class="connect-wallet-wd" >Mint success</div>
+                        <div v-if="airDropAuthorizedData.isConnectWalletOrAirdrop === 2" class="connect-wallet-wd" >Mint success</div>
                         <!-- <div class="wallet-addr" >{{walletAddr}}</div> -->
                     </div>
 
@@ -147,9 +147,10 @@
                     console.log(res)
                     this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
                     console.log(this.hiboxContr, '是否赋值成功----')
-                })
-                .catch(() => {
-
+                }).catch((err) => {
+                    // debug
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
+                    alert(err)
                 })
                 // if (window.ethereum) {
                 //     window.ethereum.enable().then((res) => {
@@ -164,18 +165,19 @@
                 // HiAirdrop文件实例化里面的对象方法
                 this.hiboxContr.requestAirdrop()
                 .then(res => {
-                    console.log(res)
+                    console.log('final requestAirdrop then ' , res)
                     this.airDropAuthorizedData.isConnectWalletOrAirdrop = 2 // 切换按钮
                 })
                 .catch(err => {
-                    console.log(err)
+                    console.log('final requestAirdrop err ', err)
+                    this.airDropAuthorizedData.isConnectWalletOrAirdrop = 1 // 切换按钮
                 })
             },
-             // 获取账号NFT产品
-            nftinfos () {
-                // HiAirdrop文件实例化里面的对象方法
-                this.hiboxContr.nftinfos()
-            },
+            //  // 获取账号NFT产品
+            // nftinfos () {
+            //     // HiAirdrop文件实例化里面的对象方法
+            //     this.hiboxContr.nftinfos()
+            // },
             copyAddr() {
                 const el = document.createElement('textarea');
                 el.value = "0x13dae0e8EE9aEF44A4Bd4dDB1D1D29fc72Ec28b6";

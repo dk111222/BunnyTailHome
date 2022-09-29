@@ -6,7 +6,7 @@
         <div class="header">
             <div class="header-auto">
             <!-- left-icon -->
-            <div class="hibox-icon" @click="hiweb3HH()">
+            <div class="hibox-icon">
                 <img src="../assets/img/nav-title-hibox.png" alt="hibox">
             </div>
             <!-- right-nav -->
@@ -406,127 +406,6 @@
             window.removeEventListener('scroll', this.scrollMove)
         },
         methods: {
-            walletConnected() {
-                return window.ethereum;
-            },
-
-            connectWallet() {
-                if (window.ethereum) {
-                    window.ethereum.enable().then((res) => {
-                        this.metaMaskAddress = "Addr:" +res[0];
-                    });
-                } else {
-                    alert("Please install metamask.");
-                }
-            },
-            toAirdrop() {
-                alert("Airdrop comming soom.");
-            },
-
-            hiweb3HH() {
-                var hicontract = new HiContract()
-                hicontract.nftinfos()
-            },
-
-            // hiweb3() {
-            //         //引入包
-            //         let Web3 =require('web3')
-            //         var web3Provider;
-            //         if (window.ethereum) {
-            //             web3Provider = window.ethereum;
-            //             console.log("web3Provider", window.ethereum)
-            //             try {
-            //                 // 请求用户授权
-            //                 window.ethereum.enable();
-            //             } catch (error) {
-            //                 // 用户不授权时
-            //                 console.error("ethereum User denied account access")
-            //             }
-            //         } else if (window.web3) {   // 老版 MetaMask Legacy dapp browsers...
-            //             console.log("currentProvider", window.web3.currentProvider)
-            //             web3Provider = window.web3.currentProvider;
-            //         } else {
-            //             console.log("HttpProvider https://data-seed-prebsc-1-s1.binance.org:8545")
-            //             web3Provider = new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
-            //         }
-            //         // 使用指定的 Provider （e.g 比如在 Mist 中） 或者实例化一个新的 websocket provider
-            //         // var web3 = new Web3(Web3.givenProvider || 'ws://remotenode.com:8546');
-            //         // 或者
-            //         // var web3 = new Web3('https://data-seed-prebsc-1-s1.binance.org:8545')
-            //         // var web3 = new Web3(new Web3("https://data-seed-prebsc-1-s1.binance.org:8545"))
-            //         // var web3 = new Web3(Web3.givenProvider || new Web3.providers.WebsocketProvider('ws://remotenode.com:8546'));
-
-            //         // const DAI_ADDRESS = "0xC632023c68b68eD37E363dd8bEda48735ab2F330"
-            //         // const web3 = new Web3(window.ethereum);
-            //         // const contractObj = new web3.eth.Contract(hiboxABI, DAI_ADDRESS);
-            //         // const contract = await contractObj(tokenJson, contractAddress.IPISTR);
-
-            //         const web3 = new Web3(web3Provider);//web3js就是你需要的web3实例
-            //         // const web3 =  new Web3.providers.HttpProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
-            //         console.log("web3.version ",web3.version)
-            //         console.log("web3.providers ",Web3.providers)
-                    
-            //         web3.eth.getAccounts(function (error, result) {
-            //             console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
-            //             // const account = result.getAccounts(0)
-            //         }).then (
-            //             function(result) {
-
-            //                 web3.eth.getBalance(result[0]).then((result) =>{
-            //                     console.log("wei: "+ result)
-            //                     console.log("bnb:" + web3.utils.fromWei(result,'ether'))
-            //                 });
-                            
-            //                 console.log("getAccounts then ", result[0])//授权成功后result能正常获取到账号了
-
-            //                 // var Contract = require('web3-eth-contract');
-
-            //                 // // set provider for all later instances to use
-            //                 // Contract.setProvider('ws://localhost:8546');
-            //                 web3.eth.defaultAccount = result[0]
-
-
-            //                 const DAI_ADDRESS = "0xBaD1A1a03B196A756871b050d3e48F4DF5AFe177"                            
-            //                 // const DAI_ADDRESS = "0xC632023c68b68eD37E363dd8bEda48735ab2F330"
-            //                 var dcontract = new web3.eth.Contract(AirdropABI, DAI_ADDRESS, {gasPrice: '100', from: result[0]});
-            //                 // const dcontract = new web3.eth.Contract(hiboxABI, DAI_ADDRESS)
-            //                 console.log("dcontract 0905 HH : ", DAI_ADDRESS, dcontract)
-
-            //                 // 查询类，不修改合约使用call方法
-            //                 dcontract.methods.getAirdropAvailableNum().call({from: result[0]}, function(err, res){
-            //                     console.log('getAirdropAvailableNum ', err, res);
-            //                     if (res >0) { // 剩余空投次数
-            //                         // 发起合约交易，使用send方法
-            //                         dcontract.methods.getAirdrop().send({from: result[0],gas: 200000, gasPrice:web3.utils.toWei('30','gwei')},function (err, res) {
-            //                             if (err) {
-            //                                 console.log("getAirdrop err : ", err)
-            //                             } else {
-            //                                 console.log("getAirdrop success ", res)
-            //                             }
-            //                         })
-            //                     }
-            //                 });
-
-
-            //                 // dcontract.methods.getAirdrop().estimateGas({gas: 20000000, gasPrice:1815820}, function(error, gasAmount){
-            //                 //     console.log('getAirdrop estimateGas ', web3.eth.blockNumber, gasAmount);
-            //                 // });
-
-            //                 // console.log('toWei', web3.utils.toWei('30','gwei'))
-
-            //                 // dcontract.methods.getAirdrop().send({from: result[0], gas: 300000, gasPrice:web3.utils.toWei('30','gwei')})
-            //                 // .on('transactionHash', function(hash){
-            //                 //     console.log("transactionHash", hash)
-            //                 // }).on('confirmation', function(confirmationNumber, receipt){
-            //                 //     console.log("confirmation", confirmationNumber, receipt)
-            //                 // }).on('receipt', function(receipt) {
-            //                 //     console.log("receipt", confirmationNumber, receipt)
-            //                 // }).on('error', function(err) {
-            //                 //     console.log('error', err)
-            //                 // });
-            //             }
-            //         )
-            // },
 
             activeHandle(index) {
                 switch (index) {
