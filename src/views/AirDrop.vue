@@ -19,8 +19,17 @@
             <div class="aridrop-content">
                 <div class="airdrop-content-auto">
                     <div class="airdrop-left">
+                        <div v-if="airdropStatus === 2" class="nftContainer">
+                            <div class="ntf-title" >   <!-- 圆弧形文字 --> 
+                                <svg viewBox="0 0 100 100">
+                                    <path d="M 4,50 a 50,50 0 1, 1 0, 1 z" id="circle"></path>
+                                    <text fill="#FFF" font-size="4"> <textPath xlink:href="#circle"> {{nftInfo.title}} </textPath> </text>
+                                </svg>
+                            </div>
+                            <div class="ntf-bgRing" :style="{'border':nftInfo.imageBorder}"></div>
+                            <img class="ntf-img" :src="nftInfo.image" />
+                        </div>
                         <img v-if="airdropStatus !== 2" class="img" src="../assets/img/nft-box-coming.png" />
-                        <img v-if="airdropStatus === 2" class="ntf-img__success" src="../assets/img/nft-box-success.png" />
                         <div v-if="airdropStatus === 0" @click="connectWallet" class="connect-wallet-wd" >Connect wallet</div>
                         <div v-if="airdropStatus === 1" @click="requestAirdrop" class="connect-wallet-wd" >Free mint</div>
                         <div v-if="airdropStatus === 2" class="connect-wallet-wd" >Mint success</div>
@@ -34,15 +43,15 @@
 
                         <div class="attr-content">
                             <div class="attr-title" style="color:#FF631C">Charisma</div>
-                            <div class="attr-value" id="charisma">{{charisma}}</div>
+                            <div class="attr-value" id="charisma">{{nftInfo.charisma}}</div>
                         </div>
                         <div class="attr-content">
                             <div class="attr-title" style="color:#5A5FFD">Luck</div>
-                            <div class="attr-value" id="luck" >{{luck}}</div>
+                            <div class="attr-value" id="luck" >{{nftInfo.luck}}</div>
                         </div>
                         <div class="attr-content">
                             <div class="attr-title" style="color#17AAFE">Endurance</div>
-                            <div class="attr-value" id="endurance" >{{endurance}}</div>
+                            <div class="attr-value" id="endurance" >{{nftInfo.endurance }}</div>
                         </div>
 
                         <div class="hpy-address-info">
@@ -112,11 +121,15 @@
 
                 airdropStatus : 0, // 0 初始状态, 1 连接MetaMask已成功, 2 Airdrop已成功
 
-                image: '',
-                title: '',
-                charisma: '**.*',
-                luck: '**.*',
-                endurance: '**.*',
+                nftInfo : {
+                    bgColor :'',
+                    image: '',
+                    imageBorder: "8px solid black",
+                    title: '',
+                    charisma: '**.*',
+                    luck: '**.*',
+                    endurance: '**.*',
+                },
 
                 // airDropAuthorizedData : {
                 //     isConnectWalletOrAirdrop : 0, 
@@ -168,10 +181,26 @@
         methods: {
 
             updateNftUi(data) {
-                this.image = data.image
-                this.charisma = data.attributes.charisma
-                this.luck = data.attributes.luck
-                this.endurance = data.attributes.endurance
+                if (data.grade == 1) {
+                    this.nftInfo.title = 'COMMON#' + data.edition
+                } else if (data.grade == 2) {
+                    this.nftInfo.title = 'COMMON#' + data.edition
+                } else if (data.grade == 3) {
+                    this.nftInfo.title = 'COMMON#' + data.edition
+                } else if (data.grade == 4) {
+                    this.nftInfo.title = 'COMMON#' + data.edition
+                } else {
+                    this.nftInfo.title = 'COMMON#' + data.edition
+                }
+
+                this.nftInfo.bgColor = "#" + data.attributes.backgroundColor
+                this.nftInfo.image = data.image
+                this.nftInfo.charisma = data.attributes.charisma
+                this.nftInfo.luck = data.attributes.luck
+                this.nftInfo.endurance = data.attributes.endurance
+
+                this.nftInfo.imageBorder= "8px solid #" + data.attributes.backgroundColor
+
                 // {
                 //     "name": "SPYICON  #40",
                 //     "description": "The Spy Icon",
@@ -190,7 +219,7 @@
                 //     },
                 //     "compiler": "HashLips Art Engine"
                 // }
-                console.log('updateNftUI ', data.attributes.charisma)
+                console.log('updateNftUI done')
             },
 
             // 连接MetaMask
@@ -358,13 +387,66 @@
                     margin-top: 51px;
                 }
 
-                .ntf-img__success {
+                .nftContainer {
+                    position: relative;
                     width: 398px;
                     height: 402px;
-                    margin-left: 110px;
+                    margin-left: 126px;
                     // margin-top: 51px;
                     margin-top: 109px;
+
+                    .ntf-bgRing {
+                        position: absolute;
+                        width: 374px;
+                        height: 374px;
+                        text-align: center;
+                        line-height: 380px;
+                        left: 0%;
+                        right: 6.1%;
+                        top: 6.69%;
+                        bottom: 0%;
+                        border-radius:50%;
+                        background-color: #000;
+                        border: 8px solid yellow;
+                    }
+
+                    .ntf-title { // circle
+                        position: absolute;
+                        width: 390px;
+                        height: 390px;
+                        margin: 0px;
+                        top: 1.69%;
+                        transform: rotate(100deg); 
+                        .svg{
+                            display: block;
+                            overflow: visible;
+                        }
+                        .path{ 
+                            fill: none; 
+                        }
+                    }
+
+                    // .ntf-title {
+                    //     position: absolute;
+                    //     left: 50%;
+                    //     top : 2%;
+                    //     transform: rotate(-60deg);
+                    //     color: #FFFFFF;
+                    // }
+
+                    .ntf-img {
+                        position: absolute;
+                        width: 338px;
+                        height: 338px;
+                        left: 4.57%;
+                        right: 10.67%;
+                        top: 11.23%;
+                        bottom: 4.54%;
+                        border-radius:50%;
+                    }
+
                 }
+
 
 
                 .connect-wallet-wd {
