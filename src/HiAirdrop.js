@@ -153,35 +153,6 @@ class HiContract {
         return p
     }
 
-    // free mint 请求空投
-    requestAirdrop() {
-        this.airdropRequestFlag = 1
-
-        var p = this.getMetaMaskAccount0()
-        .then(accountAddr => {
-            return this.getAvailableNum(this.accountAddr)
-        }).catch(err => {
-            console.log(err)
-        }).then (availableNum =>{
-            return  this.airdropSend(availableNum)
-        }).catch( (err) => {
-            console.log(err)
-        }).then( data =>{
-            return this.nftData(HiContract.accountAddr)
-        }).catch( (err) => {
-            console.log(err)
-        })
-        // .then (url => {
-        //     this.airdropRequestFlag = 0
-        //     return this.nftDetail(url)
-        // }).catch(err=> {
-        //     this.airdropRequestFlag = 0
-        //     console.log(err)
-        // })
-
-        return p;
-    }
-
     // 获取账户bnb余额
     balanceOfAccount(accountAddr) {
         var p = new Promise((resolve, reject) => {
@@ -196,41 +167,149 @@ class HiContract {
         return p
     }
 
+    // free mint 请求空投
+    requestAirdrop() {
+        this.airdropRequestFlag = 1
+
+        var p = this.getMetaMaskAccount0()
+        .then(accountAddr => {
+            return this.getAvailableNum(this.accountAddr)
+        }).catch(err => {
+            console.log("requestAirdrop catch1", err)
+        }).then (availableNum =>{
+            return  this.airdropSend(availableNum)
+        }).catch( (err) => {
+            reject(err)
+            console.log("requestAirdrop catch2", err)
+        }).then( data =>{
+            return this.nftData(HiContract.accountAddr)
+        }).catch( (err) => {
+            console.log("requestAirdrop catch3", err)
+        })
+        // .then (url => {
+        //     this.airdropRequestFlag = 0
+        //     return this.nftDetail(url)
+        // }).catch(err=> {
+        //     this.airdropRequestFlag = 0
+        //     console.log(err)
+        // })
+
+        return p;
+    }
+
     // 获取账号NFT产品，查询成功后返回NFT url
     nftData(accountAddr) {
-        var p = new Promise((resolve, reject) => {
-            if (HiContract.airdropRequestFlag < 1) {
-                reject('request airdop failed')
-            } else  {
-                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
-                console.log("nftData nftInfoContract", nftInfoContract, accountAddr)
-                
-                nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, 1).call(function(err, res) {
-                    console.log("tokenOfOwnerByIndex ", err, res)
-                    nftInfoContract.methods.tokenURI(res).call(function(err2, dataUrl) {
-                        console.log("nftData ", err2, dataUrl)
-                        if (err2) {
-                            reject(err2)
-                        } else {
-                            resolve(dataUrl)
-                        }
-                        // // TODO 读取url中json，并展示
-                        // fetch(dataUrl)
-                        //     .then((response) => response.json())
-                        //     .then((json) => console.log(json));
-
-                    });
-                });
-            }
+        var p = this.nftBalanceOf(accountAddr) 
+        .then(count =>{
+            return  this.nftTokenOfOwnerByIndex(accountAddr, count-1)
+        }).catch(err => {
+            console.log("nftData catch1", err);
+        }).then(nftToken =>{
+            return  this.nftTokenUrl(nftToken);
+        }).catch(err => {
+            console.log("nftData catch2", err);
         })
+
+        // var p = new Promise((resolve, reject) => {
+        //     if (HiContract.airdropRequestFlag < 1) {
+        //         reject('request airdop failed')
+        //     } else  { 
+        //         var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+        //         console.log("nftData nftInfoContract", nftInfoContract, accountAddr)
+        //         nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, 1).call(function(err, res) {
+        //             console.log("tokenOfOwnerByIndex ", err, res)
+        //             nftInfoContract.methods.tokenURI(res).call(function(err2, dataUrl) {
+        //                 console.log("nftData ", err2, dataUrl)
+        //                 if (err2) {
+        //                     reject(err2)
+        //                 } else {
+        //                     resolve(dataUrl)
+        //                 }
+        //                 // // TODO 读取url中json，并展示
+        //                 // fetch(dataUrl)
+        //                 //     .then((response) => response.json())
+        //                 //     .then((json) => console.log(json));
+
+        //             });
+        //         });
+        //     }
+        // }).then(count => {
+
+        //     return this.getAvailableNum(this.accountAddr)
+        // }).catch( (err) => {
+        //     console.log(err)
+        // })
+
         return p
+    }
+
+    // NFT合约，获取账户下有几个NFT
+    // 返回 NFT数量
+    nftBalanceOf (accountAddr) {
+        var p = new Promise((resolve, reject) => {
+            var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+
+            nftInfoContract.methods.balanceOf(accountAddr).call(function(err, count) {
+                console.log("nftBalanceOf ", err, count)
+                if (err) {
+                    reject(err)
+                } else {
+                    resolve(count)
+                }
+            })  
+        });
+        return p;
+    }
+
+     // NFT合约，获取账户下第@index个合约的token信息， index从0开始， 
+     // 返回NFT的token
+    nftTokenOfOwnerByIndex(accountAddr, index) {
+        console.log("nftTokenOfOwnerByIndex ", index)
+        var p = new Promise((resolve, reject) => {
+            if (index < 0) {
+                reject("index err")
+            } else {
+                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+                // 获取账户最新获取到的NF token
+                nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, index).call(function(err, res) {
+                    console.log("nftTokenOfOwnerByIndex ", index, err, res)
+                    if (err || res == 0) {
+                        reject(err)
+                    } else {
+                        resolve(res)
+                    }
+                })
+            }
+        });
+        return p;
+    }
+
+    // NFT合约，根据token获取NFT的URL地址
+    nftTokenUrl(nftToken) {
+        var p = new Promise((resolve, reject) => {
+            if (nftToken == undefined) {
+                reject("no token")
+            } else {
+                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+                // 获取账户下有几个NFT
+                nftInfoContract.methods.tokenURI(nftToken).call(function(err, dataUrl) {
+                    console.log("nftTokenUrl ", err, dataUrl)
+                    if (err) {
+                        reject(err)
+                    } else {
+                        resolve(dataUrl)
+                    }
+                })
+            }
+        });
+        return p;
     }
 
     // 读取url data , nginx 代理访问问题: https://www.yisu.com/zixun/581954.html
     nftDetail(url) {
         return fetch(url)
                 .then((response) =>  {
-                    console.log("fetch nft ： " , response)
+                    console.log("fetch nft ： " , url, response)
                     return response.json()
                 })
     }

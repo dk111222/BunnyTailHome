@@ -110,7 +110,8 @@
 </template>
 
 <script>
-    import HiContract from '../HiAirdrop';
+    import { reject } from 'q';
+import HiContract from '../HiAirdrop';
     import hiContract from '../main'
     
     export default {
@@ -157,15 +158,20 @@
             if (window.ethereum) {
                 this.hiboxContr.doinit()
                 .then(dataUrl=>{
-
-                    this.hiboxContr.nftDetail(dataUrl)
-                    .then(data =>{
-                        this.airdropStatus = 2 // 切换按钮
-                        this.updateNftUi(data)
-                    }).catch((err)=>{
-                        console.log("fetch nft err： " + err)
+                    console.log("doinit dataUrl", dataUrl)
+                    if (dataUrl == undefined) {
+                        reject("No NFT data")
                         this.airdropStatus = 1 // 切换按钮
-                    })
+                    } else {
+                        this.hiboxContr.nftDetail(dataUrl)
+                        .then(data =>{
+                            this.airdropStatus = 2 // 切换按钮
+                            this.updateNftUi(data)
+                        }).catch((err)=>{
+                            console.log("fetch nft err： " + err)
+                            this.airdropStatus = 1 // 切换按钮
+                        })
+                    }
                     // TODO update ui
                 }).catch(err =>{
                     this.airdropStatus = 1 // 切换按钮
