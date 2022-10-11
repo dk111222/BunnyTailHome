@@ -5,10 +5,14 @@ import Web3 from 'web3'
 
 import { Message } from "element-ui";
 
-const AIRDROP_ADDRESS = "0xBaD1A1a03B196A756871b050d3e48F4DF5AFe177"             // HIBOX BSC test addr               
-// const AIRDROP_ADDRESS = "0xC632023c68b68eD37E363dd8bEda48735ab2F330"
-const NFTINFO_ADDRESS = '0x7cC71dA09C61a2706cA378DFa63204612505c194'
+//  测试链  
+// const AIRDROP_ADDRESS = "0xBaD1A1a03B196A756871b050d3e48F4DF5AFe177"    // 空投地址 获取是否可以空投，请求空投
+// const NFTINFO_ADDRESS = '0x7cC71dA09C61a2706cA378DFa63204612505c194'    // NFT地址  查询用户有几个NFT，获取NFT地址
 
+
+// 正式链空投与NFT地址：
+const AIRDROP_ADDRESS = "0x94a0b89ebd26a43b4414121191bA902A1b453284"    // 空投地址 获取是否可以空投，请求空投
+const NFTINFO_ADDRESS = '0xfe0D0802284AF9Cdec585448311481393Bd5D637'    // NFT地址  查询用户有几个NFT，获取NFT地址
 
 
 class HiContract {
@@ -149,24 +153,24 @@ class HiContract {
         return p
     }
 
-    // free mint
+    // free mint 请求空投
     requestAirdrop() {
         this.airdropRequestFlag = 1
 
-        // var p = this.getMetaMaskAccount0()
-        // .then(accountAddr => {
-        //     return this.getAvailableNum(this.accountAddr)
-        // }).catch(err => {
-        //     console.log(err)
-        // }).then (availableNum =>{
-        //     return  this.airdropSend(availableNum)
-        // }).catch( (err) => {
-        //     console.log(err)
-        // }).then( data =>{
-        //     return this.nftData(HiContract.accountAddr)
-        // }).catch( (err) => {
-        //     console.log(err)
-        // })
+        var p = this.getMetaMaskAccount0()
+        .then(accountAddr => {
+            return this.getAvailableNum(this.accountAddr)
+        }).catch(err => {
+            console.log(err)
+        }).then (availableNum =>{
+            return  this.airdropSend(availableNum)
+        }).catch( (err) => {
+            console.log(err)
+        }).then( data =>{
+            return this.nftData(HiContract.accountAddr)
+        }).catch( (err) => {
+            console.log(err)
+        })
         // .then (url => {
         //     this.airdropRequestFlag = 0
         //     return this.nftDetail(url)
@@ -174,56 +178,11 @@ class HiContract {
         //     this.airdropRequestFlag = 0
         //     console.log(err)
         // })
-        // debug UI
-        var p = this.nftDetail('https://www.hibox.tel/web3/data/1004.json')
 
         return p;
-        // // 嵌套一层promise返回到AirDrop页面
-        // return new Promise((resolve, reject) => {
-        //     console.log("requestAirdrop web3 status ", window.ethereum)
-
-        //     HiContract.web3.eth.getAccounts(function (error, result) {
-        //         console.log("getAccounts res[0] ", error, result[0])//授权成功后result能正常获取到账号了
-        //         if (error) {
-        //             HiContract.accountAddr = null
-        //         } else {
-        //             this.accountAddr = result[0]
-        //             console.log("accounts " , result[0])
-        //             HiContract.web3.eth.getBalance(result[0]).then((result) =>{
-        //                 self.wei = result
-        //                 self.bnb = HiContract.web3.utils.fromWei(result,'ether')
-        //                 console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
-        //             });
-
-        //             var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
-        //             console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
-    
-        //             // 查询类，不修改合约使用call方法
-        //             hiboxContract.methods.getAirdropAvailableNum().call({from: self.accountAddr}, function(err, res){
-        //                 console.log('getAirdropAvailableNum ', err, res);
-        //                 if (res >0) { // 剩余空投次数
-        //                     // 发起合约交易，使用send方法
-        //                     hiboxContract.methods.getAirdrop().send({from: result[0],gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
-        //                         if (err) {
-        //                             console.log("getAirdrop err : ", err)
-        //                         } else {
-        //                             console.log("getAirdrop success ", res)
-        //                         }
-        //                     })
-        //                     resolve(res) // data
-        //                 } else {
-        //                     reject(0)
-        //                 }
-                        
-        //             }).then((result) => {
-        //                 reject(-1)
-        //                 console.log("then -> res " + res)
-        //             })
-        //         }
-        //     })
-        // })
     }
 
+    // 获取账户bnb余额
     balanceOfAccount(accountAddr) {
         var p = new Promise((resolve, reject) => {
             HiContract.web3.eth.getBalance(accountAddr).then((result) =>{
@@ -237,7 +196,7 @@ class HiContract {
         return p
     }
 
-    // 获取账号NFT产品
+    // 获取账号NFT产品，查询成功后返回NFT url
     nftData(accountAddr) {
         var p = new Promise((resolve, reject) => {
             if (HiContract.airdropRequestFlag < 1) {
