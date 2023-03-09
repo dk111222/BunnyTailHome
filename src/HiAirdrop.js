@@ -11,8 +11,8 @@ import { Message } from "element-ui";
 
 
 // 正式链空投与NFT地址：
-const AIRDROP_ADDRESS = "0x94a0b89ebd26a43b4414121191bA902A1b453284"    // 空投地址 获取是否可以空投，请求空投
-const NFTINFO_ADDRESS = '0xfe0D0802284AF9Cdec585448311481393Bd5D637'    // NFT地址  查询用户有几个NFT，获取NFT地址
+const AIRDROP_ADDRESS = "0x9247267ad31413b0958b2681F723b5DAA0E3f190"    // 空投地址 获取是否可以空投，请求空投
+const NFTINFO_ADDRESS = '0x59Dfad307338aDc2ADaffFF5a6e6F6e3D0eF0601'    // NFT地址  查询用户有几个NFT，获取NFT地址
 
 
 class HiContract {
@@ -69,6 +69,7 @@ class HiContract {
      * **/  
     connectMetamask() {
         return new Promise((resolve, reject) => {
+            console.log(" connectMetamask window.ethereum = "+ window.ethereum);
             if (typeof window.ethereum !== 'undefined') {
                 // window.ethereum.enable() 过期方法
                 // https://eips.ethereum.org/EIPS/eip-1193#appendix-ii-examples
@@ -94,11 +95,12 @@ class HiContract {
         var p = new Promise((resolve, reject) => {
             HiContract.web3.eth.getAccounts(function (error, result) {
                 if (HiContract.accountAddr == undefined) {
-                    console.log("getMetaMaskAccount0 ", error, result)//授权成功后result能正常获取到账号了
                     if (error) {
+                        console.log("getMetaMaskAccount0 err ", error)//授权成功后result能正常获取到账号了
                         HiContract.accountAddr = null
                         reject (error)
                     } else {
+                        console.log("getMetaMaskAccount0 addr ", result[0])//授权成功后result能正常获取到账号了
                         HiContract.accountAddr = result[0]
                         resolve (result[0])
                     }
@@ -175,13 +177,15 @@ class HiContract {
         .then(accountAddr => {
             return this.getAvailableNum(this.accountAddr)
         }).catch(err => {
-            console.log("requestAirdrop catch1", err)
+            console.log("requestAirdrop catch1", err);
         }).then (availableNum =>{
+            console.log(" -> airdropSend " + availableNum);
             return  this.airdropSend(availableNum)
         }).catch( (err) => {
             reject(err)
             console.log("requestAirdrop catch2", err)
         }).then( data =>{
+            console.log(" -> nftData ");
             return this.nftData(HiContract.accountAddr)
         }).catch( (err) => {
             console.log("requestAirdrop catch3", err)
@@ -248,12 +252,12 @@ class HiContract {
     nftBalanceOf (accountAddr) {
         var p = new Promise((resolve, reject) => {
             var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
-
             nftInfoContract.methods.balanceOf(accountAddr).call(function(err, count) {
-                console.log("nftBalanceOf ", err, count)
                 if (err) {
+                    console.log("nftBalanceOf err: ", err)
                     reject(err)
                 } else {
+                    console.log("nftBalanceOf count: ", count)
                     resolve(count)
                 }
             })  
