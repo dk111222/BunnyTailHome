@@ -588,6 +588,25 @@ const NFTABI = [
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "nftminter",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nftindex",
+        "type": "uint256"
+      }
+    ],
+    "name": "airdropContractMintAgentNFT",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function",
+    "payable": true
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -709,8 +728,21 @@ const NFTABI = [
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_airdropContract",
+        "type": "address"
+      }
+    ],
+    "name": "setAirdropContract",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   }
-]
+];
 
 export default NFTABI; 
 

@@ -69,17 +69,17 @@ class HiContract {
      * **/  
     connectMetamask() {
         return new Promise((resolve, reject) => {
-            console.log(" connectMetamask window.ethereum = "+ window.ethereum);
+            console.log(" connectMetamask window.ethereum = "+ (typeof window.ethereum ));
             if (typeof window.ethereum !== 'undefined') {
-                // window.ethereum.enable() 过期方法
+                // window.ethereum.enable() //过期方法
                 // https://eips.ethereum.org/EIPS/eip-1193#appendix-ii-examples
-                window.ethereum.request({ method: 'eth_accounts' })
+                window.ethereum.request({ method: 'eth_requestAccounts' })
                 .then((accounts) => {
                     HiContract.accountAddr = accounts[0];
 
                     HiContract.web3Provider = window.ethereum;
                     HiContract.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
-                    console.log("connectMetamask acctount ", accounts[0])
+                    console.log("connectMetamask acctount ", HiContract.accountAddr)
                     resolve(true)
                 })
                 .catch((reason) => {
@@ -100,11 +100,12 @@ class HiContract {
                         HiContract.accountAddr = null
                         reject (error)
                     } else {
-                        console.log("getMetaMaskAccount0 addr ", result[0])//授权成功后result能正常获取到账号了
+                        console.log("getMetaMaskAccount0 111 addr ", result)//授权成功后result能正常获取到账号了
                         HiContract.accountAddr = result[0]
                         resolve (result[0])
                     }
                 } else {
+                    console.log("getMetaMaskAccount0 222 addr ", HiContract.accountAddr)//授权成功后result能正常获取到账号了
                     resolve (HiContract.accountAddr)
                 }
             })

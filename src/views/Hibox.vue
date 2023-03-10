@@ -90,7 +90,7 @@
                         </div>
                     </div> -->
                     <a class="game-intro-read-more" href="https://whitepaper.hibox.tel/" target="_blank">
-                        <span>READ MORE  ></span>
+                        <span>READ MORE ></span>
                         <!-- <span class="read-more-tip-ic"></span> -->
                     </a>
                 </div>

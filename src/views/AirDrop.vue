@@ -161,7 +161,7 @@ import HiContract from '../HiAirdrop';
                     console.log("doinit dataUrl", dataUrl)
                     if (dataUrl == undefined) {
                         reject("No NFT data")
-                        this.airdropStatus = 1 // 切换按钮
+                        this.airdropStatus = 0 // 切换按钮
                     } else {
                         this.hiboxContr.nftDetail(dataUrl)
                         .then(data =>{
@@ -235,10 +235,10 @@ import HiContract from '../HiAirdrop';
                 .then(res => {
                     console.log(res)
                     this.airdropStatus = 1 // 切换按钮
-                    console.log(this.hiboxContr, '是否赋值成功----')
+                    console.log('是否赋值成功---' + this.hiboxContr.accountAddr)
                 }).catch((err) => {
                     // debug
-                    this.airdropStatus = 1 // 切换按钮
+                    this.airdropStatus = 0 // 切换按钮
                     alert(err)
                 })
             },
