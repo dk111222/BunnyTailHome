@@ -154,7 +154,7 @@ import HiContract from '../HiAirdrop';
         },
         mounted() {
             // 监听滚动事件
-            console.log(this.hiboxContr, '----------------------mouted')
+            console.log('----------------------mouted -------------')
             if (window.ethereum) {
                 this.hiboxContr.doinit()
                 .then(dataUrl=>{

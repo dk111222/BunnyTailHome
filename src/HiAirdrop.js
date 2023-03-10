@@ -43,8 +43,8 @@ class HiContract {
     }
 
     doinit() {
-        HiContract.web3Provider = window.ethereum;
-        HiContract.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
+        this.web3Provider = window.ethereum;
+        this.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
 
         var p = this.getMetaMaskAccount0()
         .then(accountAddr => {
@@ -62,12 +62,13 @@ class HiContract {
     }
 
 
-    /**----------------------------------------------   tip   --------------------------------------------------------------------
+    /**----------------------------------------------   tip   ------------------------------------------
      * constructor 里面可以const self = this
      * 
      * 但是以下的方法，self 要换成this, 不然使用connectMetamask，requestAirdrop等这些函数里面的self.xxx,实际是指向错的
      * **/  
     connectMetamask() {
+        var iContract = this;
         return new Promise((resolve, reject) => {
             console.log(" connectMetamask window.ethereum = "+ (typeof window.ethereum ));
             if (typeof window.ethereum !== 'undefined') {
@@ -75,11 +76,9 @@ class HiContract {
                 // https://eips.ethereum.org/EIPS/eip-1193#appendix-ii-examples
                 window.ethereum.request({ method: 'eth_requestAccounts' })
                 .then((accounts) => {
-                    HiContract.accountAddr = accounts[0];
-
-                    HiContract.web3Provider = window.ethereum;
-                    HiContract.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
-                    console.log("connectMetamask acctount ", HiContract.accountAddr)
+                    iContract.accountAddr = accounts[0];
+                    iContract.web3Provider = window.ethereum;
+                    iContract.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
                     resolve(true)
                 })
                 .catch((reason) => {
@@ -92,21 +91,24 @@ class HiContract {
     }
 
     getMetaMaskAccount0() {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
-            HiContract.web3.eth.getAccounts(function (error, result) {
-                if (HiContract.accountAddr == undefined) {
+            iContract.web3.eth.getAccounts(function (error, result) {
+                if (iContract.accountAddr == undefined) {
                     if (error) {
                         console.log("getMetaMaskAccount0 err ", error)//授权成功后result能正常获取到账号了
-                        HiContract.accountAddr = null
+                        iContract.accountAddr = null
                         reject (error)
                     } else {
                         console.log("getMetaMaskAccount0 111 addr ", result)//授权成功后result能正常获取到账号了
-                        HiContract.accountAddr = result[0]
+                        iContract.accountAddr = result[0];
+                        iContract.accountAddr= result[0];
+                        self.accountAddr = result[0];
                         resolve (result[0])
                     }
                 } else {
-                    console.log("getMetaMaskAccount0 222 addr ", HiContract.accountAddr)//授权成功后result能正常获取到账号了
-                    resolve (HiContract.accountAddr)
+                    console.log("getMetaMaskAccount0 222 addr ", iContract.accountAddr)//授权成功后result能正常获取到账号了
+                    resolve (iContract.accountAddr)
                 }
             })
         })
@@ -114,8 +116,9 @@ class HiContract {
     }
 
     getAvailableNum(accountAddr) {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
-            var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
+            var hiboxContract = new iContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
             console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
 
             // 查询类，不修改合约使用call方法
@@ -133,19 +136,19 @@ class HiContract {
     }
 
     airdropSend(availableNum) {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
             if (availableNum >0) {
-                // var addr = HiContract.accountAddr
-                var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
-                hiboxContract.methods.getAirdrop().send({from: HiContract.accountAddr, gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
+                var hiboxContract = new iContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
+                hiboxContract.methods.getAirdrop().send({from: iContract.accountAddr, gas: 200000, gasPrice: iContract.web3.utils.toWei('30','gwei')},function (err, res) {
                     if (err) {
                         console.log("airdropSend err : ", err)
-                        HiContract.airdropRequestFlag = 2 
+                        iContract.airdropRequestFlag = 2 
                         alert(err.message)
                         reject (err.message)
                     } else {
                         console.log("airdropSend success ", res)
-                        HiContract.airdropRequestFlag = 10 
+                        iContract.airdropRequestFlag = 10 
                         resolve(res) // data
                     }
                 })
@@ -158,13 +161,14 @@ class HiContract {
 
     // 获取账户bnb余额
     balanceOfAccount(accountAddr) {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
-            HiContract.web3.eth.getBalance(accountAddr).then((result) =>{
-                HiContract.wei = result
-                HiContract.bnb = HiContract.web3.utils.fromWei(result,'ether')
-                console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
+            iContract.web3.eth.getBalance(accountAddr).then((result) =>{
+                iContract.wei = result
+                HiContract.bnb = iContract.web3.utils.fromWei(result,'ether')
+                console.log("bnb:" + iContract.web3.utils.fromWei(result, 'ether'))
 
-                resolve(HiContract.web3.utils.fromWei(result, 'ether'))
+                resolve(iContract.web3.utils.fromWei(result, 'ether'))
             });
         })
         return p
@@ -251,8 +255,9 @@ class HiContract {
     // NFT合约，获取账户下有几个NFT
     // 返回 NFT数量
     nftBalanceOf (accountAddr) {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
-            var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+            var nftInfoContract = new iContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
             nftInfoContract.methods.balanceOf(accountAddr).call(function(err, count) {
                 if (err) {
                     console.log("nftBalanceOf err: ", err)
@@ -269,12 +274,13 @@ class HiContract {
      // NFT合约，获取账户下第@index个合约的token信息， index从0开始， 
      // 返回NFT的token
     nftTokenOfOwnerByIndex(accountAddr, index) {
-        console.log("nftTokenOfOwnerByIndex ", index)
+        console.log("nftTokenOfOwnerByIndex ", index);
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
             if (index < 0) {
                 reject("index err")
             } else {
-                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+                var nftInfoContract = new iContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
                 // 获取账户最新获取到的NF token
                 nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, index).call(function(err, res) {
                     console.log("nftTokenOfOwnerByIndex ", index, err, res)
@@ -291,11 +297,12 @@ class HiContract {
 
     // NFT合约，根据token获取NFT的URL地址
     nftTokenUrl(nftToken) {
+        var iContract = this;
         var p = new Promise((resolve, reject) => {
             if (nftToken == undefined) {
                 reject("no token")
             } else {
-                var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
+                var nftInfoContract = new iContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
                 // 获取账户下有几个NFT
                 nftInfoContract.methods.tokenURI(nftToken).call(function(err, dataUrl) {
                     console.log("nftTokenUrl ", err, dataUrl)
