@@ -3,8 +3,6 @@ import AirdropABI from "./ABIAirdrop";
 import NFTABI from "./ABINftInfo"
 import Web3 from 'web3'
 
-import { Message } from "element-ui";
-
 //  测试链  
 // const AIRDROP_ADDRESS = "0xBaD1A1a03B196A756871b050d3e48F4DF5AFe177"    // 空投地址 获取是否可以空投，请求空投
 // const NFTINFO_ADDRESS = '0x7cC71dA09C61a2706cA378DFa63204612505c194'    // NFT地址  查询用户有几个NFT，获取NFT地址
@@ -34,8 +32,6 @@ class HiContract {
         self.airdropAvailableNum = 0  // 可以获取的数量
         self.nftUrl = null;
 
-        console.log("constructer web3 status ", window.ethereum)
-
         // read NFT infos
         // if (window.ethereum) {
         //     this.doinit()
@@ -50,14 +46,8 @@ class HiContract {
         .then(accountAddr => {
             return  this.nftData(accountAddr)
         }).catch(err => {
-            console.log(err)
+            alert(err)
         })
-        // .then (url => {
-        //     return this.nftDetail(url)
-        // }).catch(err=> {
-        //     console.log(err)
-        // })
-        // var p = this.nftDetail('https://www.hibox.tel/web3/data/1004.json')
         return p;
     }
 
@@ -78,7 +68,6 @@ class HiContract {
 
                     HiContract.web3Provider = window.ethereum;
                     HiContract.web3 = new Web3(window.ethereum);//web3js就是你需要的web3实例
-                    console.log("connectMetamask acctount ", accounts[0])
                     resolve(true)
                 })
                 .catch((reason) => {
@@ -94,7 +83,6 @@ class HiContract {
         var p = new Promise((resolve, reject) => {
             HiContract.web3.eth.getAccounts(function (error, result) {
                 if (HiContract.accountAddr == undefined) {
-                    console.log("getMetaMaskAccount0 ", error, result)//授权成功后result能正常获取到账号了
                     if (error) {
                         HiContract.accountAddr = null
                         reject (error)
@@ -113,11 +101,9 @@ class HiContract {
     getAvailableNum(accountAddr) {
         var p = new Promise((resolve, reject) => {
             var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
-            console.log("hiboxContract - > getAirdropAvailableNum ", hiboxContract)
 
             // 查询类，不修改合约使用call方法
             hiboxContract.methods.getAirdropAvailableNum().call({from: accountAddr}, function(err, res){
-                console.log("hiboxContract - > getAirdropAvailableNum ", err, res)
                 if (err || res <= 0) {
                     reject ('No available NFT')
                 } else {
@@ -136,12 +122,10 @@ class HiContract {
                 var hiboxContract = new HiContract.web3.eth.Contract(AirdropABI, AIRDROP_ADDRESS);
                 hiboxContract.methods.getAirdrop().send({from: HiContract.accountAddr, gas: 200000, gasPrice: HiContract.web3.utils.toWei('30','gwei')},function (err, res) {
                     if (err) {
-                        console.log("airdropSend err : ", err)
                         HiContract.airdropRequestFlag = 2 
                         alert(err.message)
                         reject (err.message)
                     } else {
-                        console.log("airdropSend success ", res)
                         HiContract.airdropRequestFlag = 10 
                         resolve(res) // data
                     }
@@ -159,7 +143,6 @@ class HiContract {
             HiContract.web3.eth.getBalance(accountAddr).then((result) =>{
                 HiContract.wei = result
                 HiContract.bnb = HiContract.web3.utils.fromWei(result,'ether')
-                console.log("bnb:" + HiContract.web3.utils.fromWei(result, 'ether'))
 
                 resolve(HiContract.web3.utils.fromWei(result, 'ether'))
             });
@@ -175,24 +158,16 @@ class HiContract {
         .then(accountAddr => {
             return this.getAvailableNum(this.accountAddr)
         }).catch(err => {
-            console.log("requestAirdrop catch1", err)
+            alert(err)
         }).then (availableNum =>{
             return  this.airdropSend(availableNum)
         }).catch( (err) => {
             reject(err)
-            console.log("requestAirdrop catch2", err)
         }).then( data =>{
             return this.nftData(HiContract.accountAddr)
         }).catch( (err) => {
-            console.log("requestAirdrop catch3", err)
+            alert(err)
         })
-        // .then (url => {
-        //     this.airdropRequestFlag = 0
-        //     return this.nftDetail(url)
-        // }).catch(err=> {
-        //     this.airdropRequestFlag = 0
-        //     console.log(err)
-        // })
 
         return p;
     }
@@ -203,42 +178,10 @@ class HiContract {
         .then(count =>{
             return  this.nftTokenOfOwnerByIndex(accountAddr, count-1)
         }).catch(err => {
-            console.log("nftData catch1", err);
         }).then(nftToken =>{
             return  this.nftTokenUrl(nftToken);
         }).catch(err => {
-            console.log("nftData catch2", err);
         })
-
-        // var p = new Promise((resolve, reject) => {
-        //     if (HiContract.airdropRequestFlag < 1) {
-        //         reject('request airdop failed')
-        //     } else  { 
-        //         var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
-        //         console.log("nftData nftInfoContract", nftInfoContract, accountAddr)
-        //         nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, 1).call(function(err, res) {
-        //             console.log("tokenOfOwnerByIndex ", err, res)
-        //             nftInfoContract.methods.tokenURI(res).call(function(err2, dataUrl) {
-        //                 console.log("nftData ", err2, dataUrl)
-        //                 if (err2) {
-        //                     reject(err2)
-        //                 } else {
-        //                     resolve(dataUrl)
-        //                 }
-        //                 // // TODO 读取url中json，并展示
-        //                 // fetch(dataUrl)
-        //                 //     .then((response) => response.json())
-        //                 //     .then((json) => console.log(json));
-
-        //             });
-        //         });
-        //     }
-        // }).then(count => {
-
-        //     return this.getAvailableNum(this.accountAddr)
-        // }).catch( (err) => {
-        //     console.log(err)
-        // })
 
         return p
     }
@@ -250,7 +193,6 @@ class HiContract {
             var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
 
             nftInfoContract.methods.balanceOf(accountAddr).call(function(err, count) {
-                console.log("nftBalanceOf ", err, count)
                 if (err) {
                     reject(err)
                 } else {
@@ -264,7 +206,6 @@ class HiContract {
      // NFT合约，获取账户下第@index个合约的token信息， index从0开始， 
      // 返回NFT的token
     nftTokenOfOwnerByIndex(accountAddr, index) {
-        console.log("nftTokenOfOwnerByIndex ", index)
         var p = new Promise((resolve, reject) => {
             if (index < 0) {
                 reject("index err")
@@ -272,7 +213,6 @@ class HiContract {
                 var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
                 // 获取账户最新获取到的NF token
                 nftInfoContract.methods.tokenOfOwnerByIndex(accountAddr, index).call(function(err, res) {
-                    console.log("nftTokenOfOwnerByIndex ", index, err, res)
                     if (err || res == 0) {
                         reject(err)
                     } else {
@@ -293,7 +233,6 @@ class HiContract {
                 var nftInfoContract = new HiContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
                 // 获取账户下有几个NFT
                 nftInfoContract.methods.tokenURI(nftToken).call(function(err, dataUrl) {
-                    console.log("nftTokenUrl ", err, dataUrl)
                     if (err) {
                         reject(err)
                     } else {
@@ -309,15 +248,8 @@ class HiContract {
     nftDetail(url) {
         return fetch(url)
                 .then((response) =>  {
-                    console.log("fetch nft ： " , url, response)
                     return response.json()
                 })
-    }
-
-    dump() {
-        console.log("web3.version ", self.web3.version)
-        console.log("web3.providers ", self.Web3.providers)
-        console.log("account ", self.accountAddr)
     }
 }
 

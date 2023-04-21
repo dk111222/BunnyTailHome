@@ -19,7 +19,7 @@ let hiboxrouter = new Router({
   ]
 })
 
-hiboxrouter.afterEach((to,from) => {
+hiboxrouter.afterEach((_to,_from) => {
   window.scrollTo(0,0);
 });
 

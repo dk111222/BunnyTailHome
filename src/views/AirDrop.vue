@@ -1,5 +1,4 @@
 <template>
-
     <div class="content">
         <div class="header">
             <div class="header-auto">
@@ -111,8 +110,7 @@
 
 <script>
     import { reject } from 'q';
-import HiContract from '../HiAirdrop';
-    import hiContract from '../main'
+    import HiContract from '../HiAirdrop';
     
     export default {
         data() {
@@ -147,18 +145,15 @@ import HiContract from '../HiAirdrop';
         watch: {
             getAccountAddr: {
                 handler: function() {
-                    let walletAddr = this.hiboxContr.accountAddr;
-                    console.log("walletAddr watch", walletAddr)
+                    // let walletAddr = this.hiboxContr.accountAddr;
                 },
             }
         },
         mounted() {
             // 监听滚动事件
-            console.log(this.hiboxContr, '----------------------mouted')
             if (window.ethereum) {
                 this.hiboxContr.doinit()
                 .then(dataUrl=>{
-                    console.log("doinit dataUrl", dataUrl)
                     if (dataUrl == undefined) {
                         reject("No NFT data")
                         this.airdropStatus = 1 // 切换按钮
@@ -168,13 +163,14 @@ import HiContract from '../HiAirdrop';
                             this.airdropStatus = 2 // 切换按钮
                             this.updateNftUi(data)
                         }).catch((err)=>{
-                            console.log("fetch nft err： " + err)
                             this.airdropStatus = 1 // 切换按钮
+                            alert(err)
                         })
                     }
                     // TODO update ui
                 }).catch(err =>{
                     this.airdropStatus = 1 // 切换按钮
+                    alert(err)
                 })
             } else {
                 this.airdropStatus = 0 // 切换按钮
@@ -225,17 +221,14 @@ import HiContract from '../HiAirdrop';
                 //     },
                 //     "compiler": "HashLips Art Engine"
                 // }
-                console.log('updateNftUI done')
             },
 
             // 连接MetaMask
             connectWallet() {
-                // console.log(this.hiboxContr);
                 this.hiboxContr.connectMetamask()
                 .then(res => {
-                    console.log(res)
                     this.airdropStatus = 1 // 切换按钮
-                    console.log(this.hiboxContr, '是否赋值成功----')
+                    alert(res)
                 }).catch((err) => {
                     // debug
                     this.airdropStatus = 1 // 切换按钮
@@ -249,19 +242,18 @@ import HiContract from '../HiAirdrop';
                 if (this.hiboxContr.airdropRequestFlag < 1 ) {
                     this.hiboxContr.requestAirdrop()
                     .then(dataUrl => {
-                        console.log('requestAirdrop dataUrl ' , dataUrl)
                         this.hiboxContr.nftDetail(dataUrl)
                         .then(data =>{
                             this.airdropStatus = 2 // 切换按钮
                             this.updateNftUi(data)
                         }).catch((err)=>{
-                            console.log("fetch nft err： " + err)
                             this.airdropStatus = 1 // 切换按钮
+                            alert(err)
                         })
                     })
                     .catch(err => {
-                        console.log('requestAirdrop err ', err)
                         this.airdropStatus = 1 // 切换按钮
+                        alert(err)
                     })
                 }
             },
