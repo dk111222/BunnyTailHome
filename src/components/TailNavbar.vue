@@ -194,7 +194,6 @@
                         background: rgba(0, 0, 0, 0.16);
                         border: 2px solid rgb(255, 255, 255);
                         box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-                        filter: blur(0.2px);
                         border-radius: 27px;
                     }
                 }

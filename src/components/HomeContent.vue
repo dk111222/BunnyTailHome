@@ -89,6 +89,13 @@
   </script>
   
   <style lang="scss" scoped>
+
+.content {
+    widows: 100%;
+    min-width: 1440px;
+    overflow-x: hidden;
+}
+
   .top-content {
         width: 100% !important;
         /* 矩形 3 */
@@ -99,6 +106,8 @@
         top: 0;
         background: linear-gradient(180.00deg, rgba(78,67,163,1.00),rgba(0,85,131,1.00) 100%);
         z-index: -2;
+        overflow-x: hidden;
+
         .girl1 {
             /* 图像 2 */
             position: absolute;
@@ -317,13 +326,16 @@
   }
 
   .bottom-content{
-    /* 矩形 11 */
-    width: 100%;
+    width: 100% !important;
     position: absolute;
     min-width: 1920px;
     height: 3313px;
     left: 0;
+    right: 0;
     top: 2178px;
+    overflow-x: hidden;
+    width: 100% !important;
+    z-index: -2;
 
     background: linear-gradient(180.00deg, rgba(0,83,133,1.00),rgba(0,0,0,1.00) 28.697%);
 
@@ -341,11 +353,8 @@
         .market-title{
             /* MARKETPLACE*/
             position: absolute;
-            width: 1155px;
-            height: 148px;
-            left: 85px;
-            right: 85px;
-            top: 13.88%;
+            width: 1324px;
+            top: 15.88%;
 
             color: rgb(255, 255, 255);
             font-family: PingFang SC;
@@ -360,10 +369,9 @@
             /* Each of our Nft has a unique image. It can be traded publicly on our in-game platform. */
             position: absolute;
             width: 1155px;
-            height: 148px;
             left: 85px;
             right: 85px;
-            top: 47.1%;
+            top: 45.1%;
 
             color: rgb(255, 255, 255);
             font-family: PingFang SC;

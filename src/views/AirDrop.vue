@@ -151,10 +151,6 @@
         },
         mounted() {
             // 监听滚动事件
-<<<<<<< HEAD
-=======
-            console.log('----------------------mouted -------------')
->>>>>>> 174a991fd962d52e9c5b639dec0bd00ff32c89a7
             if (window.ethereum) {
                 this.hiboxContr.doinit()
                 .then(dataUrl=>{
@@ -232,11 +228,7 @@
                 this.hiboxContr.connectMetamask()
                 .then(res => {
                     this.airdropStatus = 1 // 切换按钮
-<<<<<<< HEAD
                     alert(res)
-=======
-                    console.log('是否赋值成功---' + this.hiboxContr.accountAddr)
->>>>>>> 174a991fd962d52e9c5b639dec0bd00ff32c89a7
                 }).catch((err) => {
                     // debug
                     this.airdropStatus = 0 // 切换按钮
