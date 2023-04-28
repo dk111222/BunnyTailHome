@@ -12,14 +12,14 @@
     import HomeContent from '../components/HomeContent.vue';
 
     import {
-        swiper,
-        swiperSlide
+        // swiper,
+        // swiperSlide
     } from 'vue-awesome-swiper'
 
     export default {
         components: {
-            swiper,
-            swiperSlide,
+            // swiper,
+            // swiperSlide,
             TailNavbar,
             HomeContent
         },

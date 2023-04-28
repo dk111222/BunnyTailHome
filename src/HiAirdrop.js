@@ -60,7 +60,6 @@ class HiContract {
     connectMetamask() {
         var iContract = this;
         return new Promise((resolve, reject) => {
-            console.log(" connectMetamask window.ethereum = "+ (typeof window.ethereum ));
             if (typeof window.ethereum !== 'undefined') {
                 // window.ethereum.enable() //过期方法
                 // https://eips.ethereum.org/EIPS/eip-1193#appendix-ii-examples
@@ -88,18 +87,18 @@ class HiContract {
             iContract.web3.eth.getAccounts(function (error, result) {
                 if (iContract.accountAddr == undefined) {
                     if (error) {
-                        console.log("getMetaMaskAccount0 err ", error)//授权成功后result能正常获取到账号了
+                        // console.log("getMetaMaskAccount0 err ", error)//授权成功后result能正常获取到账号了
                         iContract.accountAddr = null
                         reject (error)
                     } else {
-                        console.log("getMetaMaskAccount0 111 addr ", result)//授权成功后result能正常获取到账号了
+                        // console.log("getMetaMaskAccount0 111 addr ", result)//授权成功后result能正常获取到账号了
                         iContract.accountAddr = result[0];
                         iContract.accountAddr= result[0];
                         self.accountAddr = result[0];
                         resolve (result[0])
                     }
                 } else {
-                    console.log("getMetaMaskAccount0 222 addr ", iContract.accountAddr)//授权成功后result能正常获取到账号了
+                    // console.log("getMetaMaskAccount0 222 addr ", iContract.accountAddr)//授权成功后result能正常获取到账号了
                     resolve (iContract.accountAddr)
                 }
             })
@@ -135,7 +134,7 @@ class HiContract {
                         alert(err.message)
                         reject (err.message)
                     } else {
-                        console.log("airdropSend success ", res)
+                        // console.log("airdropSend success ", res)
                         iContract.airdropRequestFlag = 10 
                         resolve(res) // data
                     }
@@ -154,7 +153,7 @@ class HiContract {
             iContract.web3.eth.getBalance(accountAddr).then((result) =>{
                 iContract.wei = result
                 HiContract.bnb = iContract.web3.utils.fromWei(result,'ether')
-                console.log("bnb:" + iContract.web3.utils.fromWei(result, 'ether'))
+                // console.log("bnb:" + iContract.web3.utils.fromWei(result, 'ether'))
 
                 resolve(iContract.web3.utils.fromWei(result, 'ether'))
             });
@@ -171,14 +170,14 @@ class HiContract {
             return this.getAvailableNum(this.accountAddr)
         }).catch(err => {
             alert(err)
-            console.log("requestAirdrop catch1", err);
+            // console.log("requestAirdrop catch1", err);
         }).then (availableNum =>{
-            console.log(" -> airdropSend " + availableNum);
+            // console.log(" -> airdropSend " + availableNum);
             return  this.airdropSend(availableNum)
         }).catch( (err) => {
             reject(err)
         }).then( data =>{
-            console.log(" -> nftData ");
+            // console.log(" -> nftData ");
             return this.nftData(HiContract.accountAddr)
         }).catch( (err) => {
             alert(err)
@@ -209,10 +208,10 @@ class HiContract {
             var nftInfoContract = new iContract.web3.eth.Contract(NFTABI, NFTINFO_ADDRESS);
             nftInfoContract.methods.balanceOf(accountAddr).call(function(err, count) {
                 if (err) {
-                    console.log("nftBalanceOf err: ", err)
+                    // console.log("nftBalanceOf err: ", err)
                     reject(err)
                 } else {
-                    console.log("nftBalanceOf count: ", count)
+                    // console.log("nftBalanceOf count: ", count)
                     resolve(count)
                 }
             })  
