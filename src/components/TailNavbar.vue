@@ -19,51 +19,11 @@
         </div>
   </template>
   
-  <script>
-  import WalletConnect from "@walletconnect/client";
+<script>
 
   export default {
     name: 'TailNavBar',
     methods: {
-        async connectWallet() {
-            // Create a new WalletConnect client
-            const connector = new WalletConnect({
-                bridge: "https://bridge.walletconnect.org", // Required
-                qrcodeModalOptions: {
-                mobileLinks: [
-                    "rainbow",
-                    "metamask",
-                    "argent",
-                    "trust",
-                    "imtoken",
-                    "pillar",
-                    "gnosis",
-                    "gnosis-safe",
-                    "opera",
-                    "opera-touch",
-                    "opera-for-android",
-                    "opera-mini",
-                    "hyperpay",
-                    "paytomat",
-                    "wallet",
-                    "coinomi",
-                    "trustee",
-                    "argent",
-                    "huobiwallet",
-                    "coolwallet",
-                    "atoken",
-                    "gnosis",
-                    "gnosis-safe",
-                ],
-                },
-            });
-
-            // Check if connection is already established
-            if (!connector.connected) {
-                // create new session
-                await connector.createSession();
-            }
-        },
         activeHandle(index) {
                 switch (index) {
                     case 0:
