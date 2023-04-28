@@ -150,6 +150,7 @@ class HiContract {
     balanceOfAccount(accountAddr) {
         var iContract = this;
         var p = new Promise((resolve, reject) => {
+            print(reject)
             iContract.web3.eth.getBalance(accountAddr).then((result) =>{
                 iContract.wei = result
                 HiContract.bnb = iContract.web3.utils.fromWei(result,'ether')
@@ -167,6 +168,7 @@ class HiContract {
 
         var p = this.getMetaMaskAccount0()
         .then(accountAddr => {
+            print(accountAddr)
             return this.getAvailableNum(this.accountAddr)
         }).catch(err => {
             alert(err)
@@ -175,8 +177,9 @@ class HiContract {
             // console.log(" -> airdropSend " + availableNum);
             return  this.airdropSend(availableNum)
         }).catch( (err) => {
-            reject(err)
+            alert(err)
         }).then( data =>{
+            print(data)
             // console.log(" -> nftData ");
             return this.nftData(HiContract.accountAddr)
         }).catch( (err) => {
@@ -192,9 +195,11 @@ class HiContract {
         .then(count =>{
             return  this.nftTokenOfOwnerByIndex(accountAddr, count-1)
         }).catch(err => {
+            print(err)
         }).then(nftToken =>{
             return  this.nftTokenUrl(nftToken);
         }).catch(err => {
+            print(err)
         })
 
         return p
